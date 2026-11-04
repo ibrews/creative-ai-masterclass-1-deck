@@ -21,6 +21,5 @@ source/media/
 tools/providers.json
 
 # deck import/roundtrip tool outputs — regenerated on demand
-media/
 tools/imported-*.json
 tools/palette-*.css
