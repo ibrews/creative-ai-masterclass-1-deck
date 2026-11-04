@@ -3,12 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Is XR Right For Your Project? — A Spatial Deck Presentation</title>
+<title>Creative AI Workflow Masterclass, Part 1 · Alex Coulombe Presents</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="description" content="A framework for spatial decisions — before you pick a headset or a studio. Built with Spatial Deck.">
-<meta property="og:title" content="Is XR Right For Your Project?">
-<meta property="og:description" content="3 lessons. 6 case studies. A framework for spatial decisions.">
-<meta property="og:image" content="https://ibrews.github.io/spatial-deck/social.png">
+<meta name="description" content="Set Up From Scratch: go from nothing to a working creative AI setup with agents, tool connections and a memory. Thursday Nov 5, 12p ET, live.">
+<meta property="og:title" content="Creative AI Workflow Masterclass, Part 1 · Alex Coulombe Presents">
+<meta property="og:description" content="Go from nothing to a creative AI setup that connects to your tools and remembers your work. Live, Thursday Nov 5, 12p ET.">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://ibrews.github.io/creative-ai-masterclass-1-deck/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ibrews.github.io/creative-ai-masterclass-1-deck/social.png">
+<meta property="og:image" content="https://ibrews.github.io/creative-ai-masterclass-1-deck/social.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -39,44 +45,111 @@
    'IFRAME:'  Prefix c.img with 'IFRAME:' to embed a URL (YouTube, etc.)
    ======================================================================= */
 const SECTIONS = [
-  { year: 'CH 1', accent: 'teal',
-    lesson: { title:'Define the Spatial Problem First.\nThe Technology Follows.', short:'SPACE > TECH', tagline:'Every successful XR project starts with a question about space \u2014 not a question about headsets. \u201cWhat does it feel like to stand here?\u201d beats \u201cShould we use Quest or Vision Pro?\u201d every time.', tags:'Architecture \u00b7 Theater \u00b7 Pre-Visualization' },
-    cases: [
-      { title:'The Building That Didn\u2019t Exist Yet', subtitle:'Pre-construction visualization for a 200-room hotel',
-        img:'images/ch1-case1-archviz.png', bullets:['The client\u2019s architect shipped 400 pages of drawings. Nobody could agree on the lobby ceiling height.','Forty-five minutes in VR replaced three months of revision cycles','The breakthrough wasn\u2019t the headset \u2014 it was standing inside an unbuilt room and pointing at a problem'] },
-      { title:'The Rehearsal That Saved the Set', subtitle:'A theater company tests blocking before load-in',
-        img:'images/ch1-case2-theater.png', bullets:['Physical set pieces cost $40K to build. Virtual ones cost an afternoon.','The director found a sightline problem on day one \u2014 not opening night','The actors didn\u2019t need to be gamers. They needed to walk, look, and point.'] },
-    ] },
-  { year: 'CH 2', accent: 'purple',
-    lesson: { title:'Match the Platform\nto the Friction Budget.', short:'FRICTION BUDGET', tagline:'Your users have a finite tolerance for setup, tutorials, and cables. Photorealism doesn\u2019t matter if the headset never leaves the pelican case. Pick the platform that your actual audience will actually put on.', tags:'Quest \u00b7 PCVR \u00b7 OpenXR \u00b7 WebXR' },
-    cases: [
-      { title:'PCVR vs. Standalone', subtitle:'It\u2019s not about specs \u2014 it\u2019s about friction',
-        img:'images/ch2-case1-platforms.png', bullets:['Standalone (Quest): 10-second setup, runs anywhere, good enough for 90% of training and review','Tethered PCVR: photorealistic fidelity, but someone has to manage cables and a gaming PC','Wireless backpack PCVR: best of both \u2014 if your project justifies the hardware investment'] },
-      { title:'The OpenXR Question', subtitle:'Build once, or build for the room you\u2019re in?',
-        img:'images/ch2-case2-flowchart.svg', bullets:['OpenXR promises write-once, deploy-anywhere. Reality: input mapping and performance still diverge.','If your audience is fixed (e.g., a sales center), optimize for one platform ruthlessly','If your audience is unknown (e.g., a downloadable app), OpenXR + graceful fallbacks is the move'] },
-    ] },
-  { year: 'CH 3', accent: 'amber',
-    lesson: { title:'Iteration Speed Is\nthe Only Spec That Matters.', short:'ITERATION SPEED', tagline:'Polygon counts and refresh rates are table stakes. The studio that can show you a change on Tuesday that you asked about on Monday \u2014 that\u2019s the one that finishes the project. Everything else is a demo reel.', tags:'Unreal Engine \u00b7 Real-Time \u00b7 Multiplayer' },
-    cases: [
-      { title:'Five Questions for Any XR Studio', subtitle:'A checklist before you sign the SOW',
-        img:'images/ch3-case1-checklist.svg', bullets:['Can they show you a working prototype in two weeks, or just a pitch deck in two months?','Do they build in a real-time engine (Unreal, Unity) or pre-render everything? Real-time means you can iterate.','Ask: \u201cWhat happens when we change the floor plan halfway through?\u201d The answer tells you everything.'] },
-      { title:'The Red Flags', subtitle:'How to spot a studio that\u2019ll burn your budget',
-        img:'images/ch3-case2-redflags.png', bullets:['They demo on hardware you\u2019ll never own. If the pitch is on a $10K rig, ask what deployment looks like.','\u201cWe\u2019ll figure out multiplayer later.\u201d Networking is architectural \u2014 it can\u2019t be bolted on in month six.','No one on the team has shipped a project that ran for more than one day. Trade shows \u2260 production.'] },
-    ] },
-  { year: 'CH 4', accent: 'rose',
-    lesson: { title:'Your Deck Is Data.\nTreat It Like Code.', short:'DECK AS CODE', tagline:'Spatial Deck\u2019s <code>tools/</code> directory turns slides into a pipeline: a local Ollama fleet handles structured-JSON cleanup while frontier models stay reserved for judgment. Every importer has a mirror exporter, every change has a diff, every chapter has a peer review.<br><br>You don\u2019t rewrite a deck anymore \u2014 you <em>refactor</em> it.', tags:'Fleet \u00b7 Ollama \u00b7 Python \u00b7 Zero-Build' },
-    cases: [
-      { title:'Bring Any Format In.\nGet Any Format Out.', subtitle:'Markdown \u2194 HTML \u2194 PPTX \u2194 PDF \u2014 round-trip, not one-way',
-        img:'images/ch4-case1-roundtrip.svg', bullets:['Importers: <code>import_md</code> / <code>import_html</code> / <code>import_pptx</code> / <code>import_pdf</code> / <code>import_tokens</code> \u2014 all emit the same SECTIONS-shape JSON','Exporters: <code>export_md</code> / <code>export_html</code> / <code>export_pptx</code> \u2014 round-trip verified (<code>diff_decks</code> reports 0 changes)','Structural extraction in pure Python; the fleet only rewrites prose. Single-pass, never \u201cplease fix your JSON.\u201d'] },
-      { title:'Let a Local Model\nRead Your Deck.', subtitle:'Peer review + lint + alt-text + timing \u2014 all offline, all fleet-powered',
-        img:'images/ch4-case2-peerreview.svg', bullets:['<code>peer_review.py</code>: two model families (llama3.1:8b \u00b7 qwen2.5-coder:14b) critique the same chapter \u2014 agreement is signal, disagreement is the interesting edge','<code>lint_deck</code>, <code>estimate_timing</code>, <code>gen_alt_text</code>, <code>extract_palette</code>: single-purpose QA tools, JSON-patch output only, never mutate <code>index.html</code> in one shot','Claude stays reserved for what local models fail at: architectural decisions, narrative judgment, UX trade-offs'] },
-      { title:'Merge, Diff, Ship.', subtitle:'Multi-deck merge + sentinel splicing + conflict reporting',
-        img:'images/ch4-case3-mergediff.svg', bullets:['<code>merge_decks.py</code>: concat N sources, flag year collisions, duplicate titles, Jaccard near-duplicates \u2014 writes a <code>.conflicts.md</code> for the editorial pass','<code>merge_sections.py</code>: idempotent splice between <code>// \u2500\u2500 IMPORTED START/END \u2500\u2500</code> sentinels \u2014 re-import as many times as you like','<code>diff_decks.py</code>: chapter/case-level diffs with bullet <code>difflib</code>. Your PR reviewer will thank you.'] },
-    ] },
+ {
+  "year": "CH 1",
+  "accent": "teal",
+  "lesson": {
+   "title": "Start With One Assistant.\nGive It a Home.",
+   "short": "ONE ASSISTANT",
+   "tagline": "You do not need the perfect setup. You need one assistant that can read the files you choose, and a private folder it can work in. Everything else in this class builds on that.",
+   "tags": "Claude Code · Codex · Any MCP client"
+  },
+  "cases": [
+   {
+    "title": "Pick a Setup, Then Stop Shopping",
+    "subtitle": "The course kit stays read-only. Your work lives next to it.",
+    "img": "images/ch1-home.svg",
+    "bullets": [
+     "Any assistant that can read files you select works; terminal and file-edit access are helpful, not required",
+     "Make a private project folder outside the course kit for memory, notes and output",
+     "Copy in the templates: project memory, job contract, completion receipt"
+    ],
+    "notes": "Keep this practical. The point is to commit to one setup tonight, not to compare tools. Show the folder layout live."
+   },
+   {
+    "title": "Knowledge Is Not Permission",
+    "subtitle": "Reading a recipe never authorizes you to run it",
+    "img": "images/ch1-permission.svg",
+    "bullets": [
+     "A recipe can explain a command without granting permission to run it, spend money, publish, or open private work",
+     "Give the assistant the smallest useful access: one folder, one task, a budget, a stop gate",
+     "The kit's connector only searches, fetches and reports status. No shell, no arbitrary URLs, no telemetry"
+    ],
+    "notes": "This is the safety habit that makes the overnight work in Part 2 possible. Say it plainly."
+   }
+  ]
+ },
+ {
+  "year": "CH 2",
+  "accent": "purple",
+  "lesson": {
+   "title": "Connect It to the Tools\nYou Already Use.",
+   "short": "MCP",
+   "tagline": "MCP is how an assistant gets a list of tools it is allowed to call. Point it at Unreal, Blender or Godot and it can look at your scene, not just talk about it. Start by looking.",
+   "tags": "Unreal · Blender · Godot · MCP"
+  },
+  "cases": [
+   {
+    "title": "How an MCP Connection Works",
+    "subtitle": "The assistant, a server that lists tools, and your app",
+    "img": "images/ch2-mcp.svg",
+    "bullets": [
+     "The assistant asks the server what it can do; the server answers with a tool list",
+     "Each creative app has its own server: Unreal, Blender and Godot servers exist",
+     "Nothing is installed automatically. You add the configuration yourself and can remove it"
+    ],
+    "notes": "Live demo slot: show one scene-info call in the app you use most. Keep it read-only."
+   },
+   {
+    "title": "Start Read-Only",
+    "subtitle": "Look first. Change one thing. Verify. Then widen.",
+    "img": "images/ch2-readonly.svg",
+    "bullets": [
+     "Begin with status, search and scene info: calls that change nothing",
+     "Then one small, undoable change you can see with your own eyes",
+     "The class practice project needs no Unreal and no headset, so everyone can finish it"
+    ],
+    "notes": "Tool tracks beyond the practice project have separate support gates. Say which ones you rehearsed."
+   }
+  ]
+ },
+ {
+  "year": "CH 3",
+  "accent": "amber",
+  "lesson": {
+   "title": "Give It a Memory.\nThen Prove It Works.",
+   "short": "MEMORY",
+   "tagline": "An assistant forgets everything when you close it. A short note in your private folder is what lets a fresh session pick up exactly where you stopped. Then you restart it to prove it.",
+   "tags": "Project memory · Checkpoints · Verification"
+  },
+  "cases": [
+   {
+    "title": "A Note a New Session Can Pick Up",
+    "subtitle": "Five lines that survive a restart",
+    "img": "images/ch3-memory.svg",
+    "bullets": [
+     "Goal, last accepted checkpoint, limits, next safe step, and the evidence behind them",
+     "Keep it outside the course kit so personal and client material never mixes with it",
+     "A restart is the test: a fresh session should recover the goal, checkpoint, limits and next step"
+    ],
+    "notes": "Do the restart on stage with the real note. If it fails, that is the lesson."
+   },
+   {
+    "title": "The Loop You Will Repeat",
+    "subtitle": "Find a recipe, define the job, change one thing, inspect, save",
+    "img": "images/ch3-loop.svg",
+    "bullets": [
+     "Build the fictional gallery, then make one bounded change: a title, an order, a color",
+     "The verifier checks the build. It does not decide whether you like the result, so open the page yourself",
+     "Part 2 reuses the same loop for jobs that run while you are away"
+    ],
+    "notes": "This is the exercise they do after class. Walk the first command together so nobody is stuck."
+   }
+  ]
+ }
 ];
 
-const BONUS = { year:'BONUS', title:'The Best XR Project\nIs the One You Don\u2019t Need.',
-  tagline:'Sometimes a 3D PDF, a Matterport scan, or a well-placed monitor does the job. The most honest answer a studio can give you is \u201cyou don\u2019t need us for this.\u201d If they never say that \u2014 they\u2019re selling headsets, not solutions.' };
+const BONUS = {"year": "HOMEWORK", "title": "Build It, Change It,\nRestart It.", "tagline": "Before Part 2: run the fictional gallery, make one change, save your private note, close the assistant and reopen it. If a fresh session can tell you the goal and the next step, you are ready to hand it a long job."};
 </script>
 <script>
 /* ── SD SLIDE MODULE REGISTRY ──────────────────────────────────────────────
@@ -1512,7 +1585,7 @@ body[data-look="transit"]:not(#_) .lesson-rule{margin-left:0;margin-right:auto}
 })();
 </script>
 <div id="counter"></div>
-<div id="brand">Spatial Deck</div>
+<div id="brand">Alex Coulombe Presents</div>
 <div id="step-indicator"></div>
 <div class="nav-arrows"><button class="nav-btn" id="btn-prev">&#8592;</button><div class="nav-playing" id="nav-playing"></div><button class="nav-btn" id="btn-next">&#8594;</button><label class="nav-autoplay"><input type="checkbox" id="autoplay-cb">AUTO</label></div>
 <button id="mobile-ui-toggle" title="Toggle UI">👁</button>
@@ -1780,7 +1853,7 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
 
 // Cover
 const cov=document.createElement('div');cov.className='slide active';cov.dataset.type='cover';
-cov.innerHTML=`<div class="event-tag">Spatial Deck &middot; Open-Source Presentation Framework</div><h1 class="talk-title">Is XR Right<br>For Your Project?</h1><p class="talk-subtitle">A framework for spatial decisions &mdash; before you pick a headset or a studio</p><div class="speaker-card"><div><div class="speaker-name">A Spatial Deck Presentation</div><div class="speaker-co">github.com/spatial-deck</div></div></div>`;
+cov.innerHTML=`<div class="event-tag">Live class &middot; Thu Nov 5, 2026 &middot; 12p ET</div><h1 class="talk-title">Creative AI<br>Workflow Masterclass</h1><p class="talk-subtitle">Part 1: Set Up From Scratch</p><div class="speaker-card"><div><div class="speaker-name">Alex Coulombe</div><div class="speaker-co">Alex Coulombe Presents</div></div></div>`;
 deck.appendChild(cov);allSlides.push(cov);
 
 // Build sections
@@ -2030,10 +2103,9 @@ deck.appendChild(mapS);allSlides.push(mapS);
 
 // Close slide with inline Agile Lens SVG logo
 const cls=document.createElement('div');cls.className='slide';cls.dataset.type='close';
-cls.innerHTML=`<div class="close-ey">Thank You</div><h2 class="close-title">Let\u2019s Talk.</h2><p class="close-sub">Thinking spatially?</p>
-<div class="contact-row"><div class="contact-pill"><span class="lbl">Web</span>example.com</div><div class="contact-pill"><span class="lbl">Email</span>hi@example.com</div></div>
-<div class="close-qr-row"><div class="qr-card"><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://github.com/ibrews/spatial-deck" alt="QR"><div class="qr-label">Spatial Deck</div><div class="qr-badge b-teal">Fork it! Ship your own deck!</div></div></div>
-<div style="position:absolute;bottom:clamp(30px,calc(4*var(--vh)),60px);left:50%;transform:translateX(-50%);opacity:.35;z-index:2"><svg width="200" height="40" viewBox="0 0 869 175" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M266.385 134.295L264.681 136H249.34L247.635 134.295L239.113 112.137L235.704 110.432H193.09L189.681 112.137L181.159 134.295L179.454 136H164.114L162.409 134.295V117.25L201.613 18.3878L203.318 16.6833H225.476L227.181 18.3878L266.385 117.25V134.295ZM230.59 88.2733L215.249 47.3647H213.545L198.204 88.2733L199.909 89.9778H228.886L230.59 88.2733ZM346.604 52.4783V127.477C346.604 158.159 327.854 171.795 303.991 171.795C283.537 171.795 269.901 161.568 268.196 146.227L269.901 144.523H290.355L292.059 146.227C293.764 149.636 297.173 151.341 303.991 151.341C315.923 151.341 322.741 144.523 322.741 129.182H321.036C321.036 129.182 314.218 137.705 298.878 137.705C278.423 137.705 261.378 120.659 261.378 93.3869C261.378 66.1145 278.423 49.0692 298.878 49.0692C314.218 49.0692 321.036 57.5919 321.036 57.5919H322.741L324.445 52.4783L326.15 50.7738H344.9L346.604 52.4783ZM285.241 93.3869C285.241 107.023 290.355 117.25 303.991 117.25C317.627 117.25 322.741 107.023 322.741 93.3869C322.741 79.7507 317.627 69.5235 303.991 69.5235C290.355 69.5235 285.241 79.7507 285.241 93.3869ZM378.964 35.433L377.259 37.1376H356.805L355.1 35.433V18.3878L356.805 16.6833H377.259L378.964 18.3878V35.433ZM378.964 134.295L377.259 136H356.805L355.1 134.295V52.4783L356.805 50.7738H377.259L378.964 52.4783V134.295ZM411.31 134.295L409.605 136H389.151L387.446 134.295V18.3878L389.151 16.6833H409.605L411.31 18.3878V134.295ZM496.496 93.3869V100.205L494.791 101.91H441.951L440.247 103.614C440.247 107.023 443.656 117.25 457.292 117.25C462.405 117.25 467.519 115.546 469.223 112.137L470.928 110.432H491.382L493.087 112.137C491.382 122.364 482.86 137.705 457.292 137.705C428.315 137.705 414.679 117.25 414.679 93.3869C414.679 69.5235 428.315 49.0692 455.587 49.0692C482.86 49.0692 496.496 69.5235 496.496 93.3869ZM469.223 84.8643L470.928 83.1597C470.928 81.4552 469.223 69.5235 455.587 69.5235C441.951 69.5235 440.247 81.4552 440.247 83.1597L441.951 84.8643H469.223ZM615.779 134.295L614.075 136H537.371L535.667 134.295V18.3878L537.371 16.6833H557.825L559.53 18.3878V113.841L561.234 115.546H614.075L615.779 117.25V134.295ZM687.249 93.3869V100.205L685.545 101.91H632.705L631 103.614C631 107.023 634.409 117.25 648.045 117.25C653.159 117.25 658.273 115.546 659.977 112.137L661.682 110.432H682.136L683.84 112.137C682.136 122.364 673.613 137.705 648.045 137.705C619.068 137.705 605.432 117.25 605.432 93.3869C605.432 69.5235 619.068 49.0692 646.341 49.0692C673.613 49.0692 687.249 69.5235 687.249 93.3869ZM659.977 84.8643L661.682 83.1597C661.682 81.4552 659.977 69.5235 646.341 69.5235C632.705 69.5235 631 81.4552 631 83.1597L632.705 84.8643H659.977ZM770.778 134.295L769.073 136H748.619L746.914 134.295V84.8643C746.914 76.3416 743.505 69.5235 733.278 69.5235C721.347 69.5235 714.528 76.3416 714.528 91.6824V134.295L712.824 136H692.37L690.665 134.295V52.4783L692.37 50.7738H711.119L712.824 52.4783L714.528 57.5919H716.233C719.642 54.1828 726.46 49.0692 738.392 49.0692C758.846 49.0692 770.778 62.7054 770.778 83.1597V134.295ZM847.495 110.432C847.495 124.068 837.268 137.705 809.995 137.705C786.132 137.705 772.496 125.773 772.496 108.728L774.2 107.023H794.654L796.359 108.728C796.359 115.546 801.473 117.25 809.995 117.25C818.518 117.25 823.631 115.546 823.631 110.432C823.631 103.614 816.813 103.614 806.586 101.91C796.359 100.205 774.2 95.0914 774.2 74.6371C774.2 61.0009 784.427 49.0692 809.995 49.0692C830.449 49.0692 845.79 57.5919 845.79 74.6371L844.086 76.3416H823.631L821.927 74.6371C821.927 71.2281 818.518 69.5235 809.995 69.5235C801.473 69.5235 798.064 71.2281 798.064 76.3416C798.064 83.1597 808.291 83.1597 818.518 84.8643C828.745 86.5688 847.495 89.9778 847.495 110.432Z" fill="white"/><circle cx="71" cy="73" r="60" stroke="white" stroke-width="8" fill="none"/><line x1="115" y1="117" x2="142" y2="155" stroke="white" stroke-width="8" stroke-linecap="round"/></svg></div>`;
+cls.innerHTML=`<div class="close-ey">See you in Part 2</div><h2 class="close-title">Build it. Restart it.</h2><p class="close-sub">Part 2: Let It Run &middot; Wed Nov 11, 11a ET</p>
+<div class="contact-row"><div class="contact-pill"><span class="lbl">Class page</span>alexcoulombepresents.com/classes/2026-11-04-creative-ai-masterclass-part-1</div></div>
+<div class="close-qr-row"><div class="qr-card"><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://alexcoulombepresents.com/classes/2026-11-04-creative-ai-masterclass-part-1" alt="QR code for the class page"><div class="qr-label">Class page</div><div class="qr-badge b-teal">Materials + recording</div></div></div>`;
 deck.appendChild(cls);allSlides.push(cls);
 
 SD._wire();
