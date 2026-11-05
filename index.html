@@ -52,56 +52,404 @@ const SECTIONS =[
   "year": "CH 1",
   "accent": "teal",
   "lesson": {
-   "title": "Start With One Assistant",
-   "short": "ONE ASSISTANT",
-   "tagline": "Give it a reviewed recipe to read and a private place to work. By the end of class, a fresh session should be able to pick up your gallery edit.",
-   "tags": "ACP Second Brain",
-   "notes": "Ask everyone to point to the course copy and the private working folder on their own machine. Keep a terminal and a browser open. An assistant with only file-reading access can still participate: the student runs the commands. Walk from the member ZIP through the file-only chat and the first verified browser page before introducing the optional connector."
+   "title": "Start at your desktop",
+   "tagline": "Open one local project in Codex or Claude. Your assistant will check the tools you need and help you install what is missing.",
+   "short": "CLASS FILES",
+   "tags": "Self-paced desktop workshop",
+   "notes": "Open one local project in Codex or Claude. Your assistant will check the tools you need and help you install what is missing. Follow the steps in Start Here.html. Each step includes a prompt, an expected result and a recovery action."
   },
   "cases": [
    {
-    "title": "Open your class kit",
-    "subtitle": "Start at the ACP member portal.",
-    "img": "images/first-run/portal.png",
-    "bullets": [
-     "Open <a class=\"deck-link\" href=\"https://alexcoulombepresents.com/members/second-brain\" target=\"_blank\" rel=\"noopener\">alexcoulombepresents.com/members/second-brain</a>.",
-     "Sign in with the email tied to your membership or either November class purchase. Download the kit ZIP.",
-     "Extract the ZIP. Open the folder containing README.md, start-here, templates and examples."
-    ],
-    "notes": "On macOS, double-click the ZIP in Finder. On Windows, right-click the ZIP and choose Extract All, then open the extracted folder. On Linux, use the archive manager’s Extract action. If access is missing, check which email you used or ask Alex for kit access. Students do not need the private GitHub repository."
-   },
-   {
-    "title": "Start the terminal here",
-    "subtitle": "Use the extracted kit as your starting directory.",
-    "img": "images/first-run/folder.png",
-    "bullets": [
-     "Mac: in Terminal, type <code>cd</code> and a space, drag the extracted folder in, then press Return.",
-     "Windows: open that folder in File Explorer, type <code>powershell</code> in its address bar and press Enter.",
-     "Run <code>pwd</code> and <code>ls</code>. Check for <code>start-here</code>, <code>examples</code> and <code>templates</code>."
-    ],
-    "notes": "Linux: open a terminal in the extracted directory from your file manager or cd to its full path. If ls shows only one more enclosing folder, enter it and check again. Do not paste a sample machine path. Open start-here/README.md and reference/support-matrix.md in a text editor."
-   },
-   {
-    "title": "Check the starting line",
-    "subtitle": "One local check before you create anything.",
+    "title": "Open the class folder",
+    "subtitle": "Begin here even if your computer has no creative apps installed.",
     "img": "",
     "bullets": [
-     "Mac or Linux: run <code>python3 --version</code>. Windows: run <code>py -3 --version</code>.",
-     "Continue with Python 3.11 or newer. If your working command is <code>python</code>, use it for each gallery command.",
-     "If Python is missing or older, use a partner’s terminal while you follow the file-reading steps."
+     "Download the Small Worlds Workshop student ZIP from the class Drive folder.",
+     "Extract it and open the folder containing Brain, Studio, Skills and Creative.",
+     "Double-click Start Here.html for the illustrated guide and copyable prompts."
     ],
-    "notes": "Run the version command live. For self-study, install a current Python 3 release from python.org/downloads and reopen the terminal before checking again. The required exercise uses the standard library. It needs no uv, engine, headset or paid API.",
+    "notes": "In the Google Drive folder shared with your class, download Small Worlds Workshop – Part 1 student kit – 2026-11-05.zip. One-class students use this same download.\n\nIn Downloads, double-click the ZIP on Mac. On Windows, right-click it, choose Extract All, then Extract. Move the extracted Small Worlds Workshop folder somewhere easy to find, such as Documents.\n\nOpen the folder that contains Brain, Skills, Studio and Creative. Double-click Start Here.html to read and copy every prompt offline. Keep that folder window open.\n\n\n\nYou can open Studio/show-brief.md in a text editor. Its first lines identify the Small Worlds exhibition and brief SW-17.\n\nIf you see a ZIP preview, extract it first. If Drive asks for access, switch to the Google account that received the class folder or request access there. ACP membership is unnecessary.",
+    "guideStep": "unpack",
     "example": {
-     "label": "Terminal",
+     "label": "Workshop",
      "lines": [
-      "python3 --version",
-      "Python 3.11 or newer",
-      "",
-      "Working copy",
-      "private/local-gallery/"
+      "Small Worlds Workshop",
+      "  Start Here.html",
+      "  Brain/     Course recipes",
+      "  Studio/    Your work",
+      "  Skills/    Two skill folders",
+      "  Creative/  Blender + Godot + Android"
      ]
     }
    },
+   {
+    "title": "Install one desktop assistant",
+    "subtitle": "Choose whichever account you already use.",
+    "img": "",
+    "bullets": [
+     "Install one desktop app from its official website.",
+     "In ChatGPT Desktop choose Codex, or in Claude Desktop select Code.",
+     "Sign in and find the option to open a local folder."
+    ],
+    "notes": "Codex: download the official desktop app for your operating system. On versions labeled ChatGPT, choose Codex from the app menu after signing in.\n\nClaude: download Claude Desktop for your operating system, open it, sign in and select Code. You need an account with access to the local coding workspace.\n\nMac: open the downloaded installer and follow its instructions (drag the app into Applications if prompted). Windows: run the downloaded installer or use the official Store link. Open the installed app.\n\n\n\nYou have a desktop window with a new local project or session option. You only need one assistant.\n\nIf you are in a browser chat, switch to the installed desktop app. If your account does not offer a local workspace, use the other supported app or pair with someone who has access. The class requires no paid API key.",
+    "guideStep": "get-assistant",
+    "example": {
+     "label": "Workshop",
+     "lines": [
+      "Choose one",
+      "Codex · Local project",
+      "Claude Desktop · Code / Local"
+     ]
+    }
+   },
+   {
+    "title": "Give it the workshop folder",
+    "subtitle": "A local project lets the assistant work on the same files you can see.",
+    "img": "",
+    "bullets": [
+     "Codex: Open folder / Add project → Small Worlds Workshop → Local.",
+     "Claude: Code → New session → local environment → Small Worlds Workshop.",
+     "Ask it to read Studio/show-brief.md. Check for SW-17 and Paper City at Dusk."
+    ],
+    "notes": "Codex: choose Open folder or Add project. Select Small Worlds Workshop, choose Local, and start a chat in that project. If the project exists without a folder, use its menu → Edit project → Add folder.\n\nClaude Desktop: select Code → New session. Choose the local environment (your computer), then the project folder control and Small Worlds Workshop. Work directly in this folder.\n\nSend the prompt below. Keep the course reference in Brain and your own files in Studio. When the app asks for access, check that it names this workshop.\n\nRead only. List the four workshop folders in my current project. Open Studio/show-brief.md and tell me its brief ID and working title. Cite the file. Do not change anything.\n\nIt finds Brain, Studio, Skills and Creative, and reads SW-17, Paper City at Dusk, from the brief.\n\nIf it asks you to paste the file, reports an empty project or sees only Brain, reopen the enclosing Small Worlds Workshop folder. Start a fresh local chat there and repeat the check.",
+    "guideStep": "open-project",
+    "example": {
+     "label": "Workshop",
+     "lines": [
+      "Select the enclosing folder",
+      "Small Worlds Workshop",
+      "     └── Studio/show-brief.md"
+     ]
+    },
+    "prompt": "Read only. List the four workshop folders in my current project. Open Studio/show-brief.md and tell me its brief ID and working title. Cite the file. Do not change anything."
+   },
+   {
+    "title": "Get the software you need",
+    "subtitle": "Start the downloads now. Keep reading while the creative apps install.",
+    "img": "",
+    "bullets": [
+     "Ask the assistant to check your OS, processor and installed versions.",
+     "Approve missing Python 3.11+, Blender and Godot 4 Standard downloads from their official sites.",
+     "Launch each creative app once. Ask the assistant to verify the versions it found."
+    ],
+    "notes": "First send the inventory prompt. The gallery needs Python 3.11 or newer; your assistant will run the included scripts. For today’s 3D route use Blender and Godot 4 Standard. Use stable desktop releases for your operating system and processor.\n\nPython and Blender: use their official downloads below. Mac: open the Python installer package and install Blender in Applications. Windows: run each installer; enable the Python launcher or PATH option if offered.\n\nGodot: download Standard (GDScript). Unzip the download. On Mac, move Godot into Applications; on Windows, open the extracted editor executable. Start each app once. Then return to your assistant for the version check.\n\nCheck this computer for Python 3.11+, Blender and Godot 4 Standard. Report each version you actually found and each missing item. Help me install only the missing tools for my OS and processor from the official sites. Describe what you will install and wait for my OK. If you cannot use the installer, guide me through its buttons one at a time. After installation, verify each version again. Skip Unreal and Android Studio for now.\n\nThe assistant identifies a working Python 3.11+ interpreter. Blender opens its startup scene and Godot opens its Project Manager. You can continue the reading and skills steps while either editor downloads.\n\nIf Python is installed but still missing in the assistant, close and reopen the desktop app and project. If school or work policy blocks installation, ask your administrator; the included render and starter files let you follow the visual examples.",
+    "guideStep": "install",
+    "example": {
+     "label": "Workshop",
+     "lines": [
+      "Core  ·  Python 3.11+",
+      "Creative  ·  Blender + Godot 4",
+      "Later  ·  Android Studio if desired"
+     ]
+    },
+    "prompt": "Check this computer for Python 3.11+, Blender and Godot 4 Standard. Report each version you actually found and each missing item. Help me install only the missing tools for my OS and processor from the official sites. Describe what you will install and wait for my OK. If you cannot use the installer, guide me through its buttons one at a time. After installation, verify each version again. Skip Unreal and Android Studio for now."
+   },
+   {
+    "title": "Decide whether to start Android Studio",
+    "subtitle": "Optional now; you can finish the Blender and Godot work without it.",
+    "img": "",
+    "bullets": [
+     "Already have Android Studio? Check for SDK Platform 35 and a device.",
+     "Starting from scratch? Use the official installer and its download estimates.",
+     "Defer the phone branch if setup will interrupt the class."
+    ],
+    "notes": "If Android Studio is already installed, let your assistant check it. If you want the phone follow-on and have time, start its official installer and Standard setup wizard now.\n\nFor this project the Android SDK Manager needs Android 15 / API 35. A first sync downloads Gradle dependencies. An emulator may also require a large system image and virtualization.\n\nGive this setup a personal time limit. If it stalls or asks for a long system-image download, return to the workshop. The optional Android project is in your ZIP for later.\n\nI want the optional Android Studio track. Check whether Android Studio, SDK Platform 35 and a phone or existing emulator are available. Estimate the remaining downloads from the installer. Help me install the missing pieces from Google only after I approve. If this will interrupt the class, help me defer it.\n\nYou have either chosen “later” or opened Android Studio and checked the SDK. Both choices let you continue.\n\nFor a first install, follow the setup wizard’s platform-specific steps and use its size estimates. A prepared physical Android device can avoid downloading an emulator image.",
+    "guideStep": "android-choice",
+    "example": {
+     "label": "Workshop",
+     "lines": [
+      "For today",
+      "Blender → Godot",
+      "Phone postcard → optional"
+     ]
+    },
+    "prompt": "I want the optional Android Studio track. Check whether Android Studio, SDK Platform 35 and a phone or existing emulator are available. Estimate the remaining downloads from the installer. Help me install the missing pieces from Google only after I approve. If this will interrupt the class, help me defer it."
+   }
+  ]
+ },
+ {
+  "year": "CH 2",
+  "accent": "purple",
+  "lesson": {
+   "title": "Give the agent a second brain",
+   "tagline": "Your workshop contains its course library and your exhibition brief. Ask questions whose answers you can open and check.",
+   "short": "SECOND BRAIN",
+   "tags": "Self-paced desktop workshop",
+   "notes": "Your workshop contains its course library and your exhibition brief. Ask questions whose answers you can open and check. Follow the steps in Start Here.html. Each step includes a prompt, an expected result and a recovery action."
+  },
+  "cases": [
+   {
+    "title": "Connect the second brain",
+    "subtitle": "The assistant reads your course files when it needs an answer. Your private note carries decisions forward.",
+    "img": "images/ch1-home.svg",
+    "bullets": [
+     "Brain holds course recipes. Studio holds your own brief, work and decisions.",
+     "Ask for the document ID and relative path when the assistant gives course advice.",
+     "Choose your own visitor nickname and save it with your goal in Studio/project-memory.md."
+    ],
+    "notes": "Open Brain/start-here/README.md yourself. Look at the ID and title above the first heading. A course recipe has a stable ID, a review status and a path.\n\nSend the prompt. It establishes where to look for course methods, where the project brief lives and where your agent may save work.\n\nOpen Studio/project-memory.md. Pick a visitor nickname of your own. Tell the assistant to record it, your goal and the starting checkpoint there. Keep Brain unchanged.\n\nUse Brain as my read-only ACP Second Brain. For course questions, open the relevant page, then cite its ID and relative path. For this exhibition, use Studio/show-brief.md. My work goes in Studio. Read Brain/start-here/README.md and Brain/start-here/private-project-memory.md. Explain what belongs in Studio/project-memory.md. Wait for my chosen visitor nickname before writing it.\n\nIt finds SB-01-start and SB-01-memory. Your own nickname and goal appear inside Studio/project-memory.md after you supply them.\n\nIf the answer sounds generic, ask it to quote the page title and show the exact path. A new chat can reread the folder; a fact left only in chat can disappear on restart.",
+    "guideStep": "how-brain",
+    "prompt": "Use Brain as my read-only ACP Second Brain. For course questions, open the relevant page, then cite its ID and relative path. For this exhibition, use Studio/show-brief.md. My work goes in Studio. Read Brain/start-here/README.md and Brain/start-here/private-project-memory.md. Explain what belongs in Studio/project-memory.md. Wait for my chosen visitor nickname before writing it."
+   },
+   {
+    "title": "Ask three questions with known answers",
+    "subtitle": "Send these one at a time. Check the file behind each answer.",
+    "img": "",
+    "bullets": [
+     "Recovery: after exit 75, how does the gallery resume? What if the inputs changed?",
+     "Restart: which three sources should a fresh session read?",
+     "Exhibit: where does the visitor start? What are the roof heights and archive code?"
+    ],
+    "notes": "Recovery: “The gallery stopped after one exhibit with exit 75. If the input matches, what exact command resumes it? What if the input changed? Cite the recipe.”\n\nRestart: “I closed the original chat. Which three things should I give a fresh session, and what should it report before doing any work? Cite the recipe.”\n\nExhibit: “What is the wall-label archive code, where does the visitor start and how high are the three roofs? Cite the show brief.”\n\nAnswer each question from Brain or Studio/show-brief.md. For each, open the file, name its ID and path, and tell me what evidence I should check. Do not run the recovery commands or edit anything.\n\nRecovery: JOB-01-recover, troubleshooting/recover-an-interrupted-job.md; python3 build.py --output interrupted --resume for matching inputs, fresh output for changed inputs. Restart: SB-01-resume, start-here/resume-after-restart.md; resume recipe, private note and relevant contract or receipt. Brief SW-17: MOTH-27, Lantern Gate, 2 / 3 / 4 meters.\n\nFor an incorrect answer, open the cited file together and ask again. As a fourth test, ask for the visitor nickname you picked. It should read your private note and spell it correctly.",
+    "guideStep": "quiz",
+    "example": {
+     "label": "Workshop",
+     "lines": [
+      "Recovery · JOB-01-recover",
+      "Restart · SB-01-resume",
+      "Exhibition · SW-17"
+     ]
+    },
+    "prompt": "Answer each question from Brain or Studio/show-brief.md. For each, open the file, name its ID and path, and tell me what evidence I should check. Do not run the recovery commands or edit anything."
+   }
+  ]
+ },
+ {
+  "year": "CH 3",
+  "accent": "amber",
+  "lesson": {
+   "title": "Teach it two repeatable jobs",
+   "tagline": "Install the source-checking skill and the gallery-editing skill in this project. Then call each by name.",
+   "short": "SKILLS",
+   "tags": "Self-paced desktop workshop",
+   "notes": "Install the source-checking skill and the gallery-editing skill in this project. Then call each by name. Follow the steps in Start Here.html. Each step includes a prompt, an expected result and a recovery action."
+  },
+  "cases": [
+   {
+    "title": "What does a skill add?",
+    "subtitle": "The second brain supplies the answer. A skill tells your agent how to do a repeatable job with it.",
+    "img": "",
+    "bullets": [
+     "Open the two SKILL.md files and compare them with Studio/show-brief.md.",
+     "The brief supplies the project facts. The skills supply a lookup procedure and an editing procedure.",
+     "You choose which procedure runs and what it may change."
+    ],
+    "notes": "In Finder or Explorer open Skills/acp-recipe-check/SKILL.md. Read the instructions for finding a source and reporting what needs a local check.\n\nOpen Skills/acp-gallery-change/SKILL.md. Notice the required baseline, permitted edit, verification step and receipt.\n\nCompare those files to Studio/show-brief.md. The brief owns the wall code and the design choices. The skill owns the procedure for using a brief. Your approval gives the agent permission to act.\n\nRead the two SKILL.md files under Skills. Explain which skill you would use to answer a recovery question and which you would use to carry out an approved title edit. Do not install or run them yet.\n\nIt chooses acp-recipe-check for source-grounded questions and acp-gallery-change for the build-and-verify workflow.\n\nIf it claims a skill is already installed, ask for the installed file path. The visible Skills folder holds the source copies delivered with class.",
+    "guideStep": "compare",
+    "example": {
+     "label": "Workshop",
+     "lines": [
+      "Brain/     Reviewed recipes",
+      "Studio/    Brief + decisions",
+      "Skills/    Reusable procedures"
+     ]
+    },
+    "prompt": "Read the two SKILL.md files under Skills. Explain which skill you would use to answer a recovery question and which you would use to carry out an approved title edit. Do not install or run them yet."
+   },
+   {
+    "title": "Install both skills in this project",
+    "subtitle": "Choose the destination for the desktop app you opened.",
+    "img": "",
+    "bullets": [
+     "Ask the desktop assistant to copy both complete folders from Skills.",
+     "Use .agents/skills/ for Codex or .claude/skills/ for Claude Code, inside this project.",
+     "Open a fresh local chat. Look for both names in the skill picker."
+    ],
+    "notes": "Stay in the project chat. Use the prompt below and replace APP with Codex or Claude. Review its proposed destination before allowing the copy.\n\nCodex installs to .agents/skills/. Claude Desktop Code installs to .claude/skills/. Each skill needs its own folder with SKILL.md immediately inside.\n\nStart a new local chat in the same project. In Codex type $ and look for acp-recipe-check; in Claude Code type /acp-recipe-check. Also look for acp-gallery-change.\n\nI am using APP. Install acp-recipe-check and acp-gallery-change from this project’s Skills folder into the project skill directory for my app only. Copy each complete folder. If a destination already exists, compare it and stop before replacing anything. Show me the two final SKILL.md paths. Do not change global settings.\n\nFor example, Codex shows .agents/skills/acp-recipe-check/SKILL.md; Claude shows .claude/skills/acp-recipe-check/SKILL.md. Both names should be discoverable in the fresh session.\n\nIf names are missing, verify this project is the current folder and check for a doubled path such as skills/Skills/. Reopen the project and start another chat. Reading the source file manually is a fallback while you repair discovery.",
+    "guideStep": "install-skills",
+    "example": {
+     "label": "Workshop",
+     "lines": [
+      "Project only",
+      "Codex     .agents/skills/",
+      "Claude    .claude/skills/",
+      "Each name → SKILL.md"
+     ]
+    },
+    "prompt": "I am using APP. Install acp-recipe-check and acp-gallery-change from this project’s Skills folder into the project skill directory for my app only. Copy each complete folder. If a destination already exists, compare it and stop before replacing anything. Show me the two final SKILL.md paths. Do not change global settings."
+   },
+   {
+    "title": "Use the installed lookup skill",
+    "subtitle": "See what changes when the assistant follows a procedure.",
+    "img": "images/ch1-permission.svg",
+    "bullets": [
+     "Select $acp-recipe-check in Codex or /acp-recipe-check in Claude.",
+     "Ask where the edited gallery belongs, how to verify it and who approves the result.",
+     "Ask about a fourth tower. Can the agent identify a decision the brief leaves open?"
+    ],
+    "notes": "Select the skill you just installed: $acp-recipe-check in Codex or /acp-recipe-check in Claude Code. Add the question below and send it.\n\nOpen its cited page in Brain. Compare its answer against that page. Look for the local check as well as the explanation.\n\nAsk a second question: “What color did the curator approve for a fourth tower?” The brief specifies three towers. A useful answer identifies the missing decision.\n\nUse the installed acp-recipe-check skill. My gallery baseline is already in output/. Where should my one-title revision be built, how do I verify it and who decides if it looks right? Give the course source, your answer and what I should check locally.\n\nIt cites CLASS-01-part1 in Brain/workflows/part-1-exercise.md, uses output-edited, verifies that folder and leaves visual approval with you.\n\nIf it starts editing, stop and invoke the read-only skill explicitly in a fresh project chat. If it guesses the fourth tower color, ask it to show the exact line in SW-17.",
+    "guideStep": "invoke",
+    "prompt": "Use the installed acp-recipe-check skill. My gallery baseline is already in output/. Where should my one-title revision be built, how do I verify it and who decides if it looks right? Give the course source, your answer and what I should check locally."
+   }
+  ]
+ },
+ {
+  "year": "CH 4",
+  "accent": "rose",
+  "lesson": {
+   "title": "Make one edit worth keeping",
+   "tagline": "Build the three-card gallery, commission a single title change and leave a note a new session can use.",
+   "short": "GALLERY",
+   "tags": "Self-paced desktop workshop",
+   "notes": "Build the three-card gallery, commission a single title change and leave a note a new session can use. Follow the steps in Start Here.html. Each step includes a prompt, an expected result and a recovery action."
+  },
+  "cases": [
+   {
+    "title": "Ask your agent to build the baseline",
+    "subtitle": "You send the request. The desktop assistant runs the included Python tools.",
+    "img": "images/first-run/gallery.png",
+    "bullets": [
+     "Ask the assistant to run the supplied builder and verifier inside Studio/local-gallery.",
+     "Open output/index.html and compare the three cards with this reference.",
+     "Record your decision after inspecting the page."
+    ],
+    "notes": "In your project chat paste the prompt. The workbook already includes a private copy at Studio/local-gallery; leave Brain/examples alone.\n\nReview the proposed actions. Allow the build and verifier inside this workspace. Ask for the actual final output line and the path to the page.\n\nIn Finder or Explorer open Studio → local-gallery → output → index.html. Double-click it. Count the cards, inspect the order and tell the assistant whether you accept this baseline.\n\nIn Studio/local-gallery use an available Python 3.11+ interpreter to run build.py --output output, then verify.py --output output. Preserve any existing output. Report the actual verifier result and give me the local HTML path. Do not edit exhibits.json. Wait for me to inspect the page.\n\nThe checker says PASS: 3 exhibits. The browser shows Small Worlds Gallery with Paper City, Moon Garden, then Quiet Machine. Your agent can now record your baseline decision in Studio/project-memory.md.\n\nIf the page already exists, inspect it and ask the agent to verify it against unchanged inputs. If Python is missing, return to the software step. The included screenshot is a reference while you troubleshoot.",
+    "guideStep": "baseline",
+    "prompt": "In Studio/local-gallery use an available Python 3.11+ interpreter to run build.py --output output, then verify.py --output output. Preserve any existing output. Report the actual verifier result and give me the local HTML path. Do not edit exhibits.json. Wait for me to inspect the page."
+   },
+   {
+    "title": "Turn your own brief into one edit",
+    "subtitle": "The skill reads a local commission and produces a reviewable result.",
+    "img": "images/desktop-class/edited-gallery.png",
+    "bullets": [
+     "Invoke acp-gallery-change and authorize the title edit in SW-17.",
+     "Compare output/index.html with output-edited/index.html.",
+     "Record the verifier result, your verdict and why in Studio/receipt.md."
+    ],
+    "notes": "Invoke $acp-gallery-change in Codex or /acp-gallery-change in Claude. Add the prompt below. Before allowing the edit, check its file list.\n\nThe permitted input is Studio/local-gallery/exhibits.json. Expect a fresh output-edited folder and a private receipt. Keep the accepted baseline in output.\n\nOpen both HTML files side by side. Check the new first title and the two unchanged exhibits. Tell the assistant your verdict and why; have it update your private note.\n\nUse the installed acp-gallery-change skill and brief SW-17. I approve one edit: change only the displayed title for paper-city to the title in my brief. Keep its ID, the other cards and their order. Build and verify a fresh output-edited, write Studio/receipt.md, then stop for my visual decision. Budget one edit and one correction.\n\noutput/index.html still says Paper City. output-edited/index.html says Paper City at Dusk. The receipt separates the verifier result from your decision.\n\nIf output-edited exists from an earlier attempt, agree on a new folder first. If the checker passes but the title is wrong, record a rejection and keep the last accepted baseline.",
+    "guideStep": "edit",
+    "prompt": "Use the installed acp-gallery-change skill and brief SW-17. I approve one edit: change only the displayed title for paper-city to the title in my brief. Keep its ID, the other cards and their order. Build and verify a fresh output-edited, write Studio/receipt.md, then stop for my visual decision. Budget one edit and one correction."
+   },
+   {
+    "title": "Prove a fresh chat can resume",
+    "subtitle": "Let the next session recover something it could not know from general training.",
+    "img": "images/ch3-memory.svg",
+    "bullets": [
+     "Save your nickname, accepted path, reason and next action in your private note.",
+     "Start a new chat in the same local project. Give it the note, receipt and resume recipe.",
+     "Check the answer against your files before authorizing another change."
+    ],
+    "notes": "Have the current session save the nickname, accepted output path, your reason and the next safe step in Studio/project-memory.md. Open the note and verify those details.\n\nStart a new chat in the same local project. Leave the old conversation closed. Paste the prompt without repeating your nickname or verdict.\n\nCompare the answer with your note. If the assistant guessed, fix the missing field in the note and repeat the test in a new chat.\n\nRead only Brain/start-here/resume-after-restart.md, Studio/project-memory.md and Studio/receipt.md. What is my visitor nickname, which output did I accept, why, and what is the next safe action? Cite the exact files. If my decision is missing, say so. Do not build anything.\n\nIt returns your chosen nickname, your actual verdict and an action inside the recorded limits. You can now resume independently after a break.\n\nIf it merely repeats the original goal, check you opened the same extracted folder. If your client recalls old chats, give it a new fact in the file and ask it to point to that field.",
+    "guideStep": "restart",
+    "prompt": "Read only Brain/start-here/resume-after-restart.md, Studio/project-memory.md and Studio/receipt.md. What is my visitor nickname, which output did I accept, why, and what is the next safe action? Cite the exact files. If my decision is missing, say so. Do not build anything."
+   }
+  ]
+ },
+ {
+  "year": "CH 5",
+  "accent": "teal",
+  "lesson": {
+   "title": "Bring Paper City to life",
+   "tagline": "Follow the brief from a Blender source scene to an interactive Godot exhibit. Inspect what changes and what survives.",
+   "short": "BLENDER + GODOT",
+   "tags": "Self-paced desktop workshop",
+   "notes": "Follow the brief from a Blender source scene to an interactive Godot exhibit. Inspect what changes and what survives. Follow the steps in Start Here.html. Each step includes a prompt, an expected result and a recovery action."
+  },
+  "cases": [
+   {
+    "title": "Open the scene described by your brief",
+    "subtitle": "The Blender exercise starts with an inspectable scene and ends with your own revision.",
+    "img": "images/desktop-class/paper-city.png",
+    "bullets": [
+     "In Blender choose File → Open → Creative/Starting-Scene/Paper City.blend.",
+     "Find Lantern Gate, the footbridge and the three folded roofs.",
+     "Ask the assistant to read SW-17 and propose the one permitted change."
+    ],
+    "notes": "Open Blender. Choose File → Open, navigate to Creative/Starting-Scene/Paper City.blend and open it. Choose the supplied scene if Blender asks whether to save the empty default scene.\n\nIn camera view find the Lantern Gate, one footbridge and three towers. Use the Outliner search for “Tower” to locate walls and folded roofs. Open Creative/Starting-Scene/Postcard.png beside Blender for the reference render.\n\nAsk the assistant to read the brief and compare the proposed edit with the available source. Stop after the plan.\n\nRead Studio/show-brief.md and Creative/build_scene.py. Tell me what SW-17 says about tower heights, bridge rails and camera framing. Show which one parameter can change the rails to jade, and propose a new output folder under Studio. Do not run Blender yet.\n\nIt identifies the three roof heights (2, 3 and 4 m), vermilion → jade, fixed framing, and the builder’s --rails jade parameter.\n\nIf the scene opens gray, use Material Preview or compare the PNG. If Blender is unavailable, continue with the starter render and move to Godot using the supplied city model.",
+    "guideStep": "scene",
+    "prompt": "Read Studio/show-brief.md and Creative/build_scene.py. Tell me what SW-17 says about tower heights, bridge rails and camera framing. Show which one parameter can change the rails to jade, and propose a new output folder under Studio. Do not run Blender yet."
+   },
+   {
+    "title": "Build the jade-rail version",
+    "subtitle": "Commission the change in plain language and compare the two renders.",
+    "img": "images/desktop-class/jade.png",
+    "bullets": [
+     "Ask your agent to build a fresh Studio/Jade version with the included Blender script.",
+     "Compare the two Postcard.png renders. The rails should turn jade.",
+     "Open the new .blend and check the towers and camera."
+    ],
+    "notes": "Return to the assistant chat and paste the prompt. Allow only the supplied builder, your installed Blender and the fresh destination.\n\nOpen Studio/Jade/Postcard.png next to Creative/Starting-Scene/Postcard.png. Zoom into the footbridge: the two rails should turn green.\n\nOpen Studio/Jade/Paper City.blend. Confirm the same three towers and composition. Tell your assistant whether to accept the revision and save that decision.\n\nRun the supplied Creative/build_scene.py with the installed Blender in background mode, using --out Studio/Jade and --rails jade after the script argument separator. Work from the workshop root. Do not overwrite an existing folder. Report Blender’s exit result and the three files created. Keep the baseline intact.\n\nStudio/Jade contains Paper City.blend, Paper City.glb and Postcard.png. The bridge rails changed; the roof heights, gate and camera framing agree with the starting render.\n\nIf Blender is missing, use the official installer in the software step. If Studio/Jade already exists, agree on a fresh path and use that name in the following steps. If the render failed, keep the log and baseline.",
+    "guideStep": "make-scene",
+    "prompt": "Run the supplied Creative/build_scene.py with the installed Blender in background mode, using --out Studio/Jade and --rails jade after the script argument separator. Work from the workshop root. Do not overwrite an existing folder. Report Blender’s exit result and the three files created. Keep the baseline intact."
+   },
+   {
+    "title": "Run your exhibit in Godot",
+    "subtitle": "The starter viewer already has a camera, lighting and visitor controls.",
+    "img": "images/desktop-class/godot.png",
+    "bullets": [
+     "Godot Project Manager → Import → Creative/GodotGallery/project.godot.",
+     "Press F5. Try Orbit left, Orbit right and Read wall label.",
+     "Check MOTH-27 against the brief. F8 stops playback."
+    ],
+    "notes": "Open Godot 4 Standard. In Project Manager choose Import, browse to Creative/GodotGallery/project.godot and select Import & Edit (or Import, then Edit). Wait for the GLB import.\n\nPress the Play Project triangle (F5). Click Orbit left and Orbit right. Click Read wall label to reveal the code, then click Hide wall label.\n\nStop the running project (F8). Ask your assistant where the imported model lives, and which copy you should edit to preserve the working starter.\n\nInspect Creative/GodotGallery without changing anything. Which file supplies the 3D city, which file defines the visitor controls, and which button reveals our archive code? Cite the paths and predict what I should see on first launch.\n\nYou see the vermilion rails and all three towers. Orbit changes the view. The wall label reveals MOTH-27. The model is art/city.glb and the button behavior is in gallery.gd.\n\nIf Godot shows its empty project list, import project.godot rather than the GLB. If the view is blank, wait for import, then run the main project with F5. The project uses the Compatibility renderer.",
+    "guideStep": "play",
+    "prompt": "Inspect Creative/GodotGallery without changing anything. Which file supplies the 3D city, which file defines the visitor controls, and which button reveals our archive code? Cite the paths and predict what I should see on first launch."
+   },
+   {
+    "title": "Carry your revision into the visitor experience",
+    "subtitle": "Make the handoff in a private copy, then test it as a visitor.",
+    "img": "images/desktop-class/godot-jade.png",
+    "bullets": [
+     "Ask the assistant to copy the Godot project to Studio/Godot-Jade.",
+     "Replace only its art/city.glb with the new Blender export. Import that project and press F5.",
+     "Inspect the jade rails and test the wall label. Save both results."
+    ],
+    "notes": "Stop Godot playback and send the prompt. If you used a different revision folder, substitute it for Studio/Jade.\n\nReturn to Godot Project Manager. Import Studio/Godot-Jade/project.godot and run this copy with F5. Orbit until the bridge rails are visible.\n\nOpen the wall label. Compare its code with SW-17. Record two verdicts in Studio/receipt.md: one for the imported geometry/material, one for the interaction.\n\nCopy Creative/GodotGallery to a new Studio/Godot-Jade folder, omitting generated .godot caches. In that copy only, replace art/city.glb with Studio/Jade/Paper City.glb. Keep the original project and its scripts intact. Tell me which project.godot to open next.\n\nThe private Godot project shows jade rails, three towers and a working MOTH-27 reveal. You have taken an exhibition brief through a source-aware agent, Blender and a playable scene.\n\nIf the rails still look red, check which project window you launched and ask the assistant to compare the two GLB hashes. Focus the Godot editor so it can reimport the replacement.",
+    "guideStep": "handoff",
+    "prompt": "Copy Creative/GodotGallery to a new Studio/Godot-Jade folder, omitting generated .godot caches. In that copy only, replace art/city.glb with Studio/Jade/Paper City.glb. Keep the original project and its scripts intact. Tell me which project.godot to open next."
+   }
+  ]
+ },
+ {
+  "year": "CH 6",
+  "accent": "purple",
+  "lesson": {
+   "title": "Take your work further",
+   "tagline": "Android Studio is an optional postcard exercise. Save your Unreal comparison for Part 2 on Wednesday, November 11 at 11 a.m. Eastern.",
+   "short": "NEXT WEEK",
+   "tags": "Self-paced desktop workshop",
+   "notes": "Android Studio is an optional postcard exercise. Save your Unreal comparison for Part 2 on Wednesday, November 11 at 11 a.m. Eastern. Follow the steps in Start Here.html. Each step includes a prompt, an expected result and a recovery action."
+  },
+  "cases": [
+   {
+    "title": "Optional: make an Android postcard",
+    "subtitle": "Use the same Blender render in a small tappable Android experience.",
+    "img": "images/desktop-class/jade.png",
+    "bullets": [
+     "Ask for a private copy of Creative/AndroidPostcard with your revised render.",
+     "Open Studio/Android-Jade in Android Studio. Let Gradle sync, choose a device and click Run.",
+     "Tap Read wall label. Does the code match the exhibition brief?"
+    ],
+    "notes": "If Android Studio is ready, ask your assistant to prepare the private copy below. Open Android Studio → Open, choose Studio/Android-Jade (the folder containing settings.gradle), then wait for Gradle sync.\n\nIf prompted, use Android Studio’s bundled JDK and install SDK Platform 35. Choose app in the run configuration and an available Android device in the device selector. Click Run ▶.\n\nTap Read wall label. Compare the image with your jade render and the code with the brief. You may leave this step for another day.\n\nCopy Creative/AndroidPostcard to a fresh Studio/Android-Jade. Replace only app/src/main/res/drawable-nodpi/postcard.png in that copy with Studio/Jade/Postcard.png. Tell me how to open this project in Android Studio. If the SDK or device is missing, explain the next click and wait for my choice.\n\nThe app is a 2D postcard of your 3D scene. Tapping its button reveals MOTH-27. The Gradle project and starting image are included in the student kit.\n\nIf the device menu is empty, open Tools → Device Manager to create a virtual phone, or use a permitted physical Android phone with USB debugging. Defer if downloads exceed your time budget. A successful build alone does not verify the tap.",
+    "guideStep": "phone",
+    "prompt": "Copy Creative/AndroidPostcard to a fresh Studio/Android-Jade. Replace only app/src/main/res/drawable-nodpi/postcard.png in that copy with Studio/Jade/Postcard.png. Tell me how to open this project in Android Studio. If the SDK or device is missing, explain the next click and wait for my choice."
+   },
+   {
+    "title": "Bring a decision to Part 2",
+    "subtitle": "Wednesday, November 11 · 11 a.m. ET · Let It Run",
+    "img": "images/ch3-loop.svg",
+    "bullets": [
+     "Bring your receipt, one accepted change and one point of friction.",
+     "Next week: plan a longer job with checkpoints, a budget and a stop gate.",
+     "We’ll use Unreal to examine what survives the next handoff."
+    ],
+    "notes": "Repeat the gallery task once with a different small change and a fresh output. Bring your private summary: what you asked for, what the checker said, and what you accepted.\n\nSave one friction point. For example: the agent found the file but missed the accepted version; or the model imported but the rail material changed.\n\nNext week we will turn that single-job contract into a longer run with a budget, checkpoints and a recovery gate. We will revisit the scene handoff with Unreal in the deeper dive.\n\nUsing my current memory and receipt, draft a Part 2 job proposal for comparing my Godot city with an Unreal import. Include the allowed inputs, a first checkpoint, time or retry budget, a stop condition and what I must inspect. Do not start it or install Unreal today.\n\nYou have your own skill-enabled agent, cited workflow answers, two gallery pages, a restart note and a playable Godot project if you completed the creative route.\n\nIf you stopped early, resume at the first missing artifact. Your grade is the evidence you can show: a source, an output you inspected and a next step another session can find.",
+    "guideStep": "next",
+    "prompt": "Using my current memory and receipt, draft a Part 2 job proposal for comparing my Godot city with an Unreal import. Include the allowed inputs, a first checkpoint, time or retry budget, a stop condition and what I must inspect. Do not start it or install Unreal today."
+   }
+  ]
+ },
+ {
+  "year": "REFERENCE",
+  "accent": "amber",
+  "lesson": {
+   "title": "A closer look at assistant tools",
+   "short": "MCP",
+   "tagline": "Optional diagrams for understanding how a client connects to a tool. The desktop workshop uses project files directly.",
+   "tags": "Optional teaching material",
+   "notes": "The self-paced student route is complete. Choose individual examples for discussion or review."
+  },
+  "cases": [
    {
     "title": "Give the work a home",
     "subtitle": "Keep a clean kit and a private working copy.",
@@ -112,98 +460,6 @@ const SECTIONS =[
      "For the exercise, open a terminal with Python 3.11+."
     ],
     "notes": "Show the two folders side by side. Open exhibits.json in the private copy and point back to its untouched counterpart in the kit. Have students show where they will save personal notes."
-   },
-   {
-    "title": "Make your own working copy",
-    "subtitle": "Mac or Linux · run these once from the kit root.",
-    "img": "images/first-run/copy.png",
-    "bullets": [
-     "<code>mkdir ../class-work</code>",
-     "<code>cp -R examples/local-gallery ../class-work/</code>",
-     "<code>cp templates/{project-memory,job-contract,completion-receipt}.md ../class-work/</code>"
-    ],
-    "notes": "Use Bash or zsh for the brace expansion. Copy from an extracted folder in a writable location. If class-work already exists, check whether it holds an earlier run. Preserve it; use a new sibling name throughout for a fresh attempt. Keep this terminal in the kit folder for now. The three templates and local-gallery should be siblings inside class-work. Windows users take the next slide instead."
-   },
-   {
-    "title": "Use PowerShell on Windows",
-    "subtitle": "Windows equivalent · choose one copy route.",
-    "img": "",
-    "example": {
-     "label": "From the extracted kit folder",
-     "lines": [
-      "mkdir ../class-work",
-      "Copy-Item examples/local-gallery ../class-work/ -Recurse",
-      "Copy-Item templates/*.md ../class-work/",
-      "ls ../class-work"
-     ]
-    },
-    "bullets": [
-     "Look for <code>local-gallery</code>, your three work templates and the optional feedback template.",
-     "Use the file-attachment route on Windows. The optional connector requires POSIX filesystem features."
-    ],
-    "notes": "PowerShell accepts forward slashes here. Paste each displayed command as one line, even if it wraps. With a mouse, create class-work beside the extracted kit, copy examples/local-gallery into it and copy the three named templates from templates/. Keep the original kit intact."
-   },
-   {
-    "title": "Give the assistant its first files",
-    "subtitle": "Works in a chat that accepts attachments or pasted text.",
-    "img": "",
-    "example": {
-     "label": "Select these files from the kit",
-     "lines": [
-      "start-here/README.md",
-      "reference/support-matrix.md",
-      "start-here/private-project-memory.md"
-     ]
-    },
-    "bullets": [
-     "Start a new chat. Attach the three files, or paste their text with each relative path above it.",
-     "Ask: “Which route can I use? Give the memory page’s title, ID and path. Read only.”",
-     "Expect <code>Keep Private Project Memory</code>, <code>SB-01-memory</code> and <code>start-here/private-project-memory.md</code>."
-    ],
-    "notes": "The documents are reference material. A chat with only these attachments cannot edit your private gallery. That is sufficient: you will run the commands. Ask the assistant which files and tools it can see. With a coding client, limit editing to the private working copy; leave unrelated folders disconnected. If the answer invents an ID, reopen the source page before trusting it. We tested the file-only question in a fresh local model conversation."
-   },
-   {
-    "title": "Find a source you can reopen",
-    "subtitle": "Look inside the recipe before giving the assistant a job.",
-    "img": "",
-    "bullets": [
-     "Open the file and read its ID, review status and supported environment.",
-     "Copy the path and your kit revision into your private note.",
-     "Have a partner retrieve the same page using only your citation."
-    ],
-    "notes": "Allow four minutes for the retrieval drill. Ask: could your partner find the exact page without the chat history? If a connector is unavailable, use the intact course files directly. An integrity failure means stop and obtain a clean kit copy.",
-    "example": {
-     "label": "ACP Second Brain",
-     "lines": [
-      "SB-01-memory",
-      "Keep Private Project Memory",
-      "",
-      "start-here/",
-      "private-project-memory.md"
-     ]
-    }
-   },
-   {
-    "title": "Run the first build",
-    "subtitle": "From the kit folder, switch to your private gallery.",
-    "img": "images/first-run/build.png",
-    "bullets": [
-     "<code>cd ../class-work/local-gallery</code>",
-     "<code>python3 build.py --output output</code>",
-     "<code>python3 verify.py --output output</code>"
-    ],
-    "notes": "On Windows use py -3 build.py --output output and py -3 verify.py --output output, or the Python 3.11+ command that worked earlier. Wait for “Checkpoint: 3/3 exhibits.” and then “PASS: 3 exhibits”. If build.py cannot be found, check pwd and ls: build.py, verify.py and exhibits.json must be in this directory. If output is nonempty, preserve it and use a fresh output directory for both commands."
-   },
-   {
-    "title": "Open the page you just built",
-    "subtitle": "The browser is your final baseline check.",
-    "img": "images/first-run/gallery.png",
-    "bullets": [
-     "Mac: <code>open output/index.html</code>. Windows PowerShell: <code>Start-Process ./output/index.html</code>.",
-     "Linux: <code>xdg-open output/index.html</code>. Or double-click index.html inside your working copy’s output folder.",
-     "Look for Small Worlds Gallery, then Paper City, Moon Garden and Quiet Machine. Record the PASS and your own observation."
-    ],
-    "notes": "Give everyone time to open their own page. It runs from a file URL without a web server. If only source code appears, choose Open With and select a browser. If the page looks stale, confirm the file path points into class-work/local-gallery/output. Write the checkpoint into the private project-memory.md one directory above local-gallery."
    },
    {
     "title": "Who can authorize the edit?",
@@ -226,20 +482,7 @@ const SECTIONS =[
      "Trade contracts. Can your partner tell when the assistant must stop?"
     ],
     "notes": "Let someone read their contract aloud. Challenge it with two surprises: the assistant wants to install a dependency, or its first correction still fails verification. Ask the author where the contract says to stop. Capture the agreed boundary in the private job-contract template."
-   }
-  ]
- },
- {
-  "year": "CH 2",
-  "accent": "purple",
-  "lesson": {
-   "title": "What Can Your Assistant Ask For?",
-   "short": "MCP",
-   "tagline": "A connector gives your assistant a vocabulary. Inspect its tool list before you ask it to act.",
-   "tags": "Model Context Protocol · Read-only retrieval",
-   "notes": "Start with the course connector. Ask learners to predict whether it can rename a file. Then contrast its tool list with the separate Blender setup from SensAI. No engine installation is part of this exercise."
-  },
-  "cases": [
+   },
    {
     "title": "Follow a request",
     "subtitle": "An MCP client asks a server which tools it offers.",
@@ -262,57 +505,6 @@ const SECTIONS =[
     ],
     "notes": "Trace one round trip with your finger. Ask what to check if the editor is open but no tools appear: first the client configuration and the server connection. Ask what to check when tools appear but the wrong scene is open: target identity. The kit’s document connector has no editor commands.",
     "motion": "setup"
-   },
-   {
-    "title": "Prepare the optional connector",
-    "subtitle": "Mac or Linux · for a client with configurable MCP support.",
-    "img": "images/first-run/validate.png",
-    "bullets": [
-     "Return to the extracted kit root in Terminal. Save its path: <code>KIT=\"$PWD\"</code>.",
-     "With uv already installed, run <code>uv sync --locked --extra dev</code> and then <code>uv run acp-kit validate</code>.",
-     "Check for <code>\"valid\": true</code>. On a hash or path failure, stop and obtain a clean kit."
-    ],
-    "notes": "For students already in local-gallery, open a new terminal at the extracted kit as shown earlier. uv --version checks the optional prerequisite. If uv or a compatible client is unavailable, continue using the file-only route. Run setup from the writable kit root so uv can build its own environment. The candidate status shown here identifies the rehearsal bundle."
-   },
-   {
-    "title": "Register it in the client",
-    "subtitle": "Claude Code CLI · run from the same terminal after validation.",
-    "img": "",
-    "example": {
-     "label": "Mac or Linux · shell",
-     "lines": [
-      "cd ../class-work",
-      "claude mcp add --scope local --transport stdio acp-second-brain -- uv run --project \"$KIT\" acp-kit serve",
-      "claude mcp get acp-second-brain"
-     ]
-    },
-    "bullets": [
-     "The long registration command is one line. Local scope ties the entry to this private project.",
-     "The client launches the server. Leave <code>acp-kit serve</code> inside the registration command."
-    ],
-    "notes": "This example assumes a configured Claude Code CLI and uv on PATH. KIT must still contain the absolute path you saved in the preceding slide. The public repository README includes the same pasteable command block. A Codex CLI registration example is in the kit’s reference/connector-technical.md; our end-to-end connector rehearsal used Claude Code."
-   },
-   {
-    "title": "Check the connection",
-    "subtitle": "This is the client’s response in the private project.",
-    "img": "images/first-run/connect.png",
-    "bullets": [
-     "Look for <code>Status: ✔ Connected</code> and <code>Type: stdio</code>.",
-     "In <code>class-work</code>, start <code>claude</code> and use <code>/mcp</code> to inspect the kit server.",
-     "Its three operations are <code>search</code>, <code>fetch</code> and <code>status</code>."
-    ],
-    "notes": "Connected establishes transport. It does not prove the model has used a course page. If disconnected, confirm uv is on PATH and that KIT pointed at the folder containing pyproject.toml. For a wrong local registration use claude mcp remove acp-second-brain -s local in class-work, then repeat the add command. Use local Markdown if the client’s setup is unavailable."
-   },
-   {
-    "title": "Ask for a receipt from the assistant",
-    "subtitle": "Actual Claude Code tool calls and reply, excerpted from the rehearsal transcript.",
-    "img": "images/first-run/reply.png",
-    "bullets": [
-     "Ask: “Search for private project memory. Fetch the matching page and give its title, ID, review status and relative path.”",
-     "Check that the assistant called <code>fetch</code> with <code>SB-01-memory</code> after searching.",
-     "Compare the answer with the page in <code>start-here</code>. Then continue in your private gallery."
-    ],
-    "notes": "A registration entry or a good guess about the title would not establish retrieval. In this rehearsal Claude Code called search and fetch over stdio; the assistant model ran locally through Ollama. Students may use their already-configured assistant. The gallery requires no provider account. If you want to build from this terminal, cd local-gallery from class-work."
    },
    {
     "title": "Find the actual recipe",
@@ -363,14 +555,14 @@ const SECTIONS =[
   ]
  },
  {
-  "year": "CH 3",
+  "year": "REFERENCE",
   "accent": "amber",
   "lesson": {
-   "short": "ENGINE DEMOS",
-   "title": "Inside the engine demos",
-   "tagline": "Watch the original SensAI examples. For each, decide what the assistant controlled and what Alex had to judge.",
-   "tags": "Unreal · Blender · Forage",
-   "notes": "Optional watch-and-discuss block, about 20 minutes. Play the embedded recordings on demand. Learners do not need an engine installed. Ask for a prediction before each reveal."
+   "title": "Watch the original engine demos",
+   "short": "SENSAI",
+   "tagline": "Optional instructor recordings from SensAI. You can watch the Unreal clip without installing Unreal today.",
+   "tags": "Optional teaching material",
+   "notes": "The self-paced student route is complete. Choose individual examples for discussion or review."
   },
   "cases": [
    {
@@ -465,27 +657,16 @@ const SECTIONS =[
   ]
  },
  {
-  "year": "CH 4",
-  "accent": "rose",
+  "year": "REFERENCE",
+  "accent": "amber",
   "lesson": {
-   "short": "GALLERY LAB",
-   "title": "Build the gallery together",
-   "tagline": "Work in your private copy. Keep the baseline, make a single edit and compare the two pages.",
-   "tags": "Hands-on · Python 3.11+ · Terminal",
-   "notes": "Reserve about 25 minutes. Pair learners with different levels of terminal experience. One person drives and one person verifies, then swap before the edited build."
+   "title": "Practice checking a gallery edit",
+   "short": "GALLERY CHECKS",
+   "tagline": "Optional follow-up exercises. In the desktop workspace the private gallery is Studio/local-gallery.",
+   "tags": "Optional teaching material",
+   "notes": "The self-paced student route is complete. Choose individual examples for discussion or review."
   },
   "cases": [
-   {
-    "title": "Reopen your gallery baseline",
-    "subtitle": "Before editing, identify the three cards you already verified.",
-    "img": "images/small-worlds-gallery.png",
-    "bullets": [
-     "Open <code>class-work/local-gallery/output/index.html</code> from your working copy.",
-     "If you joined late, return to “Run the first build” for the baseline commands.",
-     "Which title will you change, and which two should remain identical?"
-    ],
-    "notes": "The baseline was already built during onboarding. Do not rerun the builder into a nonempty output folder. Ask students to locate their accepted baseline and compare it with this original sample before editing."
-   },
    {
     "title": "Read one exhibit",
     "subtitle": "Find the part of the source that controls a displayed title.",
@@ -596,14 +777,14 @@ const SECTIONS =[
   ]
  },
  {
-  "year": "CH 5",
-  "accent": "teal",
+  "year": "REFERENCE",
+  "accent": "amber",
   "lesson": {
-   "short": "EXPORT LAB",
-   "title": "What survived the trip?",
-   "tagline": "The Data Interchange class sent one scene through several tools. Use the same method to inspect what an assistant delivers.",
-   "tags": "Unreal · USD · GLB · RealityKit",
-   "notes": "Optional instructor-led lab, about 25 minutes. Use the captured material and simulator recording. Keep the results scoped to the source class scene, exporter versions and settings."
+   "title": "Preview the Unreal handoff",
+   "short": "INTERCHANGE",
+   "tagline": "Reference for next week. Review the original Data Interchange captures when you want to compare how another engine interprets a scene.",
+   "tags": "Optional teaching material",
+   "notes": "The self-paced student route is complete. Choose individual examples for discussion or review."
   },
   "cases": [
    {
@@ -735,14 +916,14 @@ const SECTIONS =[
   ]
  },
  {
-  "year": "CH 6",
+  "year": "REFERENCE",
   "accent": "amber",
   "lesson": {
-   "title": "What Survives a Restart?",
-   "short": "MEMORY",
-   "tagline": "Close the chat. Could someone find the last gallery you accepted, explain your edit and take the next safe step?",
-   "tags": "Private memory · Independent evidence",
-   "notes": "Ask a partner to play the next session. Give them only the note. Listen for where the files live, what the verifier checked and which decision still belongs to the artist."
+   "title": "Compare notes and checkpoints",
+   "short": "HANDOFF",
+   "tagline": "Optional exercises for practicing a restart with another person.",
+   "tags": "Optional teaching material",
+   "notes": "The self-paced student route is complete. Choose individual examples for discussion or review."
   },
   "cases": [
    {
@@ -821,19 +1002,83 @@ const SECTIONS =[
     }
    }
   ]
+ },
+ {
+  "year": "REFERENCE",
+  "accent": "amber",
+  "lesson": {
+   "title": "Optional connector setup",
+   "short": "TECHNICAL NOTES",
+   "tagline": "For students who want a separate read-only MCP connection later. The main workshop already works with the local project folder.",
+   "tags": "Optional teaching material",
+   "notes": "The self-paced student route is complete. Choose individual examples for discussion or review."
+  },
+  "cases": [
+   {
+    "title": "Prepare the optional connector",
+    "subtitle": "Mac or Linux · for a client with configurable MCP support.",
+    "img": "images/first-run/validate.png",
+    "bullets": [
+     "Open a terminal in the workshop’s Brain folder. Save this path: <code>KIT=\"$PWD\"</code>.",
+     "With uv already installed, run <code>uv sync --locked --extra dev</code> and then <code>uv run acp-kit validate</code>.",
+     "Check for <code>\"valid\": true</code>. On a hash or path failure, stop and obtain a clean kit."
+    ],
+    "notes": "Advanced users only. Brain contains pyproject.toml and the release manifest. The optional uv setup creates its own environment there. Run validate before continuing. Stop on a hash or path failure."
+   },
+   {
+    "title": "Register it in the client",
+    "subtitle": "Claude Code CLI · run from the same terminal after validation.",
+    "img": "",
+    "example": {
+     "label": "Mac or Linux · shell",
+     "lines": [
+      "cd ..",
+      "claude mcp add --scope local --transport stdio acp-second-brain -- uv run --project \"$KIT\" acp-kit serve",
+      "claude mcp get acp-second-brain"
+     ]
+    },
+    "bullets": [
+     "The long registration command is one line. Local scope ties the entry to this private project.",
+     "The client launches the server. Leave <code>acp-kit serve</code> inside the registration command."
+    ],
+    "notes": "From Brain, cd .. puts you in Small Worlds Workshop. Register here so the optional connection belongs to this workshop project. The screenshot on the next slide is from the earlier course ZIP rehearsal."
+   },
+   {
+    "title": "Check the connection",
+    "subtitle": "This is the client’s response in the private project.",
+    "img": "images/first-run/connect.png",
+    "bullets": [
+     "Look for <code>Status: ✔ Connected</code> and <code>Type: stdio</code>.",
+     "In the workshop root, open your Claude Code session and use <code>/mcp</code> to inspect this server.",
+     "Its three operations are <code>search</code>, <code>fetch</code> and <code>status</code>."
+    ],
+    "notes": "The screenshot shows the earlier rehearsal folder name. Your current project is Small Worlds Workshop. A successful connection is transport evidence; test the actual tools next."
+   },
+   {
+    "title": "Ask for a receipt from the assistant",
+    "subtitle": "Actual Claude Code tool calls and reply, excerpted from the rehearsal transcript.",
+    "img": "images/first-run/reply.png",
+    "bullets": [
+     "Ask: “Search for private project memory. Fetch the matching page and give its title, ID, review status and relative path.”",
+     "Check that the assistant called <code>fetch</code> with <code>SB-01-memory</code> after searching.",
+     "Compare the answer with the page in <code>start-here</code>. Then continue in your private gallery."
+    ],
+    "notes": "The screenshot records search and fetch calls from a Claude Code rehearsal using a local model and the same course kit. Return to Studio/local-gallery if you choose to work on the gallery."
+   }
+  ]
  }
 ];
 
-const BONUS = {"year": "HOMEWORK", "title": "Bring back the evidence", "tagline": "Before Part 2, bring the baseline, the edited gallery and the note that let a fresh session resume. Be ready to show one change you accepted or rejected.", "notes": "Give learners a minute to choose a title, order or color edit. Point them to workflows/between-class-practice.md. Ask for the two output folders, the verification result and the restart answer."};
+const BONUS = {"year": "HOMEWORK", "title": "Bring back the evidence", "tagline": "Before Part 2, bring the baseline, the edited gallery and the note that let a fresh session resume. Be ready to show one change you accepted or rejected.", "notes": "Give learners a minute to choose a title, order or color edit. Point them to Brain/workflows/between-class-practice.md. Ask for the two output folders, the verification result and the restart answer."};
 const BOOKENDS = {
  "cover": {
-  "notes": "Welcome everyone to the noon–2 p.m. Eastern session. Show the gallery finish line first: a local page someone else can rebuild and inspect. Check for Python 3.11+ and a terminal. No paid API, headset or engine is needed."
+  "notes": "Open the self-paced guide in the class Drive folder. One desktop assistant, a project folder, a verified gallery, and a playable Godot scene are today’s finish line. Let students start the official software downloads early. Android is optional and Unreal is reserved for Part 2."
  },
  "map": {
   "notes": "Ask a learner to narrate the whole route in their own words. Which step retrieves knowledge? Who approves an edit? Where does the evidence live after the chat closes? Select a chapter if the room wants to revisit it."
  },
  "close": {
-  "notes": "Part 2 meets Wednesday, November 11 at 11 a.m. Eastern. Ask someone to show the evidence their fresh session recovered. Leave the class page up for materials and take questions."
+  "notes": "Part 2 meets Wednesday, November 11 at 11 a.m. Eastern. Ask someone to show the evidence their fresh session recovered. Leave the class page up and take questions."
  }
 };
 </script>
@@ -2248,6 +2493,10 @@ body:not(.vertical-mode,.print-mode) #deck>.slide:not(.active){visibility:hidden
  body[data-look="broadside"] .wide-diagram .case-bl{grid-row:3;display:flex;flex-direction:row;align-items:flex-start;gap:2em;text-align:left}
  body[data-look="broadside"] .wide-diagram .case-bl li{flex:1}
 }
+.workbook-link{color:var(--acc-1,var(--teal));font:600 1rem/1.4 Georgia,serif;text-decoration:underline;text-underline-offset:.18em;cursor:pointer}
+.slide[data-type="cover"]>.workbook-link{margin:0 0 1.2em}
+.guide-actions{margin-top:.25em}
+body.print-mode .workbook-link,body.shot-mode .workbook-link{display:none}
 .demo-clip{width:100%;height:auto;max-height:56vh;display:block}
 .worked-example{align-self:stretch;background:#faf3e5;color:#382e24;text-align:left;padding:clamp(18px,3vw,48px);margin:0}
 .worked-example figcaption,.paired-view figcaption{font-family:Georgia,serif;font-style:italic}
@@ -3217,7 +3466,7 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
 
 // Cover
 const cov=document.createElement('div');cov.className='slide active';cov.dataset.type='cover';
-cov.innerHTML=`<div class="event-tag">Live class &middot; Thu Nov 5, 2026 &middot; 12–2p ET</div><h1 class="talk-title">Creative AI<br>Workflow Masterclass</h1><p class="talk-subtitle">Part 1: Set Up From Scratch</p><div class="speaker-card"><div><div class="speaker-name">Alex Coulombe</div><div class="speaker-co">Alex Coulombe Presents</div></div></div>`;
+cov.innerHTML=`<div class="event-tag">Live class &middot; Thu Nov 5, 2026 &middot; 12–2p ET</div><h1 class="talk-title">Creative AI<br>Workflow Masterclass</h1><p class="talk-subtitle">Part 1: Set Up From Scratch</p><a class="workbook-link deck-link" href="classroom/start-here.html" target="_blank" rel="noopener">Open the self-paced workbook ↗</a><div class="speaker-card"><div><div class="speaker-name">Alex Coulombe</div><div class="speaker-co">Alex Coulombe Presents</div></div></div>`;
 deck.appendChild(cov);allSlides.push(cov);
 
 // Build sections
@@ -3364,6 +3613,11 @@ SECTIONS.forEach((sec,si)=>{
     }
     s.innerHTML=`<div class="case-image">${imgHTML}</div><div class="case-content"><div class="case-ytag">${sec.year}${sec.lesson.short?' &middot; '+sec.lesson.short:''}</div><h2 class="case-title">${c.title}</h2><p class="case-sub">${c.subtitle}</p><ul class="case-bl">${c.bullets.map(b=>`<li>${b.replace(/\n/g,'<br>')}</li>`).join('')}</ul></div>`;
     if(['composition','units','validate'].includes(c.motion))s.classList.add('wide-diagram');
+    if(c.guideStep){
+      const nav=document.createElement('div');nav.className='guide-actions';
+      const link=document.createElement('a');link.className='deck-link workbook-link';link.textContent='Open this workbook step ↗';link.target='_blank';link.rel='noopener';link.href='classroom/start-here.html#'+c.guideStep;
+      nav.append(link);s.querySelector('.case-content').append(nav);
+    }
     if(c.pair)s.querySelector('.case-image').classList.add('pair-image');
     const video=s.querySelector('.demo-clip');
     if(video)new MutationObserver(()=>{if(!s.classList.contains('active'))video.pause();}).observe(s,{attributes:true,attributeFilter:['class']});
@@ -3380,7 +3634,7 @@ deck.appendChild(bon);allSlides.push(bon);
 const mapS=document.createElement('div');mapS.className='slide slide-map';mapS.dataset.type='map';
 mapS.innerHTML=`<h2 class="lesson-title">Your workflow</h2><nav class="workflow-index" aria-label="Revisit a chapter"></nav>`;
 const workflowNav=mapS.querySelector('nav');
-[...SECTIONS.map((sec,i)=>[sec.year,sec.lesson.short,lessonIdxs[i]]),[BONUS.year,'Practice',allSlides.indexOf(bon)]].forEach(([label,title,idx])=>{
+[...SECTIONS.flatMap((sec,i)=>sec.year!=='REFERENCE'||SECTIONS[i-1]?.year!=='REFERENCE'?[[sec.year,sec.year==='REFERENCE'?'More demos':sec.lesson.short,lessonIdxs[i]]]:[]),[BONUS.year,'Practice',allSlides.indexOf(bon)]].forEach(([label,title,idx])=>{
   const button=document.createElement('button');button.innerHTML=`<small>${label}</small>${title}`;
   button.addEventListener('click',event=>{event.stopPropagation();if(!window._moveMode)goTo(idx);});workflowNav.appendChild(button);
 });
@@ -3390,7 +3644,7 @@ deck.appendChild(mapS);allSlides.push(mapS);
 const cls=document.createElement('div');cls.className='slide';cls.dataset.type='close';
 cls.innerHTML=`<div class="close-ey">See you in Part 2</div><h2 class="close-title">Build it. Restart it.</h2><p class="close-sub">Part 2: Let It Run &middot; Wed Nov 11, 11a ET</p>
 <div class="contact-row"><a class="contact-pill" href="https://alexcoulombepresents.com/classes/2026-11-04-creative-ai-masterclass-part-1">Open the class page ↗</a></div>
-<div class="close-qr-row"><div class="qr-card"><img src="images/class-page.svg" alt="QR code for the class page"><div class="qr-label">Class page</div><div class="qr-badge b-teal">Materials + recording</div></div></div>`;
+<div class="close-qr-row"><div class="qr-card"><img src="images/class-page.svg" alt="QR code for the class page"><div class="qr-label">Class page</div><div class="qr-badge b-teal">Class information</div></div></div>`;
 deck.appendChild(cls);allSlides.push(cls);
 
 SD._wire();

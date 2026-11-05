@@ -1,0 +1,430 @@
+[
+  {
+    "group": "Set up",
+    "id": "unpack",
+    "title": "Open the class folder",
+    "subtitle": "Begin here even if your computer has no creative apps installed.",
+    "actions": [
+      "In the Google Drive folder shared with your class, download Small Worlds Workshop – Part 1 student kit – 2026-11-05.zip. One-class students use this same download.",
+      "In Downloads, double-click the ZIP on Mac. On Windows, right-click it, choose Extract All, then Extract. Move the extracted Small Worlds Workshop folder somewhere easy to find, such as Documents.",
+      "Open the folder that contains Brain, Skills, Studio and Creative. Double-click Start Here.html to read and copy every prompt offline. Keep that folder window open."
+    ],
+    "prompt": "",
+    "check": "You can open Studio/show-brief.md in a text editor. Its first lines identify the Small Worlds exhibition and brief SW-17.",
+    "fix": "If you see a ZIP preview, extract it first. If Drive asks for access, switch to the Google account that received the class folder or request access there. ACP membership is unnecessary.",
+    "image": "",
+    "plate": [
+      "Small Worlds Workshop",
+      "  Start Here.html",
+      "  Brain/     Course recipes",
+      "  Studio/    Your work",
+      "  Skills/    Two skill folders",
+      "  Creative/  Blender + Godot + Android"
+    ],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Set up",
+    "id": "get-assistant",
+    "title": "Install one desktop assistant",
+    "subtitle": "Choose whichever account you already use.",
+    "actions": [
+      "Codex: download the official desktop app for your operating system. On versions labeled ChatGPT, choose Codex from the app menu after signing in.",
+      "Claude: download Claude Desktop for your operating system, open it, sign in and select Code. You need an account with access to the local coding workspace.",
+      "Mac: open the downloaded installer and follow its instructions (drag the app into Applications if prompted). Windows: run the downloaded installer or use the official Store link. Open the installed app."
+    ],
+    "prompt": "",
+    "check": "You have a desktop window with a new local project or session option. You only need one assistant.",
+    "fix": "If you are in a browser chat, switch to the installed desktop app. If your account does not offer a local workspace, use the other supported app or pair with someone who has access. The class requires no paid API key.",
+    "image": "",
+    "plate": [
+      "Choose one",
+      "Codex · Local project",
+      "Claude Desktop · Code / Local"
+    ],
+    "links": [
+      [
+        "Get Codex",
+        "https://openai.com/codex/"
+      ],
+      [
+        "Get Claude Desktop",
+        "https://claude.com/download"
+      ]
+    ],
+    "notes": ""
+  },
+  {
+    "group": "Set up",
+    "id": "open-project",
+    "title": "Give it the workshop folder",
+    "subtitle": "A local project lets the assistant work on the same files you can see.",
+    "actions": [
+      "Codex: choose Open folder or Add project. Select Small Worlds Workshop, choose Local, and start a chat in that project. If the project exists without a folder, use its menu → Edit project → Add folder.",
+      "Claude Desktop: select Code → New session. Choose the local environment (your computer), then the project folder control and Small Worlds Workshop. Work directly in this folder.",
+      "Send the prompt below. Keep the course reference in Brain and your own files in Studio. When the app asks for access, check that it names this workshop."
+    ],
+    "prompt": "Read only. List the four workshop folders in my current project. Open Studio/show-brief.md and tell me its brief ID and working title. Cite the file. Do not change anything.",
+    "check": "It finds Brain, Studio, Skills and Creative, and reads SW-17, Paper City at Dusk, from the brief.",
+    "fix": "If it asks you to paste the file, reports an empty project or sees only Brain, reopen the enclosing Small Worlds Workshop folder. Start a fresh local chat there and repeat the check.",
+    "image": "",
+    "plate": [
+      "Select the enclosing folder",
+      "Small Worlds Workshop",
+      "     └── Studio/show-brief.md"
+    ],
+    "links": [
+      [
+        "Codex projects",
+        "https://learn.chatgpt.com/docs/projects"
+      ],
+      [
+        "Claude local sessions",
+        "https://code.claude.com/docs/en/desktop"
+      ]
+    ],
+    "notes": ""
+  },
+  {
+    "group": "Set up",
+    "id": "install",
+    "title": "Get the software you need",
+    "subtitle": "Start the downloads now. Keep reading while the creative apps install.",
+    "actions": [
+      "First send the inventory prompt. The gallery needs Python 3.11 or newer; your assistant will run the included scripts. For today’s 3D route use Blender and Godot 4 Standard. Use stable desktop releases for your operating system and processor.",
+      "Python and Blender: use their official downloads below. Mac: open the Python installer package and install Blender in Applications. Windows: run each installer; enable the Python launcher or PATH option if offered.",
+      "Godot: download Standard (GDScript). Unzip the download. On Mac, move Godot into Applications; on Windows, open the extracted editor executable. Start each app once. Then return to your assistant for the version check."
+    ],
+    "prompt": "Check this computer for Python 3.11+, Blender and Godot 4 Standard. Report each version you actually found and each missing item. Help me install only the missing tools for my OS and processor from the official sites. Describe what you will install and wait for my OK. If you cannot use the installer, guide me through its buttons one at a time. After installation, verify each version again. Skip Unreal and Android Studio for now.",
+    "check": "The assistant identifies a working Python 3.11+ interpreter. Blender opens its startup scene and Godot opens its Project Manager. You can continue the reading and skills steps while either editor downloads.",
+    "fix": "If Python is installed but still missing in the assistant, close and reopen the desktop app and project. If school or work policy blocks installation, ask your administrator; the included render and starter files let you follow the visual examples.",
+    "image": "",
+    "plate": [
+      "Core  ·  Python 3.11+",
+      "Creative  ·  Blender + Godot 4",
+      "Later  ·  Android Studio if desired"
+    ],
+    "links": [
+      [
+        "Python installers",
+        "https://www.python.org/downloads/"
+      ],
+      [
+        "Blender downloads",
+        "https://www.blender.org/download/"
+      ],
+      [
+        "Godot downloads",
+        "https://godotengine.org/download/"
+      ]
+    ],
+    "notes": ""
+  },
+  {
+    "group": "Set up",
+    "id": "android-choice",
+    "title": "Decide whether to start Android Studio",
+    "subtitle": "Optional now; you can finish the Blender and Godot work without it.",
+    "actions": [
+      "If Android Studio is already installed, let your assistant check it. If you want the phone follow-on and have time, start its official installer and Standard setup wizard now.",
+      "For this project the Android SDK Manager needs Android 15 / API 35. A first sync downloads Gradle dependencies. An emulator may also require a large system image and virtualization.",
+      "Give this setup a personal time limit. If it stalls or asks for a long system-image download, return to the workshop. The optional Android project is in your ZIP for later."
+    ],
+    "prompt": "I want the optional Android Studio track. Check whether Android Studio, SDK Platform 35 and a phone or existing emulator are available. Estimate the remaining downloads from the installer. Help me install the missing pieces from Google only after I approve. If this will interrupt the class, help me defer it.",
+    "check": "You have either chosen “later” or opened Android Studio and checked the SDK. Both choices let you continue.",
+    "fix": "For a first install, follow the setup wizard’s platform-specific steps and use its size estimates. A prepared physical Android device can avoid downloading an emulator image.",
+    "image": "",
+    "plate": [
+      "For today",
+      "Blender → Godot",
+      "Phone postcard → optional"
+    ],
+    "links": [
+      [
+        "Android Studio and setup wizard",
+        "https://developer.android.com/studio/install"
+      ]
+    ],
+    "notes": ""
+  },
+  {
+    "group": "Second brain",
+    "id": "how-brain",
+    "title": "Connect the second brain",
+    "subtitle": "The assistant reads your course files when it needs an answer. Your private note carries decisions forward.",
+    "actions": [
+      "Open Brain/start-here/README.md yourself. Look at the ID and title above the first heading. A course recipe has a stable ID, a review status and a path.",
+      "Send the prompt. It establishes where to look for course methods, where the project brief lives and where your agent may save work.",
+      "Open Studio/project-memory.md. Pick a visitor nickname of your own. Tell the assistant to record it, your goal and the starting checkpoint there. Keep Brain unchanged."
+    ],
+    "prompt": "Use Brain as my read-only ACP Second Brain. For course questions, open the relevant page, then cite its ID and relative path. For this exhibition, use Studio/show-brief.md. My work goes in Studio. Read Brain/start-here/README.md and Brain/start-here/private-project-memory.md. Explain what belongs in Studio/project-memory.md. Wait for my chosen visitor nickname before writing it.",
+    "check": "It finds SB-01-start and SB-01-memory. Your own nickname and goal appear inside Studio/project-memory.md after you supply them.",
+    "fix": "If the answer sounds generic, ask it to quote the page title and show the exact path. A new chat can reread the folder; a fact left only in chat can disappear on restart.",
+    "image": "images/ch1-home.svg",
+    "plate": [],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Second brain",
+    "id": "quiz",
+    "title": "Ask three questions with known answers",
+    "subtitle": "Send these one at a time. Check the file behind each answer.",
+    "actions": [
+      "Recovery: “The gallery stopped after one exhibit with exit 75. If the input matches, what exact command resumes it? What if the input changed? Cite the recipe.”",
+      "Restart: “I closed the original chat. Which three things should I give a fresh session, and what should it report before doing any work? Cite the recipe.”",
+      "Exhibit: “What is the wall-label archive code, where does the visitor start and how high are the three roofs? Cite the show brief.”"
+    ],
+    "prompt": "Answer each question from Brain or Studio/show-brief.md. For each, open the file, name its ID and path, and tell me what evidence I should check. Do not run the recovery commands or edit anything.",
+    "check": "Recovery: JOB-01-recover, troubleshooting/recover-an-interrupted-job.md; python3 build.py --output interrupted --resume for matching inputs, fresh output for changed inputs. Restart: SB-01-resume, start-here/resume-after-restart.md; resume recipe, private note and relevant contract or receipt. Brief SW-17: MOTH-27, Lantern Gate, 2 / 3 / 4 meters.",
+    "fix": "For an incorrect answer, open the cited file together and ask again. As a fourth test, ask for the visitor nickname you picked. It should read your private note and spell it correctly.",
+    "image": "",
+    "plate": [
+      "Recovery · JOB-01-recover",
+      "Restart · SB-01-resume",
+      "Exhibition · SW-17"
+    ],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Skills",
+    "id": "compare",
+    "title": "What does a skill add?",
+    "subtitle": "The second brain supplies the answer. A skill tells your agent how to do a repeatable job with it.",
+    "actions": [
+      "In Finder or Explorer open Skills/acp-recipe-check/SKILL.md. Read the instructions for finding a source and reporting what needs a local check.",
+      "Open Skills/acp-gallery-change/SKILL.md. Notice the required baseline, permitted edit, verification step and receipt.",
+      "Compare those files to Studio/show-brief.md. The brief owns the wall code and the design choices. The skill owns the procedure for using a brief. Your approval gives the agent permission to act."
+    ],
+    "prompt": "Read the two SKILL.md files under Skills. Explain which skill you would use to answer a recovery question and which you would use to carry out an approved title edit. Do not install or run them yet.",
+    "check": "It chooses acp-recipe-check for source-grounded questions and acp-gallery-change for the build-and-verify workflow.",
+    "fix": "If it claims a skill is already installed, ask for the installed file path. The visible Skills folder holds the source copies delivered with class.",
+    "image": "",
+    "plate": [
+      "Brain/     Reviewed recipes",
+      "Studio/    Brief + decisions",
+      "Skills/    Reusable procedures"
+    ],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Skills",
+    "id": "install-skills",
+    "title": "Install both skills in this project",
+    "subtitle": "Choose the destination for the desktop app you opened.",
+    "actions": [
+      "Stay in the project chat. Use the prompt below and replace APP with Codex or Claude. Review its proposed destination before allowing the copy.",
+      "Codex installs to .agents/skills/. Claude Desktop Code installs to .claude/skills/. Each skill needs its own folder with SKILL.md immediately inside.",
+      "Start a new local chat in the same project. In Codex type $ and look for acp-recipe-check; in Claude Code type /acp-recipe-check. Also look for acp-gallery-change."
+    ],
+    "prompt": "I am using APP. Install acp-recipe-check and acp-gallery-change from this project’s Skills folder into the project skill directory for my app only. Copy each complete folder. If a destination already exists, compare it and stop before replacing anything. Show me the two final SKILL.md paths. Do not change global settings.",
+    "check": "For example, Codex shows .agents/skills/acp-recipe-check/SKILL.md; Claude shows .claude/skills/acp-recipe-check/SKILL.md. Both names should be discoverable in the fresh session.",
+    "fix": "If names are missing, verify this project is the current folder and check for a doubled path such as skills/Skills/. Reopen the project and start another chat. Reading the source file manually is a fallback while you repair discovery.",
+    "image": "",
+    "plate": [
+      "Project only",
+      "Codex     .agents/skills/",
+      "Claude    .claude/skills/",
+      "Each name → SKILL.md"
+    ],
+    "links": [
+      [
+        "Codex skills",
+        "https://developers.openai.com/codex/skills"
+      ],
+      [
+        "Claude Code skills",
+        "https://code.claude.com/docs/en/skills"
+      ]
+    ],
+    "notes": ""
+  },
+  {
+    "group": "Skills",
+    "id": "invoke",
+    "title": "Use the installed lookup skill",
+    "subtitle": "See what changes when the assistant follows a procedure.",
+    "actions": [
+      "Select the skill you just installed: $acp-recipe-check in Codex or /acp-recipe-check in Claude Code. Add the question below and send it.",
+      "Open its cited page in Brain. Compare its answer against that page. Look for the local check as well as the explanation.",
+      "Ask a second question: “What color did the curator approve for a fourth tower?” The brief specifies three towers. A useful answer identifies the missing decision."
+    ],
+    "prompt": "Use the installed acp-recipe-check skill. My gallery baseline is already in output/. Where should my one-title revision be built, how do I verify it and who decides if it looks right? Give the course source, your answer and what I should check locally.",
+    "check": "It cites CLASS-01-part1 in Brain/workflows/part-1-exercise.md, uses output-edited, verifies that folder and leaves visual approval with you.",
+    "fix": "If it starts editing, stop and invoke the read-only skill explicitly in a fresh project chat. If it guesses the fourth tower color, ask it to show the exact line in SW-17.",
+    "image": "images/ch1-permission.svg",
+    "plate": [],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Gallery lab",
+    "id": "baseline",
+    "title": "Ask your agent to build the baseline",
+    "subtitle": "You send the request. The desktop assistant runs the included Python tools.",
+    "actions": [
+      "In your project chat paste the prompt. The workbook already includes a private copy at Studio/local-gallery; leave Brain/examples alone.",
+      "Review the proposed actions. Allow the build and verifier inside this workspace. Ask for the actual final output line and the path to the page.",
+      "In Finder or Explorer open Studio → local-gallery → output → index.html. Double-click it. Count the cards, inspect the order and tell the assistant whether you accept this baseline."
+    ],
+    "prompt": "In Studio/local-gallery use an available Python 3.11+ interpreter to run build.py --output output, then verify.py --output output. Preserve any existing output. Report the actual verifier result and give me the local HTML path. Do not edit exhibits.json. Wait for me to inspect the page.",
+    "check": "The checker says PASS: 3 exhibits. The browser shows Small Worlds Gallery with Paper City, Moon Garden, then Quiet Machine. Your agent can now record your baseline decision in Studio/project-memory.md.",
+    "fix": "If the page already exists, inspect it and ask the agent to verify it against unchanged inputs. If Python is missing, return to the software step. The included screenshot is a reference while you troubleshoot.",
+    "image": "images/first-run/gallery.png",
+    "plate": [],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Gallery lab",
+    "id": "edit",
+    "title": "Turn your own brief into one edit",
+    "subtitle": "The skill reads a local commission and produces a reviewable result.",
+    "actions": [
+      "Invoke $acp-gallery-change in Codex or /acp-gallery-change in Claude. Add the prompt below. Before allowing the edit, check its file list.",
+      "The permitted input is Studio/local-gallery/exhibits.json. Expect a fresh output-edited folder and a private receipt. Keep the accepted baseline in output.",
+      "Open both HTML files side by side. Check the new first title and the two unchanged exhibits. Tell the assistant your verdict and why; have it update your private note."
+    ],
+    "prompt": "Use the installed acp-gallery-change skill and brief SW-17. I approve one edit: change only the displayed title for paper-city to the title in my brief. Keep its ID, the other cards and their order. Build and verify a fresh output-edited, write Studio/receipt.md, then stop for my visual decision. Budget one edit and one correction.",
+    "check": "output/index.html still says Paper City. output-edited/index.html says Paper City at Dusk. The receipt separates the verifier result from your decision.",
+    "fix": "If output-edited exists from an earlier attempt, agree on a new folder first. If the checker passes but the title is wrong, record a rejection and keep the last accepted baseline.",
+    "image": "images/desktop-class/edited-gallery.png",
+    "plate": [],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Gallery lab",
+    "id": "restart",
+    "title": "Prove a fresh chat can resume",
+    "subtitle": "Let the next session recover something it could not know from general training.",
+    "actions": [
+      "Have the current session save the nickname, accepted output path, your reason and the next safe step in Studio/project-memory.md. Open the note and verify those details.",
+      "Start a new chat in the same local project. Leave the old conversation closed. Paste the prompt without repeating your nickname or verdict.",
+      "Compare the answer with your note. If the assistant guessed, fix the missing field in the note and repeat the test in a new chat."
+    ],
+    "prompt": "Read only Brain/start-here/resume-after-restart.md, Studio/project-memory.md and Studio/receipt.md. What is my visitor nickname, which output did I accept, why, and what is the next safe action? Cite the exact files. If my decision is missing, say so. Do not build anything.",
+    "check": "It returns your chosen nickname, your actual verdict and an action inside the recorded limits. You can now resume independently after a break.",
+    "fix": "If it merely repeats the original goal, check you opened the same extracted folder. If your client recalls old chats, give it a new fact in the file and ask it to point to that field.",
+    "image": "images/ch3-memory.svg",
+    "plate": [],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Blender and Godot",
+    "id": "scene",
+    "title": "Open the scene described by your brief",
+    "subtitle": "The Blender exercise starts with an inspectable scene and ends with your own revision.",
+    "actions": [
+      "Open Blender. Choose File → Open, navigate to Creative/Starting-Scene/Paper City.blend and open it. Choose the supplied scene if Blender asks whether to save the empty default scene.",
+      "In camera view find the Lantern Gate, one footbridge and three towers. Use the Outliner search for “Tower” to locate walls and folded roofs. Open Creative/Starting-Scene/Postcard.png beside Blender for the reference render.",
+      "Ask the assistant to read the brief and compare the proposed edit with the available source. Stop after the plan."
+    ],
+    "prompt": "Read Studio/show-brief.md and Creative/build_scene.py. Tell me what SW-17 says about tower heights, bridge rails and camera framing. Show which one parameter can change the rails to jade, and propose a new output folder under Studio. Do not run Blender yet.",
+    "check": "It identifies the three roof heights (2, 3 and 4 m), vermilion → jade, fixed framing, and the builder’s --rails jade parameter.",
+    "fix": "If the scene opens gray, use Material Preview or compare the PNG. If Blender is unavailable, continue with the starter render and move to Godot using the supplied city model.",
+    "image": "images/desktop-class/paper-city.png",
+    "plate": [],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Blender and Godot",
+    "id": "make-scene",
+    "title": "Build the jade-rail version",
+    "subtitle": "Commission the change in plain language and compare the two renders.",
+    "actions": [
+      "Return to the assistant chat and paste the prompt. Allow only the supplied builder, your installed Blender and the fresh destination.",
+      "Open Studio/Jade/Postcard.png next to Creative/Starting-Scene/Postcard.png. Zoom into the footbridge: the two rails should turn green.",
+      "Open Studio/Jade/Paper City.blend. Confirm the same three towers and composition. Tell your assistant whether to accept the revision and save that decision."
+    ],
+    "prompt": "Run the supplied Creative/build_scene.py with the installed Blender in background mode, using --out Studio/Jade and --rails jade after the script argument separator. Work from the workshop root. Do not overwrite an existing folder. Report Blender’s exit result and the three files created. Keep the baseline intact.",
+    "check": "Studio/Jade contains Paper City.blend, Paper City.glb and Postcard.png. The bridge rails changed; the roof heights, gate and camera framing agree with the starting render.",
+    "fix": "If Blender is missing, use the official installer in the software step. If Studio/Jade already exists, agree on a fresh path and use that name in the following steps. If the render failed, keep the log and baseline.",
+    "image": "images/desktop-class/jade.png",
+    "plate": [],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Blender and Godot",
+    "id": "play",
+    "title": "Run your exhibit in Godot",
+    "subtitle": "The starter viewer already has a camera, lighting and visitor controls.",
+    "actions": [
+      "Open Godot 4 Standard. In Project Manager choose Import, browse to Creative/GodotGallery/project.godot and select Import & Edit (or Import, then Edit). Wait for the GLB import.",
+      "Press the Play Project triangle (F5). Click Orbit left and Orbit right. Click Read wall label to reveal the code, then click Hide wall label.",
+      "Stop the running project (F8). Ask your assistant where the imported model lives, and which copy you should edit to preserve the working starter."
+    ],
+    "prompt": "Inspect Creative/GodotGallery without changing anything. Which file supplies the 3D city, which file defines the visitor controls, and which button reveals our archive code? Cite the paths and predict what I should see on first launch.",
+    "check": "You see the vermilion rails and all three towers. Orbit changes the view. The wall label reveals MOTH-27. The model is art/city.glb and the button behavior is in gallery.gd.",
+    "fix": "If Godot shows its empty project list, import project.godot rather than the GLB. If the view is blank, wait for import, then run the main project with F5. The project uses the Compatibility renderer.",
+    "image": "images/desktop-class/godot.png",
+    "plate": [],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "Blender and Godot",
+    "id": "handoff",
+    "title": "Carry your revision into the visitor experience",
+    "subtitle": "Make the handoff in a private copy, then test it as a visitor.",
+    "actions": [
+      "Stop Godot playback and send the prompt. If you used a different revision folder, substitute it for Studio/Jade.",
+      "Return to Godot Project Manager. Import Studio/Godot-Jade/project.godot and run this copy with F5. Orbit until the bridge rails are visible.",
+      "Open the wall label. Compare its code with SW-17. Record two verdicts in Studio/receipt.md: one for the imported geometry/material, one for the interaction."
+    ],
+    "prompt": "Copy Creative/GodotGallery to a new Studio/Godot-Jade folder, omitting generated .godot caches. In that copy only, replace art/city.glb with Studio/Jade/Paper City.glb. Keep the original project and its scripts intact. Tell me which project.godot to open next.",
+    "check": "The private Godot project shows jade rails, three towers and a working MOTH-27 reveal. You have taken an exhibition brief through a source-aware agent, Blender and a playable scene.",
+    "fix": "If the rails still look red, check which project window you launched and ask the assistant to compare the two GLB hashes. Focus the Godot editor so it can reimport the replacement.",
+    "image": "images/desktop-class/godot-jade.png",
+    "plate": [],
+    "links": [],
+    "notes": ""
+  },
+  {
+    "group": "After class",
+    "id": "phone",
+    "title": "Optional: make an Android postcard",
+    "subtitle": "Use the same Blender render in a small tappable Android experience.",
+    "actions": [
+      "If Android Studio is ready, ask your assistant to prepare the private copy below. Open Android Studio → Open, choose Studio/Android-Jade (the folder containing settings.gradle), then wait for Gradle sync.",
+      "If prompted, use Android Studio’s bundled JDK and install SDK Platform 35. Choose app in the run configuration and an available Android device in the device selector. Click Run ▶.",
+      "Tap Read wall label. Compare the image with your jade render and the code with the brief. You may leave this step for another day."
+    ],
+    "prompt": "Copy Creative/AndroidPostcard to a fresh Studio/Android-Jade. Replace only app/src/main/res/drawable-nodpi/postcard.png in that copy with Studio/Jade/Postcard.png. Tell me how to open this project in Android Studio. If the SDK or device is missing, explain the next click and wait for my choice.",
+    "check": "The app is a 2D postcard of your 3D scene. Tapping its button reveals MOTH-27. The Gradle project and starting image are included in the student kit.",
+    "fix": "If the device menu is empty, open Tools → Device Manager to create a virtual phone, or use a permitted physical Android phone with USB debugging. Defer if downloads exceed your time budget. A successful build alone does not verify the tap.",
+    "image": "images/desktop-class/jade.png",
+    "plate": [],
+    "links": [
+      [
+        "Android Studio: build and run",
+        "https://developer.android.com/studio/run"
+      ]
+    ],
+    "notes": ""
+  },
+  {
+    "group": "After class",
+    "id": "next",
+    "title": "Bring a decision to Part 2",
+    "subtitle": "Wednesday, November 11 · 11 a.m. ET · Let It Run",
+    "actions": [
+      "Repeat the gallery task once with a different small change and a fresh output. Bring your private summary: what you asked for, what the checker said, and what you accepted.",
+      "Save one friction point. For example: the agent found the file but missed the accepted version; or the model imported but the rail material changed.",
+      "Next week we will turn that single-job contract into a longer run with a budget, checkpoints and a recovery gate. We will revisit the scene handoff with Unreal in the deeper dive."
+    ],
+    "prompt": "Using my current memory and receipt, draft a Part 2 job proposal for comparing my Godot city with an Unreal import. Include the allowed inputs, a first checkpoint, time or retry budget, a stop condition and what I must inspect. Do not start it or install Unreal today.",
+    "check": "You have your own skill-enabled agent, cited workflow answers, two gallery pages, a restart note and a playable Godot project if you completed the creative route.",
+    "fix": "If you stopped early, resume at the first missing artifact. Your grade is the evidence you can show: a source, an output you inspected and a next step another session can find.",
+    "image": "images/ch3-loop.svg",
+    "plate": [],
+    "links": [],
+    "notes": ""
+  }
+]

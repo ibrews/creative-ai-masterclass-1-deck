@@ -8,7 +8,7 @@
 
 ## Masterclass fork
 
-The November 5 class uses Broadside by default. Edit the six chapters in `SECTIONS`, homework in `BONUS`, and the opening, recap and closing notes in `BOOKENDS`. Nine cases select inline SVG motion plates by their `motion` field. Each plate plays on slide entry and shows its completed diagram during export or reduced motion. Recorded demos use a local clip with presenter-controlled playback and a companion still for export. Worked examples and paired photographs share the normal case builder. The recap links back to the chapters and homework. See the fork README for the class sources.
+The November 5 class uses Broadside by default. Edit the desktop teaching route and the optional reference chapters in `SECTIONS`, homework in `BONUS`, and the opening, recap and closing notes in `BOOKENDS`. Nine cases select inline SVG motion plates by their `motion` field. Each plate plays on slide entry and shows its completed diagram during export or reduced motion. Recorded demos use a local clip with presenter-controlled playback and a companion still for export. Worked examples and paired photographs share the normal case builder. The recap links back to the chapters and homework. The 19-step desktop workbook is generated from classroom/lessons.json. Keep each guideStep ID aligned with its workbook anchor. Drive distributes the student bundle to the class. Blender and Godot are the hands-on creative route; Android is optional and Unreal is reserved for the next class. See the fork README for sources.
 
 ## What Is This?
 
