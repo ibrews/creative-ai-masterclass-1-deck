@@ -2,6 +2,8 @@
 name: acp-recipe-check
 description: Find and cite an ACP Second Brain course recipe, check its applicability, and answer a specific class workflow question.
 ---
+All Brain/ and Studio/ paths below start at the selected workshop project root. When Claude shows the installed skill's base directory, walk up three directories from that base to reach the workshop root. For example, from .claude/skills/acp-recipe-check/ the brief is ../../../Studio/show-brief.md. Resolve the full path before reading. Confirm that the same parent contains both Brain/ and Studio/. If a path fails, search for **/Studio/show-brief.md within the open project.
+
 Read only. Begin in the project's Brain directory and locate a relevant Markdown page. Open the actual page. Read its document ID, review status, supported environment and the passage that answers the question. For a question about this exhibition, open Studio/show-brief.md and cite its brief ID separately.
 
 Choose the starting file by the question:
