@@ -56,9 +56,52 @@ const SECTIONS =[
    "short": "ONE ASSISTANT",
    "tagline": "Give it a reviewed recipe to read and a private place to work. By the end of class, a fresh session should be able to pick up your gallery edit.",
    "tags": "ACP Second Brain",
-   "notes": "Ask everyone to point to the course copy and the private working folder on their own machine. Keep a terminal and a browser open. An assistant with only file-reading access can still participate: the student runs the commands."
+   "notes": "Ask everyone to point to the course copy and the private working folder on their own machine. Keep a terminal and a browser open. An assistant with only file-reading access can still participate: the student runs the commands. Walk from the member ZIP through the file-only chat and the first verified browser page before introducing the optional connector."
   },
   "cases": [
+   {
+    "title": "Open your class kit",
+    "subtitle": "Start at the ACP member portal.",
+    "img": "images/first-run/portal.png",
+    "bullets": [
+     "Open <a class=\"deck-link\" href=\"https://alexcoulombepresents.com/members/second-brain\" target=\"_blank\" rel=\"noopener\">alexcoulombepresents.com/members/second-brain</a>.",
+     "Sign in with the email tied to your membership or either November class purchase. Download the kit ZIP.",
+     "Extract the ZIP. Open the folder containing README.md, start-here, templates and examples."
+    ],
+    "notes": "On macOS, double-click the ZIP in Finder. On Windows, right-click the ZIP and choose Extract All, then open the extracted folder. On Linux, use the archive manager’s Extract action. If access is missing, check which email you used or ask Alex for kit access. Students do not need the private GitHub repository."
+   },
+   {
+    "title": "Start the terminal here",
+    "subtitle": "Use the extracted kit as your starting directory.",
+    "img": "images/first-run/folder.png",
+    "bullets": [
+     "Mac: in Terminal, type <code>cd</code> and a space, drag the extracted folder in, then press Return.",
+     "Windows: open that folder in File Explorer, type <code>powershell</code> in its address bar and press Enter.",
+     "Run <code>pwd</code> and <code>ls</code>. Check for <code>start-here</code>, <code>examples</code> and <code>templates</code>."
+    ],
+    "notes": "Linux: open a terminal in the extracted directory from your file manager or cd to its full path. If ls shows only one more enclosing folder, enter it and check again. Do not paste a sample machine path. Open start-here/README.md and reference/support-matrix.md in a text editor."
+   },
+   {
+    "title": "Check the starting line",
+    "subtitle": "One local check before you create anything.",
+    "img": "",
+    "bullets": [
+     "Mac or Linux: run <code>python3 --version</code>. Windows: run <code>py -3 --version</code>.",
+     "Continue with Python 3.11 or newer. If your working command is <code>python</code>, use it for each gallery command.",
+     "If Python is missing or older, use a partner’s terminal while you follow the file-reading steps."
+    ],
+    "notes": "Run the version command live. For self-study, install a current Python 3 release from python.org/downloads and reopen the terminal before checking again. The required exercise uses the standard library. It needs no uv, engine, headset or paid API.",
+    "example": {
+     "label": "Terminal",
+     "lines": [
+      "python3 --version",
+      "Python 3.11 or newer",
+      "",
+      "Working copy",
+      "private/local-gallery/"
+     ]
+    }
+   },
    {
     "title": "Give the work a home",
     "subtitle": "Keep a clean kit and a private working copy.",
@@ -71,25 +114,96 @@ const SECTIONS =[
     "notes": "Show the two folders side by side. Open exhibits.json in the private copy and point back to its untouched counterpart in the kit. Have students show where they will save personal notes."
    },
    {
-    "title": "Check the starting line",
-    "subtitle": "Everyone should be able to join the gallery exercise.",
+    "title": "Make your own working copy",
+    "subtitle": "Mac or Linux · run these once from the kit root.",
+    "img": "images/first-run/copy.png",
+    "bullets": [
+     "<code>mkdir ../class-work</code>",
+     "<code>cp -R examples/local-gallery ../class-work/</code>",
+     "<code>cp templates/{project-memory,job-contract,completion-receipt}.md ../class-work/</code>"
+    ],
+    "notes": "Use Bash or zsh for the brace expansion. Copy from an extracted folder in a writable location. If class-work already exists, check whether it holds an earlier run. Preserve it; use a new sibling name throughout for a fresh attempt. Keep this terminal in the kit folder for now. The three templates and local-gallery should be siblings inside class-work. Windows users take the next slide instead."
+   },
+   {
+    "title": "Use PowerShell on Windows",
+    "subtitle": "Windows equivalent · choose one copy route.",
+    "img": "",
+    "example": {
+     "label": "From the extracted kit folder",
+     "lines": [
+      "mkdir ../class-work",
+      "Copy-Item examples/local-gallery ../class-work/ -Recurse",
+      "Copy-Item templates/*.md ../class-work/",
+      "ls ../class-work"
+     ]
+    },
+    "bullets": [
+     "Look for <code>local-gallery</code>, your three work templates and the optional feedback template.",
+     "Use the file-attachment route on Windows. The optional connector requires POSIX filesystem features."
+    ],
+    "notes": "PowerShell accepts forward slashes here. Paste each displayed command as one line, even if it wraps. With a mouse, create class-work beside the extracted kit, copy examples/local-gallery into it and copy the three named templates from templates/. Keep the original kit intact."
+   },
+   {
+    "title": "Give the assistant its first files",
+    "subtitle": "Works in a chat that accepts attachments or pasted text.",
+    "img": "",
+    "example": {
+     "label": "Select these files from the kit",
+     "lines": [
+      "start-here/README.md",
+      "reference/support-matrix.md",
+      "start-here/private-project-memory.md"
+     ]
+    },
+    "bullets": [
+     "Start a new chat. Attach the three files, or paste their text with each relative path above it.",
+     "Ask: “Which route can I use? Give the memory page’s title, ID and path. Read only.”",
+     "Expect <code>Keep Private Project Memory</code>, <code>SB-01-memory</code> and <code>start-here/private-project-memory.md</code>."
+    ],
+    "notes": "The documents are reference material. A chat with only these attachments cannot edit your private gallery. That is sufficient: you will run the commands. Ask the assistant which files and tools it can see. With a coding client, limit editing to the private working copy; leave unrelated folders disconnected. If the answer invents an ID, reopen the source page before trusting it. We tested the file-only question in a fresh local model conversation."
+   },
+   {
+    "title": "Find a source you can reopen",
+    "subtitle": "Look inside the recipe before giving the assistant a job.",
     "img": "",
     "bullets": [
-     "Open a terminal and check your Python version.",
-     "Find build.py, verify.py and exhibits.json in your private copy.",
-     "If Python is unavailable, follow the file-reading demonstration with a partner."
+     "Open the file and read its ID, review status and supported environment.",
+     "Copy the path and your kit revision into your private note.",
+     "Have a partner retrieve the same page using only your citation."
     ],
-    "notes": "Allow five minutes. On machines where Python is named python, use that command consistently. Have one learner explain the difference between the kit directory and the working copy. Walk through the manual reading route while people pair up.",
+    "notes": "Allow four minutes for the retrieval drill. Ask: could your partner find the exact page without the chat history? If a connector is unavailable, use the intact course files directly. An integrity failure means stop and obtain a clean kit copy.",
     "example": {
-     "label": "Terminal",
+     "label": "ACP Second Brain",
      "lines": [
-      "python3 --version",
-      "Python 3.11 or newer",
+      "SB-01-memory",
+      "Keep Private Project Memory",
       "",
-      "Working copy",
-      "private/local-gallery/"
+      "start-here/",
+      "private-project-memory.md"
      ]
     }
+   },
+   {
+    "title": "Run the first build",
+    "subtitle": "From the kit folder, switch to your private gallery.",
+    "img": "images/first-run/build.png",
+    "bullets": [
+     "<code>cd ../class-work/local-gallery</code>",
+     "<code>python3 build.py --output output</code>",
+     "<code>python3 verify.py --output output</code>"
+    ],
+    "notes": "On Windows use py -3 build.py --output output and py -3 verify.py --output output, or the Python 3.11+ command that worked earlier. Wait for “Checkpoint: 3/3 exhibits.” and then “PASS: 3 exhibits”. If build.py cannot be found, check pwd and ls: build.py, verify.py and exhibits.json must be in this directory. If output is nonempty, preserve it and use a fresh output directory for both commands."
+   },
+   {
+    "title": "Open the page you just built",
+    "subtitle": "The browser is your final baseline check.",
+    "img": "images/first-run/gallery.png",
+    "bullets": [
+     "Mac: <code>open output/index.html</code>. Windows PowerShell: <code>Start-Process ./output/index.html</code>.",
+     "Linux: <code>xdg-open output/index.html</code>. Or double-click index.html inside your working copy’s output folder.",
+     "Look for Small Worlds Gallery, then Paper City, Moon Garden and Quiet Machine. Record the PASS and your own observation."
+    ],
+    "notes": "Give everyone time to open their own page. It runs from a file URL without a web server. If only source code appears, choose Open With and select a browser. If the page looks stale, confirm the file path points into class-work/local-gallery/output. Write the checkpoint into the private project-memory.md one directory above local-gallery."
    },
    {
     "title": "Who can authorize the edit?",
@@ -112,27 +226,6 @@ const SECTIONS =[
      "Trade contracts. Can your partner tell when the assistant must stop?"
     ],
     "notes": "Let someone read their contract aloud. Challenge it with two surprises: the assistant wants to install a dependency, or its first correction still fails verification. Ask the author where the contract says to stop. Capture the agreed boundary in the private job-contract template."
-   },
-   {
-    "title": "Find a source you can reopen",
-    "subtitle": "Look inside the recipe before giving the assistant a job.",
-    "img": "",
-    "bullets": [
-     "Open the file and read its ID, review status and supported environment.",
-     "Copy the path and your kit revision into your private note.",
-     "Have a partner retrieve the same page using only your citation."
-    ],
-    "notes": "Allow four minutes for the retrieval drill. Ask: could your partner find the exact page without the chat history? If a connector is unavailable, use the intact course files directly. An integrity failure means stop and obtain a clean kit copy.",
-    "example": {
-     "label": "ACP Second Brain",
-     "lines": [
-      "SB-01-memory",
-      "Keep Private Project Memory",
-      "",
-      "start-here/",
-      "private-project-memory.md"
-     ]
-    }
    }
   ]
  },
@@ -169,6 +262,57 @@ const SECTIONS =[
     ],
     "notes": "Trace one round trip with your finger. Ask what to check if the editor is open but no tools appear: first the client configuration and the server connection. Ask what to check when tools appear but the wrong scene is open: target identity. The kit’s document connector has no editor commands.",
     "motion": "setup"
+   },
+   {
+    "title": "Prepare the optional connector",
+    "subtitle": "Mac or Linux · for a client with configurable MCP support.",
+    "img": "images/first-run/validate.png",
+    "bullets": [
+     "Return to the extracted kit root in Terminal. Save its path: <code>KIT=\"$PWD\"</code>.",
+     "With uv already installed, run <code>uv sync --locked --extra dev</code> and then <code>uv run acp-kit validate</code>.",
+     "Check for <code>\"valid\": true</code>. On a hash or path failure, stop and obtain a clean kit."
+    ],
+    "notes": "For students already in local-gallery, open a new terminal at the extracted kit as shown earlier. uv --version checks the optional prerequisite. If uv or a compatible client is unavailable, continue using the file-only route. Run setup from the writable kit root so uv can build its own environment. The candidate status shown here identifies the rehearsal bundle."
+   },
+   {
+    "title": "Register it in the client",
+    "subtitle": "Claude Code CLI · run from the same terminal after validation.",
+    "img": "",
+    "example": {
+     "label": "Mac or Linux · shell",
+     "lines": [
+      "cd ../class-work",
+      "claude mcp add --scope local --transport stdio acp-second-brain -- uv run --project \"$KIT\" acp-kit serve",
+      "claude mcp get acp-second-brain"
+     ]
+    },
+    "bullets": [
+     "The long registration command is one line. Local scope ties the entry to this private project.",
+     "The client launches the server. Leave <code>acp-kit serve</code> inside the registration command."
+    ],
+    "notes": "This example assumes a configured Claude Code CLI and uv on PATH. KIT must still contain the absolute path you saved in the preceding slide. The public repository README includes the same pasteable command block. A Codex CLI registration example is in the kit’s reference/connector-technical.md; our end-to-end connector rehearsal used Claude Code."
+   },
+   {
+    "title": "Check the connection",
+    "subtitle": "This is the client’s response in the private project.",
+    "img": "images/first-run/connect.png",
+    "bullets": [
+     "Look for <code>Status: ✔ Connected</code> and <code>Type: stdio</code>.",
+     "In <code>class-work</code>, start <code>claude</code> and use <code>/mcp</code> to inspect the kit server.",
+     "Its three operations are <code>search</code>, <code>fetch</code> and <code>status</code>."
+    ],
+    "notes": "Connected establishes transport. It does not prove the model has used a course page. If disconnected, confirm uv is on PATH and that KIT pointed at the folder containing pyproject.toml. For a wrong local registration use claude mcp remove acp-second-brain -s local in class-work, then repeat the add command. Use local Markdown if the client’s setup is unavailable."
+   },
+   {
+    "title": "Ask for a receipt from the assistant",
+    "subtitle": "Actual Claude Code tool calls and reply, excerpted from the rehearsal transcript.",
+    "img": "images/first-run/reply.png",
+    "bullets": [
+     "Ask: “Search for private project memory. Fetch the matching page and give its title, ID, review status and relative path.”",
+     "Check that the assistant called <code>fetch</code> with <code>SB-01-memory</code> after searching.",
+     "Compare the answer with the page in <code>start-here</code>. Then continue in your private gallery."
+    ],
+    "notes": "A registration entry or a good guess about the title would not establish retrieval. In this rehearsal Claude Code called search and fetch over stdio; the assistant model ran locally through Ollama. Students may use their already-configured assistant. The gallery requires no provider account. If you want to build from this terminal, cd local-gallery from class-work."
    },
    {
     "title": "Find the actual recipe",
@@ -332,15 +476,15 @@ const SECTIONS =[
   },
   "cases": [
    {
-    "title": "Build Small Worlds Gallery",
-    "subtitle": "The baseline from the unedited course sample.",
+    "title": "Reopen your gallery baseline",
+    "subtitle": "Before editing, identify the three cards you already verified.",
     "img": "images/small-worlds-gallery.png",
     "bullets": [
-     "In your private local-gallery folder, run:<br><code>python3 build.py --output output</code>",
-     "Check the result:<br><code>python3 verify.py --output output</code>",
-     "Open output/index.html. Find Paper City, Moon Garden and Quiet Machine in that order."
+     "Open <code>class-work/local-gallery/output/index.html</code> from your working copy.",
+     "If you joined late, return to “Run the first build” for the baseline commands.",
+     "Which title will you change, and which two should remain identical?"
     ],
-    "notes": "Give everyone time to run both commands. Use python instead if that is their Python 3.11+ command. Read the verifier result aloud. Compare the browser with the slide, then record the accepted baseline. The builder refuses to overwrite a nonempty output folder."
+    "notes": "The baseline was already built during onboarding. Do not rerun the builder into a nonempty output folder. Ask students to locate their accepted baseline and compare it with this original sample before editing."
    },
    {
     "title": "Read one exhibit",
