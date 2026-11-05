@@ -2269,7 +2269,7 @@ body[data-look="broadside"]:not(#_) .case-title{font-size:clamp(2rem,2.9em,3.5re
 .workflow-index{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;max-width:100%}
 .workflow-index button{color:inherit;background:transparent;border:0;border-block:1px solid currentColor;font:inherit;font-size:clamp(18px,2.5vw,38px);padding:.65em;cursor:pointer}
 .workflow-index small{display:block;color:var(--acc-1,var(--teal));font-size:.52em;letter-spacing:.12em;margin-bottom:.6em}
-body[data-look="broadside"]:not(#_) #brand{opacity:1;color:var(--ink-2)}
+body[data-look="broadside"]:not(#_) #brand{position:absolute;left:36px;bottom:0;height:25px;line-height:25px;pointer-events:none;opacity:1;color:var(--ink-2)}
 body[data-look="broadside"]:not(#_) #deck{--t-body:clamp(1rem,calc(1.6*var(--vw)),1.7rem)}
 .motion-plate{width:100%;height:auto;display:block;color:#231b14}
 @keyframes plate-arrive{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -2288,7 +2288,7 @@ body[data-look="broadside"]:not(#_) #deck{--t-body:clamp(1rem,calc(1.6*var(--vw)
  body[data-look="broadside"]:not(#_):not(.stage-on) .case-content{flex:0 1 auto;width:100%}
  body[data-look="broadside"]:not(#_):not(.stage-on) .case-bl{gap:5px}
  body[data-look="broadside"]:not(#_):not(.stage-on) #sd-frame{display:none}
- body[data-look="broadside"]:not(.stage-on) #brand{left:24px;top:22px;bottom:auto}
+ body[data-look="broadside"]:not(.stage-on) #brand{left:24px;top:22px;bottom:auto;height:auto;line-height:1.2}
 }
 </style></head>
 <body>
@@ -5125,5 +5125,11 @@ updateHUD();
 })();
 </script>
 <!-- ── SD LOOK RUNTIME END ── -->
+<script>
+// Broadside’s running furniture shares the scaled slide frame.
+if(document.body.dataset.look==='broadside'){
+  document.getElementById('deck').appendChild(document.getElementById('brand'));
+}
+</script>
 </body>
 </html>
