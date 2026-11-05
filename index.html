@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Creative AI Workflow Masterclass, Part 1 · Alex Coulombe Presents</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" sizes="32x32" href="favicon-32.png">
+<link rel="icon" sizes="16x16" href="favicon-16.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="description" content="Set Up From Scratch: go from nothing to a working creative AI setup with agents, tool connections and a memory. Thursday Nov 5, 12p ET, live.">
 <meta property="og:title" content="Creative AI Workflow Masterclass, Part 1 · Alex Coulombe Presents">
@@ -44,38 +47,50 @@
               Optional title/subtitle renders as frosted-glass overlay.
    'IFRAME:'  Prefix c.img with 'IFRAME:' to embed a URL (YouTube, etc.)
    ======================================================================= */
-const SECTIONS = [
+const SECTIONS =[
  {
   "year": "CH 1",
   "accent": "teal",
   "lesson": {
-   "title": "Start With One Assistant.\nGive It a Home.",
+   "title": "Start With One Assistant",
    "short": "ONE ASSISTANT",
-   "tagline": "You do not need the perfect setup. You need one assistant that can read the files you choose, and a private folder it can work in. Everything else in this class builds on that.",
-   "tags": "Claude Code · Codex · Any MCP client"
+   "tagline": "Give it a reviewed recipe to read and a private place to work. By the end of class, a fresh session should be able to pick up your gallery edit.",
+   "tags": "ACP Second Brain",
+   "notes": "Ask everyone to point to the course copy and the private working folder on their own machine. Keep a terminal and a browser open. An assistant with only file-reading access can still participate: the student runs the commands."
   },
   "cases": [
    {
-    "title": "Pick a Setup, Then Stop Shopping",
-    "subtitle": "The course kit stays read-only. Your work lives next to it.",
+    "title": "Give the work a home",
+    "subtitle": "Keep a clean kit and a private working copy.",
     "img": "images/ch1-home.svg",
     "bullets": [
-     "Any assistant that can read files you select works; terminal and file-edit access are helpful, not required",
-     "Make a private project folder outside the course kit for memory, notes and output",
-     "Copy in the templates: project memory, job contract, completion receipt"
+     "Choose one assistant that can read files you select.",
+     "Outside the kit, make a private folder. Copy in local-gallery and the memory, job contract and receipt templates.",
+     "For the exercise, open a terminal with Python 3.11+."
     ],
-    "notes": "Keep this practical. The point is to commit to one setup tonight, not to compare tools. Show the folder layout live."
+    "notes": "Show the two folders side by side. Open exhibits.json in the private copy and point back to its untouched counterpart in the kit. Have students show where they will save personal notes."
    },
    {
-    "title": "Knowledge Is Not Permission",
-    "subtitle": "Reading a recipe never authorizes you to run it",
+    "title": "Who can authorize the edit?",
+    "subtitle": "A recipe describes the steps. You decide which ones to take.",
     "img": "images/ch1-permission.svg",
     "bullets": [
-     "A recipe can explain a command without granting permission to run it, spend money, publish, or open private work",
-     "Give the assistant the smallest useful access: one folder, one task, a budget, a stop gate",
-     "The kit's connector only searches, fetches and reports status. No shell, no arbitrary URLs, no telemetry"
+     "Name the file the assistant may change.",
+     "Set a budget of one edit and one correction.",
+     "Stop on malformed data, an unexpected file change or a failed check after the correction."
     ],
-    "notes": "This is the safety habit that makes the overnight work in Part 2 possible. Say it plainly."
+    "notes": "Offer a deliberately vague instruction: “Improve the gallery.” Ask the room what it authorizes. Rewrite it together: “Change the displayed title of paper-city in my private exhibits.json. Keep the ID and other exhibits.” Name both allowed output folders before running anything."
+   },
+   {
+    "title": "Write the job before you run it",
+    "subtitle": "Pair exercise · one minute to draft, one minute to challenge",
+    "img": "images/ch1-permission.svg",
+    "bullets": [
+     "“Rename Paper City to Paper City at Dusk in my private exhibits.json.”",
+     "Allow the baseline and edited output folders. Keep IDs, order and descriptions intact.",
+     "Trade contracts. Can your partner tell when the assistant must stop?"
+    ],
+    "notes": "Let someone read their contract aloud. Challenge it with two surprises: the assistant wants to install a dependency, or its first correction still fails verification. Ask the author where the contract says to stop. Capture the agreed boundary in the private job-contract template."
    }
   ]
  },
@@ -83,33 +98,57 @@ const SECTIONS = [
   "year": "CH 2",
   "accent": "purple",
   "lesson": {
-   "title": "Connect It to the Tools\nYou Already Use.",
+   "title": "What Can Your Assistant Ask For?",
    "short": "MCP",
-   "tagline": "MCP is how an assistant gets a list of tools it is allowed to call. Point it at Unreal, Blender or Godot and it can look at your scene, not just talk about it. Start by looking.",
-   "tags": "Unreal · Blender · Godot · MCP"
+   "tagline": "A connector gives your assistant a vocabulary. Inspect its tool list before you ask it to act.",
+   "tags": "Model Context Protocol · Read-only retrieval",
+   "notes": "Start with the course connector. Ask learners to predict whether it can rename a file. Then contrast its tool list with the separate Blender setup from SensAI. No engine installation is part of this exercise."
   },
   "cases": [
    {
-    "title": "How an MCP Connection Works",
-    "subtitle": "The assistant, a server that lists tools, and your app",
+    "title": "Follow a request",
+    "subtitle": "An MCP client asks a server which tools it offers.",
     "img": "images/ch2-mcp.svg",
     "bullets": [
-     "The assistant asks the server what it can do; the server answers with a tool list",
-     "Each creative app has its own server: Unreal, Blender and Godot servers exist",
-     "Nothing is installed automatically. You add the configuration yourself and can remove it"
+     "The ACP Second Brain connector can search, fetch and report status.",
+     "Unreal, Blender and Godot are optional tracks with separate setups.",
+     "Check the support matrix before choosing an engine track."
     ],
-    "notes": "Live demo slot: show one scene-info call in the app you use most. Keep it read-only."
+    "notes": "Trace the route from assistant to server. The diagram shows optional engine connections. Switch back to the course kit: the document connector has no command for editing a scene or running a shell."
    },
    {
-    "title": "Start Read-Only",
-    "subtitle": "Look first. Change one thing. Verify. Then widen.",
+    "title": "Find the actual recipe",
+    "subtitle": "Follow the answer back to a reviewed page.",
+    "img": "",
+    "bullets": [
+     "Search for “private project memory.”",
+     "Fetch SB-01-memory and check its environment and review status.",
+     "Save its ID, path and kit revision with your job."
+    ],
+    "notes": "Let the request and response travel in opposite directions. Open start-here/private-project-memory.md and compare the page with the search result. Without a connector, read the same file manually. A reported kit integrity failure requires a clean copy.",
+    "motion": "retrieval"
+   },
+   {
+    "title": "Small tools, clearer requests",
+    "subtitle": "In the SensAI Blender demo, tool design changed what the model could do.",
+    "img": "images/sensai-blender.png",
+    "bullets": [
+     "With a free-form code tool, the local model sometimes printed the call instead of executing it.",
+     "The demo exposed small operations with named arguments. The model could issue the calls and Alex could inspect the viewport.",
+     "Try the same precision here: name paper-city and the title field."
+    ],
+    "notes": "Show the Blender scene from SensAI. Ask which light “the light” refers to, then use the naming example hero_lighting_key. Have the class rewrite “fix the gallery” with one target and a visible acceptance test. The Blender setup was specific to that demo."
+   },
+   {
+    "title": "Start read-only",
+    "subtitle": "Decide when you need to watch and when a command will do.",
     "img": "images/ch2-readonly.svg",
     "bullets": [
-     "Begin with status, search and scene info: calls that change nothing",
-     "Then one small, undoable change you can see with your own eyes",
-     "The class practice project needs no Unreal and no headset, so everyone can finish it"
+     "In a live editor, inspect the scene before authorizing an edit.",
+     "A headless task can build files with the editor closed. Our gallery builder works this way.",
+     "Open the result in a browser to judge the change."
     ],
-    "notes": "Tool tracks beyond the practice project have separate support gates. Say which ones you rehearsed."
+    "notes": "Recall the two SensAI loops. Ask learners to sort three tasks: inspect a light, rebuild the gallery, decide if a title reads well. Run the builder in the terminal and switch to the browser for the last decision. No Unreal, headset or paid API is required."
    }
   ]
  },
@@ -117,39 +156,97 @@ const SECTIONS = [
   "year": "CH 3",
   "accent": "amber",
   "lesson": {
-   "title": "Give It a Memory.\nThen Prove It Works.",
+   "title": "What Survives a Restart?",
    "short": "MEMORY",
-   "tagline": "An assistant forgets everything when you close it. A short note in your private folder is what lets a fresh session pick up exactly where you stopped. Then you restart it to prove it.",
-   "tags": "Project memory · Checkpoints · Verification"
+   "tagline": "Close the chat. Could someone find the last gallery you accepted, explain your edit and take the next safe step?",
+   "tags": "Private memory · Independent evidence",
+   "notes": "Ask a partner to play the next session. Give them only the note. Listen for where the files live, what the verifier checked and which decision still belongs to the artist."
   },
   "cases": [
    {
-    "title": "A Note a New Session Can Pick Up",
-    "subtitle": "Five lines that survive a restart",
-    "img": "images/ch3-memory.svg",
+    "title": "Build Small Worlds Gallery",
+    "subtitle": "The baseline from the unedited course sample.",
+    "img": "images/small-worlds-gallery.png",
     "bullets": [
-     "Goal, last accepted checkpoint, limits, next safe step, and the evidence behind them",
-     "Keep it outside the course kit so personal and client material never mixes with it",
-     "A restart is the test: a fresh session should recover the goal, checkpoint, limits and next step"
+     "In your private local-gallery folder, run:<br><code>python3 build.py --output output</code>",
+     "Check the result:<br><code>python3 verify.py --output output</code>",
+     "Open output/index.html. Find Paper City, Moon Garden and Quiet Machine in that order."
     ],
-    "notes": "Do the restart on stage with the real note. If it fails, that is the lesson."
+    "notes": "Give everyone time to run both commands. Use python instead if that is their Python 3.11+ command. Read the verifier result aloud. Compare the browser with the slide, then record the accepted baseline. The builder refuses to overwrite a nonempty output folder."
    },
    {
-    "title": "The Loop You Will Repeat",
-    "subtitle": "Find a recipe, define the job, change one thing, inspect, save",
+    "title": "Keep both versions",
+    "subtitle": "One title edit should leave a small, visible difference.",
+    "img": "",
+    "bullets": [
+     "Edit the displayed title of paper-city in exhibits.json. Keep its ID.",
+     "Build and verify again using output-edited as the destination.",
+     "Compare both pages. Are the other two titles and the order intact?"
+    ],
+    "notes": "The animation uses Paper City at Dusk as an example edit. Keep output/ intact. Run python3 build.py --output output-edited and python3 verify.py --output output-edited. Compare pages side by side. Record both the verifier output and the visual decision.",
+    "motion": "checkpoint"
+   },
+   {
+    "title": "A file can open and still be wrong",
+    "subtitle": "In the UE5 interchange class, we compared the same scene across three renderers.",
+    "img": "images/three-renderers.jpg",
+    "bullets": [
+     "In that scene, stock GLB lost a red material override and dropped the rect and sky lights.",
+     "The file opened. Comparing the result with the source exposed the loss.",
+     "Apply that test to the gallery: a valid file can still have the wrong title."
+    ],
+    "notes": "Ask the room to choose one feature to follow before comparing images. The earlier class compared Unreal, Godot and Three.js; its stock export table records the override and light losses. These are observations from that scene. Ask what evidence would catch an accidental change to Moon Garden."
+   },
+   {
+    "title": "Follow the red material",
+    "subtitle": "One object from the UE5 class, three observed outcomes.",
+    "img": "",
+    "motion": "material",
+    "bullets": [
+     "Start with the red flat-color override in the source scene.",
+     "Stock USD and stock GLB both returned gray in this test. The UnRealityKit bridge kept the red.",
+     "Pick one property in your own work and compare that property at the destination."
+    ],
+    "notes": "Let the swatches resolve before naming the outputs. Ask: if the object name and mesh survived, would a count of imported objects catch this difference? Compare a kept material with a lost override. These outcomes describe the class scene and settings, not every export."
+   },
+   {
+    "title": "Write the restart note",
+    "subtitle": "Leave the next session enough evidence to begin.",
+    "img": "images/ch3-memory.svg",
+    "bullets": [
+     "State the goal and the last version you accepted.",
+     "Record limits, commands, verifier output and what you saw.",
+     "Name one safe next step. Save the note outside the kit."
+    ],
+    "notes": "Demonstrate a first line such as “Baseline accepted in output/; edited title awaiting my visual review.” Ask a student which folder they would open. If they hesitate, add the exact private path. Keep client details out of the course repository."
+   },
+   {
+    "title": "Test the handoff",
+    "subtitle": "A fresh session is the reader of your note.",
     "img": "images/ch3-loop.svg",
     "bullets": [
-     "Build the fictional gallery, then make one bounded change: a title, an order, a color",
-     "The verifier checks the build. It does not decide whether you like the result, so open the page yourself",
-     "Part 2 reuses the same loop for jobs that run while you are away"
+     "Close the conversation. Give a fresh session the private memory note.",
+     "Ask for the goal, checkpoint, limits and next step before it changes anything.",
+     "If it guesses, revise the note and try the handoff again."
     ],
-    "notes": "This is the exercise they do after class. Walk the first command together so nobody is stuck."
+    "notes": "Let the class see the new conversation start empty. Compare its answer to your saved note. Ask it to cite the evidence for acceptance. If the note records only a successful build, pause before it claims you approved the design."
    }
   ]
  }
 ];
 
-const BONUS = {"year": "HOMEWORK", "title": "Build It, Change It,\nRestart It.", "tagline": "Before Part 2: run the fictional gallery, make one change, save your private note, close the assistant and reopen it. If a fresh session can tell you the goal and the next step, you are ready to hand it a long job."};
+const BONUS = {"year": "HOMEWORK", "title": "Bring back the evidence", "tagline": "Before Part 2, bring the baseline, the edited gallery and the note that let a fresh session resume. Be ready to show one change you accepted or rejected.", "notes": "Give learners a minute to choose a title, order or color edit. Point them to workflows/between-class-practice.md. Ask for the two output folders, the verification result and the restart answer."};
+const BOOKENDS = {
+ "cover": {
+  "notes": "Welcome everyone to the noon–2 p.m. Eastern session. Show the gallery finish line first: a local page someone else can rebuild and inspect. Check for Python 3.11+ and a terminal. No paid API, headset or engine is needed."
+ },
+ "map": {
+  "notes": "Ask a learner to narrate the whole route in their own words. Which step retrieves knowledge? Who approves an edit? Where does the evidence live after the chat closes? Select a chapter if the room wants to revisit it."
+ },
+ "close": {
+  "notes": "Part 2 meets Wednesday, November 11 at 11 a.m. Eastern. Ask someone to show the evidence their fresh session recovered. Leave the class page up for materials and take questions."
+ }
+};
 </script>
 <script>
 /* ── SD SLIDE MODULE REGISTRY ──────────────────────────────────────────────
@@ -1550,7 +1647,37 @@ body[data-look="transit"]:not(#_) #map-svg text{fill:var(--ink)!important}
 body[data-look="transit"]:not(#_) .lesson-rule{margin-left:0;margin-right:auto}
 </style>
 <!-- ── SD LOOKS END ── -->
-</head>
+<style>@font-face{font-family:'ACP Slab';src:url('media/type/alfa-slab-one/AlfaSlabOne-Regular.ttf')}@font-face{font-family:'ACP Book';src:url('media/type/eb-garamond/EBGaramond.ttf');font-weight:400 800}@font-face{font-family:'ACP Book';src:url('media/type/eb-garamond/EBGaramond-Italic.ttf');font-weight:400 800;font-style:italic}
+body[data-look="broadside"]:not(#_){--font-display:'ACP Slab',Georgia,serif;--font-body:'ACP Book',Georgia,serif}
+body[data-look="broadside"]:not(#_) .case-image img{filter:none;border-radius:0!important}
+body[data-look="broadside"]:not(#_) .talk-title{font-size:clamp(3rem,6.4em,7.3rem)}
+body[data-look="broadside"]:not(#_) .lesson-title{font-size:clamp(3rem,5em,5.6rem)}
+body[data-look="broadside"]:not(#_) .case-title{font-size:clamp(2rem,2.9em,3.5rem)}
+.case-bl code{font-size:.8em;overflow-wrap:anywhere}
+.workflow-index{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;max-width:100%}
+.workflow-index button{color:inherit;background:transparent;border:0;border-block:1px solid currentColor;font:inherit;font-size:clamp(18px,2.5vw,38px);padding:.65em;cursor:pointer}
+.workflow-index small{display:block;color:var(--acc-1,var(--teal));font-size:.52em;letter-spacing:.12em;margin-bottom:.6em}
+body[data-look="broadside"]:not(#_) #brand{opacity:1;color:var(--ink-2)}
+body[data-look="broadside"]:not(#_) #deck{--t-body:clamp(1rem,calc(1.6*var(--vw)),1.7rem)}
+.motion-plate{width:100%;height:auto;display:block;color:#231b14}
+@keyframes plate-arrive{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes plate-trace{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:no-preference){
+ body:not(.shot-mode,.print-mode,.reduced-motion,.vertical-mode) .active .beat{animation:plate-arrive .6s var(--delay) both}
+ body:not(.shot-mode,.print-mode,.reduced-motion,.vertical-mode) .active .trace{stroke-dasharray:1;animation:plate-trace .95s var(--delay) both}
+}
+@media(max-width:600px) and (orientation:portrait){
+ body[data-look="broadside"]:not(#_):not(.stage-on) #deck::after{inset:12px;border-width:3px}
+ body[data-look="broadside"]:not(#_):not(.stage-on) .slide{padding:34px 28px;gap:0}
+ body[data-look="broadside"]:not(#_):not(.stage-on) .talk-title,body[data-look="broadside"]:not(#_):not(.stage-on) .lesson-title,body[data-look="broadside"]:not(#_):not(.stage-on) .close-title{font-size:clamp(28px,8.8vw,49px)}
+ body[data-look="broadside"]:not(#_):not(.stage-on) .case-title{font-size:clamp(19px,6vw,30px);margin:.25em 0}
+ body[data-look="broadside"]:not(#_):not(.stage-on) .case-image{width:86%;max-width:340px;flex:none;max-height:32dvh;margin:0 auto 14px}
+ body[data-look="broadside"]:not(#_):not(.stage-on) .case-image>*{max-height:32dvh;object-fit:contain}
+ body[data-look="broadside"]:not(#_):not(.stage-on) .case-content{flex:0 1 auto;width:100%}
+ body[data-look="broadside"]:not(#_):not(.stage-on) .case-bl{gap:5px}
+ body[data-look="broadside"]:not(#_):not(.stage-on) #sd-frame{display:none}
+}
+</style></head>
 <body>
 <div class="bg"><div class="bg-gradient"></div><canvas id="stars"></canvas><div class="bg-overlay bg-overlay--aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div><div class="bg-overlay bg-overlay--ember"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div><div class="bg-overlay bg-overlay--ghost"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div><div class="bg-overlay bg-overlay--nebula"><div class="swirl"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div><div class="bg-overlay bg-overlay--extreme"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div></div></div>
 <div id="deck"></div>
@@ -1568,6 +1695,7 @@ body[data-look="transit"]:not(#_) .lesson-rule{margin-left:0;margin-right:auto}
   function wantStage(w,h){
     if(fitParam==='stage')return true;
     if(fitParam==='off')return false;
+    if(document.body.dataset.look==="broadside" && w<=600 && h>=660 && h>w)return false;
     return w<MIN_W||h<MIN_H;
   }
   function fit(){
@@ -1584,6 +1712,29 @@ body[data-look="transit"]:not(#_) .lesson-rule{margin-left:0;margin-right:auto}
   window._fitStage=fit;
 })();
 </script>
+<template id="motion-material"><svg class="motion-plate" viewBox="0 0 800 560" role="img" aria-label="Red source swatch compared with gray stock USD and GLB results and red UnRealityKit output."><rect width="800" height="560" fill="#efe6d2"/><g fill="#231b14" font-family="Georgia,serif"><text x="48" y="66" font-size="36">Where the color changed</text><path d="M48 86H752" stroke="#463f36"/><rect x="58" y="221" width="125" height="125" fill="#b92117"/><text x="120" y="384" text-anchor="middle" font-size="24">UE source</text><g class="beat" style="--delay:1.0s"><path class="trace" d="M205 280 H270 L340 167 H400" pathLength="1" fill="none" stroke="#a3271f" stroke-width="3"/><rect x="415" y="137" width="60" height="60" fill="#888582"/><text x="496" y="175" font-size="29">Stock USD</text><text x="748" y="175" text-anchor="end" font-size="22" font-style="italic">Gray</text></g><g class="beat" style="--delay:2.6s"><path class="trace" d="M205 280 H270 L340 283 H400" pathLength="1" fill="none" stroke="#a3271f" stroke-width="3"/><rect x="415" y="253" width="60" height="60" fill="#888582"/><text x="496" y="291" font-size="29">Stock GLB</text><text x="748" y="291" text-anchor="end" font-size="22" font-style="italic">Gray</text></g><g class="beat" style="--delay:4.2s"><path class="trace" d="M205 280 H270 L340 399 H400" pathLength="1" fill="none" stroke="#a3271f" stroke-width="3"/><rect x="415" y="369" width="60" height="60" fill="#b92117"/><text x="496" y="407" font-size="29">UnRealityKit</text><text x="748" y="407" text-anchor="end" font-size="22" font-style="italic">Red</text></g><text x="48" y="514" font-size="21" font-style="italic">Class test · flat-color material override</text></g></svg></template>
+<template id="motion-retrieval"><svg class="motion-plate" viewBox="0 0 800 560" role="img" aria-label="Request and reply sequence between the assistant and the course kit." xmlns="http://www.w3.org/2000/svg">
+ <rect width="800" height="560" fill="#efe6d2"/><g fill="#231b14" font-family="Georgia,serif">
+ <text x="48" y="66" font-size="36">Inside one lookup</text><path d="M48 86H752" stroke="currentColor"/>
+ <g font-size="25" font-style="italic"><text x="50" y="141">Assistant</text><text x="610" y="141">Course kit</text></g>
+ <path d="M105 160V492 M685 160V492" stroke="#a99b83" stroke-dasharray="3 6"/>
+ <g text-anchor="middle" font-size="24"><g class="beat" style="--delay:0.0s"><text x="395" y="180">Search “private project memory”</text>
+ <path class="trace" d="M105 202 H685" pathLength="1" fill="none" stroke="#a3271f" stroke-width="3"/><path d="M685 202 l-13 -6 v12 z" fill="#a3271f"/></g><g class="beat" style="--delay:1.35s"><text x="395" y="273">Return a matching ID</text>
+ <path class="trace" d="M685 295 H105" pathLength="1" fill="none" stroke="#a3271f" stroke-width="3"/><path d="M105 295 l13 -6 v12 z" fill="#a3271f"/></g><g class="beat" style="--delay:2.7s"><text x="395" y="366">Fetch SB-01-memory</text>
+ <path class="trace" d="M105 388 H685" pathLength="1" fill="none" stroke="#a3271f" stroke-width="3"/><path d="M685 388 l-13 -6 v12 z" fill="#a3271f"/></g><g class="beat" style="--delay:4.050000000000001s"><text x="395" y="459">Return the reviewed page</text>
+ <path class="trace" d="M685 481 H105" pathLength="1" fill="none" stroke="#a3271f" stroke-width="3"/><path d="M105 481 l13 -6 v12 z" fill="#a3271f"/></g></g><text x="48" y="529" fill="#7c3126" font-size="21" font-style="italic">The answer carries a source you can reopen.</text></g></svg></template>
+<template id="motion-checkpoint"><svg class="motion-plate" viewBox="0 0 800 560" role="img" aria-label="A baseline is preserved as a second gallery is built, verified and inspected." xmlns="http://www.w3.org/2000/svg">
+ <rect width="800" height="560" fill="#efe6d2"/><g fill="#231b14" font-family="Georgia,serif">
+ <text x="48" y="66" font-size="36">One edit, two outputs</text><path d="M48 86H752" stroke="currentColor"/>
+ <g class="beat" style="--delay:0s"><rect x="48" y="130" width="270" height="227" fill="#f8f2e5" stroke="#534536"/>
+ <text x="68" y="170" font-size="24" font-style="italic">output/</text><path d="M68 189H298" stroke="#95866c"/>
+ <g font-size="25"><text x="68" y="232">Paper City</text><text x="68" y="279">Moon Garden</text><text x="68" y="326">Quiet Machine</text></g></g>
+ <g class="beat" style="--delay:1.3s"><path class="trace" d="M330 235H448" pathLength="1" stroke="#a3271f" stroke-width="3"/><path d="M450 235l-12 -6v12z" fill="#a3271f"/><text x="389" y="218" text-anchor="middle" font-size="20">rebuild</text></g>
+ <g class="beat" style="--delay:2.5s"><rect x="466" y="130" width="286" height="227" fill="#f8f2e5" stroke="#534536"/>
+ <text x="486" y="170" font-size="24" font-style="italic">output-edited/</text><path d="M486 189H732" stroke="#95866c"/>
+ <g font-size="25"><text x="486" y="232" fill="#a3271f" font-weight="bold">Paper City at Dusk</text><text x="486" y="279">Moon Garden</text><text x="486" y="326">Quiet Machine</text></g></g>
+ <g class="beat" style="--delay:4s"><path d="M48 399H752" stroke="#8c7964"/><text x="48" y="443" font-size="24">Verifier</text><text x="229" y="443" font-size="23">Does the output match the edited input?</text></g>
+ <g class="beat" style="--delay:5.5s"><text x="48" y="497" font-size="24" fill="#a3271f">Your decision</text><text x="229" y="497" font-size="23">Is that the title you wanted?</text></g></g></svg></template>
 <div id="counter"></div>
 <div id="brand">Alex Coulombe Presents</div>
 <div id="step-indicator"></div>
@@ -1675,7 +1826,7 @@ const _activeAudioCtxs=new Set();
 {const _OAC=window.AudioContext||window.webkitAudioContext;const _PAC=function(...a){const c=new _OAC(...a);_activeAudioCtxs.add(c);const oc=c.close.bind(c);c.close=function(){_activeAudioCtxs.delete(c);return oc();};return c;};_PAC.prototype=_OAC.prototype;window.AudioContext=_PAC;if(window.webkitAudioContext)window.webkitAudioContext=_PAC;}
 window._killAllSfx=function(){_activeAudioCtxs.forEach(c=>{try{c.close();}catch(e){}});_activeAudioCtxs.clear();_sfxCtx=null;(window._sfxKillHooks||[]).forEach(fn=>{try{fn();}catch(e){}});};window._sfxKillHooks=[];
 let _sfxCtx=null;
-function sfxCtx(){if(!_sfxCtx)_sfxCtx=new(window.AudioContext||window.webkitAudioContext)();if(_sfxCtx.state==='suspended')_sfxCtx.resume();return _sfxCtx;}
+function sfxCtx(){if(!_sfxCtx)_sfxCtx=new(window.AudioContext||window.webkitAudioContext)();if(_sfxCtx.state==='suspended')_sfxCtx.resume().catch(()=>{});return _sfxCtx;}
 function playWhoosh(){try{const c=sfxCtx(),t=c.currentTime;const bufLen=c.sampleRate*0.25;const buf=c.createBuffer(1,bufLen,c.sampleRate);const d=buf.getChannelData(0);for(let i=0;i<bufLen;i++)d[i]=Math.random()*2-1;const s=c.createBufferSource();s.buffer=buf;const bp=c.createBiquadFilter();bp.type='bandpass';bp.frequency.value=900;bp.Q.value=0.6;const g=c.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(0.08,t+0.04);g.gain.exponentialRampToValueAtTime(0.001,t+0.22);s.connect(bp);bp.connect(g);g.connect(c.destination);s.start(t);s.stop(t+0.25);}catch(e){}}
 function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.setValueAtTime(72,t);o.frequency.exponentialRampToValueAtTime(38,t+.18);o.connect(g);g.connect(c.destination);g.gain.setValueAtTime(.007,t);g.gain.exponentialRampToValueAtTime(.001,t+.22);o.start(t);o.stop(t+.23);}catch(e){}}
 
@@ -1766,7 +1917,7 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
     stop(){ts.forEach(clearTimeout);ts.clear();iv.forEach(clearInterval);iv.clear();gen++;}};}
   let _audio=null;
   // The deck's _killAllSfx() closes every AudioContext on slide change; hand out a fresh one after that.
-  function audio(){if(INSTANT)return null;try{if(!_audio||_audio.state==='closed')_audio=new(window.AudioContext||window.webkitAudioContext)();if(_audio.state==='suspended')_audio.resume();return _audio;}catch(e){return null;}}
+  function audio(){if(INSTANT)return null;try{if(!_audio||_audio.state==='closed')_audio=new(window.AudioContext||window.webkitAudioContext)();if(_audio.state==='suspended')_audio.resume().catch(()=>{});return _audio;}catch(e){return null;}}
   function call(r,fn,...a){const f=r.inst&&r.inst[fn];if(typeof f!=='function')return;try{return f.apply(r.inst,a);}catch(e){console.error('SD: '+r.id+'.'+fn+'() threw',e);}}
   function resolveSteps(def,c,props){const n=c.steps!=null?c.steps:(typeof def.steps==='function'?def.steps(props):def.steps);return Math.max(0,Math.floor(+n||0));}
   const esc=x=>String(x).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1853,7 +2004,7 @@ function playBing(){try{const c=sfxCtx(),t=c.currentTime,o=c.createOscillator(),
 
 // Cover
 const cov=document.createElement('div');cov.className='slide active';cov.dataset.type='cover';
-cov.innerHTML=`<div class="event-tag">Live class &middot; Thu Nov 5, 2026 &middot; 12p ET</div><h1 class="talk-title">Creative AI<br>Workflow Masterclass</h1><p class="talk-subtitle">Part 1: Set Up From Scratch</p><div class="speaker-card"><div><div class="speaker-name">Alex Coulombe</div><div class="speaker-co">Alex Coulombe Presents</div></div></div>`;
+cov.innerHTML=`<div class="event-tag">Live class &middot; Thu Nov 5, 2026 &middot; 12–2p ET</div><h1 class="talk-title">Creative AI<br>Workflow Masterclass</h1><p class="talk-subtitle">Part 1: Set Up From Scratch</p><div class="speaker-card"><div><div class="speaker-name">Alex Coulombe</div><div class="speaker-co">Alex Coulombe Presents</div></div></div>`;
 deck.appendChild(cov);allSlides.push(cov);
 
 // Build sections
@@ -1979,11 +2130,13 @@ SECTIONS.forEach((sec,si)=>{
       return;
     }
     let imgHTML;
-    if(c.img&&c.img.startsWith('IFRAME:')){
+    if(c.motion){
+      imgHTML=document.getElementById("motion-"+c.motion).innerHTML;
+    } else if(c.img&&c.img.startsWith('IFRAME:')){
       const iframeSrc=c.img.slice(7);
       imgHTML=`<iframe src="${iframeSrc}" style="width:100%;height:100%;border:none;border-radius:18px" allow="autoplay;fullscreen;xr-spatial-tracking" allowfullscreen></iframe>`;
     } else if(c.img&&c.img!=='MEDIA_CYCLER'){
-      imgHTML=`<img src="${c.img}" loading="lazy" style="border-radius:18px">`;
+      imgHTML=`<img src="${c.img}" alt="${c.subtitle}" style="border-radius:18px">`;
     } else {
       imgHTML=`<div class="media-cycler-mount" style="width:100%;height:100%"></div>`;
     }
@@ -1994,118 +2147,24 @@ SECTIONS.forEach((sec,si)=>{
 
 // Bonus
 const bon=document.createElement('div');bon.className='slide slide-lesson slide-bonus';bon.dataset.type='bonus';bon.dataset.year=BONUS.year;
-bon.innerHTML=`<div class="year-ghost">${BONUS.year}</div><div class="lesson-ey"><span class="ey-yr">${BONUS.year}</span><span class="ey-sep">&middot;</span><span class="ey-badge" style="color:var(--amber)">${BONUS.year||'CODA'}</span></div><h2 class="lesson-title">${BONUS.title}</h2><p class="lesson-tagline">${BONUS.tagline.replace(/<br><br>/g,'<br><span class="para-gap"></span>')}</p><div class="lesson-rule" style="background:var(--amber)"></div>`;
+bon.innerHTML=`<div class="year-ghost">${BONUS.year}</div><div class="lesson-ey"><span class="ey-badge" style="color:var(--amber)">${BONUS.year||'CODA'}</span></div><h2 class="lesson-title">${BONUS.title}</h2><p class="lesson-tagline">${BONUS.tagline.replace(/<br><br>/g,'<br><span class="para-gap"></span>')}</p><div class="lesson-rule" style="background:var(--amber)"></div>`;
 deck.appendChild(bon);allSlides.push(bon);
-
-// 3D Monocle on Bonus slide
-(function(){
-  const container=document.createElement('div');
-  container.style.cssText='position:absolute;right:10%;top:50%;transform:translateY(-50%);width:300px;height:300px;pointer-events:auto;z-index:2';
-  bon.appendChild(container);
-  const canvas=document.createElement('canvas');
-  canvas.width=600;canvas.height=600;
-  canvas.style.cssText='width:100%;height:100%;cursor:grab';
-  container.appendChild(canvas);
-  let running=false,renderer,scene,camera,group,rafId;
-  let isDragging=false,prevMouse={x:0,y:0},autoRotate=true,resumeTimer;
-  async function init(){
-    if(running)return;
-    const THREE=await import('three');
-    scene=new THREE.Scene();
-    camera=new THREE.PerspectiveCamera(40,1,0.1,100);
-    camera.position.set(0,0,8);
-    renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
-    renderer.setSize(600,600);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-    // Lights
-    scene.add(new THREE.AmbientLight(0x8888cc,0.5));
-    const dLight=new THREE.DirectionalLight(0xffffff,1.2);
-    dLight.position.set(5,5,5);scene.add(dLight);
-    const pLight=new THREE.PointLight(0x00d4ff,0.3);
-    pLight.position.set(0,0,2.5);scene.add(pLight);
-    // Materials
-    const ringMat=new THREE.MeshStandardMaterial({color:0xf59e0b,metalness:0.7,roughness:0.3});
-    const lensMat=new THREE.MeshStandardMaterial({color:0x00d4ff,transparent:true,opacity:0.15,metalness:0.1,roughness:0.4,side:THREE.DoubleSide});
-    const cordMat=new THREE.MeshStandardMaterial({color:0xd97706,metalness:0.6,roughness:0.35});
-    // Group
-    group=new THREE.Group();
-    // Torus (monocle ring)
-    const torus=new THREE.Mesh(new THREE.TorusGeometry(2,0.15,24,64),ringMat);
-    group.add(torus);
-    // Lens disc
-    const lens=new THREE.Mesh(new THREE.CircleGeometry(1.85,48),lensMat);
-    group.add(lens);
-    // Cord curve
-    const curve=new THREE.CatmullRomCurve3([
-      new THREE.Vector3(0,-2,0),
-      new THREE.Vector3(-0.6,-2.8,0.3),
-      new THREE.Vector3(-1.2,-3.5,0.1),
-      new THREE.Vector3(-1.0,-4.2,-0.2)
-    ]);
-    const tube=new THREE.Mesh(new THREE.TubeGeometry(curve,20,0.06,8,false),cordMat);
-    group.add(tube);
-    // Eyepiece sphere
-    const eyepiece=new THREE.Mesh(new THREE.SphereGeometry(0.18,16,16),cordMat);
-    eyepiece.position.set(-1.0,-4.2,-0.2);
-    group.add(eyepiece);
-    scene.add(group);
-    // Drag rotation
-    canvas.addEventListener('mousedown',onDown);
-    canvas.addEventListener('touchstart',onTouchDown,{passive:false});
-    window.addEventListener('mousemove',onMove);
-    window.addEventListener('touchmove',onTouchMove,{passive:false});
-    window.addEventListener('mouseup',onUp);
-    window.addEventListener('touchend',onUp);
-    running=true;autoRotate=true;let baseX=0;
-    function animate(){
-      if(!running){rafId=null;return;}
-      if(autoRotate){
-        group.rotation.y+=0.005;
-        group.rotation.x=baseX+Math.sin(Date.now()*0.0008)*0.15;
-      } else {
-        baseX=group.rotation.x;
-      }
-      renderer.render(scene,camera);
-      rafId=requestAnimationFrame(animate);
-    }
-    rafId=requestAnimationFrame(animate);
-  }
-  function onDown(e){isDragging=true;prevMouse={x:e.clientX,y:e.clientY};canvas.style.cursor='grabbing';autoRotate=false;clearTimeout(resumeTimer);}
-  function onTouchDown(e){if(e.touches.length===1){e.preventDefault();isDragging=true;prevMouse={x:e.touches[0].clientX,y:e.touches[0].clientY};autoRotate=false;clearTimeout(resumeTimer);}}
-  function onMove(e){if(!isDragging||!group)return;const dx=e.clientX-prevMouse.x,dy=e.clientY-prevMouse.y;group.rotation.y+=dx*0.01;group.rotation.x+=dy*0.01;prevMouse={x:e.clientX,y:e.clientY};}
-  function onTouchMove(e){if(!isDragging||!group||e.touches.length!==1)return;e.preventDefault();const dx=e.touches[0].clientX-prevMouse.x,dy=e.touches[0].clientY-prevMouse.y;group.rotation.y+=dx*0.01;group.rotation.x+=dy*0.01;prevMouse={x:e.touches[0].clientX,y:e.touches[0].clientY};}
-  function onUp(){if(!isDragging)return;isDragging=false;canvas.style.cursor='grab';resumeTimer=setTimeout(()=>{autoRotate=true;},2000);}
-  function dispose(){
-    running=false;
-    if(rafId){cancelAnimationFrame(rafId);rafId=null;}
-    clearTimeout(resumeTimer);isDragging=false;autoRotate=true;
-    canvas.removeEventListener('mousedown',onDown);
-    canvas.removeEventListener('touchstart',onTouchDown);
-    window.removeEventListener('mousemove',onMove);
-    window.removeEventListener('touchmove',onTouchMove);
-    window.removeEventListener('mouseup',onUp);
-    window.removeEventListener('touchend',onUp);
-    if(renderer){renderer.dispose();renderer=null;}
-    if(scene){scene.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material){if(Array.isArray(o.material))o.material.forEach(m=>m.dispose());else o.material.dispose();}});scene=null;}
-    group=null;camera=null;
-  }
-  new MutationObserver(()=>{
-    if(bon.classList.contains('active')){setTimeout(init,400);}
-    else if(running){dispose();}
-  }).observe(bon,{attributes:true,attributeFilter:['class']});
-  if(bon.classList.contains('active'))setTimeout(init,400);
-})();
 
 // Map
 const mapS=document.createElement('div');mapS.className='slide slide-map';mapS.dataset.type='map';
-mapS.innerHTML=`<div class="map-label">The Journey, Mapped</div><svg id="map-svg" viewBox="0 0 1000 600"></svg>`;
+mapS.innerHTML=`<h2 class="lesson-title">Your workflow</h2><nav class="workflow-index" aria-label="Revisit a chapter"></nav>`;
+const workflowNav=mapS.querySelector('nav');
+[...SECTIONS.map((sec,i)=>[sec.year,sec.lesson.short,lessonIdxs[i]]),[BONUS.year,'Practice',allSlides.indexOf(bon)]].forEach(([label,title,idx])=>{
+  const button=document.createElement('button');button.innerHTML=`<small>${label}</small>${title}`;
+  button.addEventListener('click',event=>{event.stopPropagation();if(!window._moveMode)goTo(idx);});workflowNav.appendChild(button);
+});
 deck.appendChild(mapS);allSlides.push(mapS);
 
 // Close slide with inline Agile Lens SVG logo
 const cls=document.createElement('div');cls.className='slide';cls.dataset.type='close';
 cls.innerHTML=`<div class="close-ey">See you in Part 2</div><h2 class="close-title">Build it. Restart it.</h2><p class="close-sub">Part 2: Let It Run &middot; Wed Nov 11, 11a ET</p>
-<div class="contact-row"><div class="contact-pill"><span class="lbl">Class page</span>alexcoulombepresents.com/classes/2026-11-04-creative-ai-masterclass-part-1</div></div>
-<div class="close-qr-row"><div class="qr-card"><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://alexcoulombepresents.com/classes/2026-11-04-creative-ai-masterclass-part-1" alt="QR code for the class page"><div class="qr-label">Class page</div><div class="qr-badge b-teal">Materials + recording</div></div></div>`;
+<div class="contact-row"><a class="contact-pill" href="https://alexcoulombepresents.com/classes/2026-11-04-creative-ai-masterclass-part-1">Open the class page ↗</a></div>
+<div class="close-qr-row"><div class="qr-card"><img src="images/class-page.svg" alt="QR code for the class page"><div class="qr-label">Class page</div><div class="qr-badge b-teal">Materials + recording</div></div></div>`;
 deck.appendChild(cls);allSlides.push(cls);
 
 SD._wire();
@@ -2222,25 +2281,6 @@ if(sl.classList.contains('active')){window._activeCycler=api;start();}}
 
 // Init gradient placeholders on case slides
 allSlides.forEach(sl=>{if(sl.dataset.type!=='case')return;const mount=sl.querySelector('.media-cycler-mount');if(!mount)return;const sec=SECTIONS[+sl.dataset.section];const acc=sec?.accent||'teal';const cols={teal:['rgba(0,212,255,.18)','rgba(6,8,16,.4)'],purple:['rgba(167,139,250,.18)','rgba(6,8,16,.4)'],amber:['rgba(245,158,11,.18)','rgba(6,8,16,.4)'],rose:['rgba(244,63,94,.18)','rgba(6,8,16,.4)']};const[c1,c2]=cols[acc]||cols.teal;const tl=sl.querySelector('.case-title')?.textContent||'';buildMediaCycler(sl,[{type:'gradient',color1:c1,color2:c2,label:tl.substring(0,30)}],{imageDuration:99999});});
-
-// Map constellation
-let mapDone=false;const LSHORT=SECTIONS.map(s=>s.lesson.short||s.lesson.title.split('\n')[0]);
-const MX=500,MY=290,MR=200,SDEG=90,STEP=360/SECTIONS.length;
-function mPos(i){const a=(SDEG+i*STEP)*Math.PI/180;return{x:MX+MR*Math.cos(a),y:MY+MR*Math.sin(a)};}
-const CL=[];for(let i=0;i<SECTIONS.length;i++)CL.push([i,(i+2)%SECTIONS.length]);
-const CA=mPos(SECTIONS.length-1),CB={x:MX+MR*1.35,y:MY+MR*0.85};
-function startMap(){if(mapDone)return;mapDone=true;const svg=document.getElementById('map-svg');svg.innerHTML='';const CIRC=2*Math.PI*MR;
-const defs=svgE('defs');const f=svgE('filter',{id:'gl',x:'-40%',y:'-40%',width:'180%',height:'180%'});f.appendChild(svgE('feGaussianBlur',{stdDeviation:'3',result:'b'}));const mg=svgE('feMerge');mg.appendChild(svgE('feMergeNode',{in:'b'}));mg.appendChild(svgE('feMergeNode',{in:'SourceGraphic'}));f.appendChild(mg);defs.appendChild(f);svg.appendChild(defs);
-svg.appendChild(svgE('circle',{cx:MX,cy:MY,r:MR,fill:'none',stroke:'rgba(0,212,255,.12)','stroke-width':'1.5'}));
-CL.forEach(([a,b])=>{const pa=mPos(a),pb=mPos(b);const l=svgE('line',{x1:pa.x,y1:pa.y,x2:pb.x,y2:pb.y,stroke:'rgba(0,212,255,.10)','stroke-width':'0.7',opacity:'0'});l.style.transition='opacity .6s';svg.appendChild(l);setTimeout(()=>l.setAttribute('opacity','1'),1800+a*200);});
-const ring=svgE('circle',{cx:MX,cy:MY,r:MR,fill:'none',stroke:'rgba(0,212,255,.85)','stroke-width':'3','stroke-dasharray':CIRC,'stroke-dashoffset':CIRC,'stroke-linecap':'round',transform:`rotate(90 ${MX} ${MY})`,filter:'url(#gl)'});svg.appendChild(ring);
-const rs=performance.now();(function ar(now){const k=Math.min(1,(now-rs)/2200);const e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;ring.setAttribute('stroke-dashoffset',CIRC*(1-e));if(k<1)requestAnimationFrame(ar);})(rs);
-const cc={x:(CA.x+CB.x)/2+30,y:(CA.y+CB.y)/2+20};const cord=svgE('path',{d:`M${CA.x} ${CA.y} Q${cc.x} ${cc.y} ${CB.x} ${CB.y}`,fill:'none',stroke:'rgba(245,158,11,.55)','stroke-width':'1.8','stroke-dasharray':'200','stroke-dashoffset':'200','stroke-linecap':'round',filter:'url(#gl)'});svg.appendChild(cord);
-setTimeout(()=>{const t0=performance.now();(function ac(now){const k=Math.min(1,(now-t0)/800);cord.setAttribute('stroke-dashoffset',200*(1-k));if(k<1)requestAnimationFrame(ac);})(t0);},2400);
-for(let i=0;i<SECTIONS.length;i++){const p=mPos(i),dx=p.x-MX,dy=p.y-MY,len=Math.hypot(dx,dy),ld=34,lx=p.x+(dx/len)*ld,ly=p.y+(dy/len)*ld;const anc=p.x>MX+20?'start':p.x<MX-20?'end':'middle';const g=svgE('g',{opacity:'0',style:'cursor:pointer'});g.style.transition='opacity .4s';g.appendChild(svgE('circle',{cx:p.x,cy:p.y,r:'16',fill:'rgba(0,212,255,.02)',stroke:'rgba(0,212,255,.08)','stroke-width':'0.5'}));g.appendChild(svgE('circle',{cx:p.x,cy:p.y,r:'4.5',fill:'rgba(0,212,255,.15)',stroke:'rgba(0,212,255,.65)','stroke-width':'1.5'}));const yr=svgE('text',{x:lx,y:ly,'text-anchor':anc,fill:'rgba(0,212,255,.8)','font-family':'Space Grotesk,sans-serif','font-size':'10.5','font-weight':'600','letter-spacing':'1.2'});yr.textContent=SECTIONS[i].year;g.appendChild(yr);const tl=svgE('text',{x:lx,y:ly+14,'text-anchor':anc,fill:'rgba(255,255,255,.4)','font-family':'Space Grotesk,sans-serif','font-size':'7','font-weight':'500','letter-spacing':'1'});tl.textContent=LSHORT[i];g.appendChild(tl);g.addEventListener('click',()=>{if(window._moveMode)return;let li=lessonIdxs[i];if(li===undefined){const found=allSlides.findIndex(sl=>sl.dataset.type==='case'&&sl.dataset.section===String(i));if(found>=0)li=found;}if(li!==undefined)goTo(li);});svg.appendChild(g);setTimeout(()=>g.setAttribute('opacity','1'),600+i*300);}
-const bg=svgE('g',{opacity:'0',style:'cursor:pointer'});bg.style.transition='opacity .4s';bg.appendChild(svgE('circle',{cx:CB.x,cy:CB.y,r:'6',fill:'rgba(245,158,11,.3)',stroke:'rgba(245,158,11,.7)','stroke-width':'1.5'}));const bl=svgE('text',{x:CB.x+14,y:CB.y+4,fill:'rgba(245,158,11,.8)','font-family':'Space Grotesk,sans-serif','font-size':'10','font-weight':'600','letter-spacing':'1'});bl.textContent=String(BONUS.year).toUpperCase()==='BONUS'?'BONUS':BONUS.year+' BONUS';bg.appendChild(bl);bg.addEventListener('click',()=>{if(window._moveMode)return;const bi=allSlides.findIndex(s=>s.dataset.type==='bonus');if(bi>=0)goTo(bi);});svg.appendChild(bg);setTimeout(()=>bg.setAttribute('opacity','1'),3200);
-const ct=svgE('text',{x:MX,y:MY-10,'text-anchor':'middle',fill:'rgba(255,255,255,.12)','font-family':'Space Grotesk,sans-serif','font-size':'14','font-weight':'600','letter-spacing':'4'});ct.textContent='IS XR RIGHT';svg.appendChild(ct);const ct2=svgE('text',{x:MX,y:MY+12,'text-anchor':'middle',fill:'rgba(255,255,255,.08)','font-family':'Space Grotesk,sans-serif','font-size':'10','font-weight':'500','letter-spacing':'2'});ct2.textContent='FOR YOUR PROJECT?';svg.appendChild(ct2);}
-new MutationObserver(()=>{if(mapS.classList.contains('active'))startMap();}).observe(mapS,{attributes:true,attributeFilter:['class']});
 
 // Animation scrubber
 (function(){const bar=document.createElement('div');bar.id='anim-scrub-bar';bar.style.cssText='position:fixed;bottom:72px;left:50%;transform:translateX(-50%);z-index:1100;display:none;align-items:center;gap:10px;background:rgba(6,8,16,.92);border:1px solid rgba(245,158,11,.4);border-radius:10px;padding:10px 14px;backdrop-filter:blur(10px);font-family:var(--font);font-size:.7rem;color:var(--amber)';bar.innerHTML=`<button id="scrub-replay" style="background:rgba(245,158,11,.15);color:var(--amber);border:1px solid rgba(245,158,11,.4);border-radius:5px;padding:5px 10px;font:inherit;cursor:pointer">Replay</button><button id="scrub-pp" style="background:rgba(245,158,11,.15);color:var(--amber);border:1px solid rgba(245,158,11,.4);border-radius:5px;padding:5px 10px;font:inherit;cursor:pointer;width:70px">Pause</button><div id="scrub-track" style="position:relative;width:360px;height:28px;display:flex;align-items:center"><input id="scrub-r" type="range" min="0" max="5000" value="0" step="10" style="width:100%;accent-color:var(--amber);position:relative;z-index:2"><div id="kf-markers" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1"></div></div><span id="scrub-t" style="min-width:60px;text-align:right;color:rgba(245,158,11,.8)">0 ms</span><button id="kf-set" title="Set keyframe for last-moved element at current time" style="background:rgba(245,158,11,.15);color:var(--amber);border:1px solid rgba(245,158,11,.4);border-radius:5px;padding:5px 8px;font:inherit;cursor:pointer">◆ KF</button><button id="kf-del" title="Delete keyframe at current time" style="background:rgba(244,63,94,.15);color:var(--rose);border:1px solid rgba(244,63,94,.4);border-radius:5px;padding:5px 8px;font:inherit;cursor:pointer;display:none">✕ KF</button>`;document.body.appendChild(bar);const rng=bar.querySelector('#scrub-r'),tl=bar.querySelector('#scrub-t'),pp=bar.querySelector('#scrub-pp'),rp=bar.querySelector('#scrub-replay');let paused=false;function sa(){const s=allSlides[current];return s?.getAnimations?.({subtree:true})||[];}rng.addEventListener('input',()=>{paused=true;pp.textContent='Play';const v=+rng.value;tl.textContent=v+' ms';sa().forEach(a=>{a.pause();try{a.currentTime=v;}catch(e){}});if(window._kfUpdateDel)window._kfUpdateDel(v);});pp.addEventListener('click',()=>{paused=!paused;if(paused){sa().forEach(a=>a.pause());pp.textContent='Play';}else{sa().forEach(a=>a.play());pp.textContent='Pause';}});rp.addEventListener('click',()=>{paused=false;pp.textContent='Pause';if(window._kfRebuild)window._kfRebuild();const n=current;if(n>0){goTo(n-1);setTimeout(()=>goTo(n),560);}if(window._kfRenderMarkers)setTimeout(window._kfRenderMarkers,1200);});window.scrubShow=(on)=>{bar.style.display=on?'flex':'none';if(on&&window._kfRenderMarkers)setTimeout(window._kfRenderMarkers,100);};window._scrubPaused=()=>paused;window._scrubTime=()=>+rng.value;window._scrubRange=()=>rng;})();
@@ -2489,10 +2529,8 @@ function getSlideNotes(idx){
     let caseIdx=0;for(let j=lessonIdxs[si]+1;j<idx;j++){if(allSlides[j]?.dataset.type==='case')caseIdx++;}
     return SECTIONS[si].cases[caseIdx]?.notes||'';
   }
-  if(ty==='bonus')return'Bonus lesson: rally the audience. This is the call to action. Build energy and end strong.';
-  if(ty==='cover')return'Welcome the audience. Wait for stragglers. Introduce yourself and the talk theme.';
-  if(ty==='close')return'Wrap up. Point to the QR codes. Thank the audience. Open for questions.';
-  if(ty==='map')return'The constellation map is a visual summary of the journey. Let it breathe for a moment before moving on.';
+  if(ty==='bonus')return BONUS.notes;
+  if(BOOKENDS[ty])return BOOKENDS[ty].notes;
   if(ty==='settings')return'Settings slide. Not shown to the audience during presentation mode.';
   return'';
 }
@@ -3833,11 +3871,11 @@ updateHUD();
 // ── Spatial Deck looks runtime (tools/apply_look.py) ──
 (function(){
   const LOOKS=["noir", "atlas", "bauhaus", "broadside", "cyanotype", "folio", "gallery", "house", "memo", "riso", "sheet", "swiss", "transit"];const P=new URLSearchParams(location.search);
-  let look=P.get('look')||document.body.dataset.look||window.SD_LOOK||'noir';if(!LOOKS.includes(look))look='noir';
-  document.body.dataset.look=look;window.SD_ACTIVE_LOOK=look;
+  let look=P.get('look')||document.body.dataset.look||window.SD_LOOK||'broadside';if(!LOOKS.includes(look))look='noir';
+  document.body.dataset.look=look;window.SD_ACTIVE_LOOK=look;if(window._fitStage)window._fitStage();
   // chrome (independent of the look): full = running frame, counter, wordmark and section kickers on every slide;
   // quiet = none of that on content slides, wordmark only on cover and close; none = chapter cards lose their kicker too
-  const CHROMES=['full','quiet','none'];let chrome=P.get('chrome')||document.body.dataset.chrome||window.SD_CHROME||'quiet';if(!CHROMES.includes(chrome))chrome='full';
+  const CHROMES=['full','quiet','none'];let chrome=P.get('chrome')||document.body.dataset.chrome||window.SD_CHROME||'full';if(!CHROMES.includes(chrome))chrome='full';
   document.body.dataset.chrome=chrome;window.SD_ACTIVE_CHROME=chrome;
   const deck0=document.getElementById('deck');const slideType=()=>{const a=deck0.querySelector('.slide.active');document.body.dataset.slide=a?(a.dataset.type||''):'';};
   if(deck0){new MutationObserver(slideType).observe(deck0,{subtree:true,attributes:true,attributeFilter:['class']});slideType();}

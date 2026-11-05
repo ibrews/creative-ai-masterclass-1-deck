@@ -6,6 +6,10 @@
 
 ---
 
+## Masterclass fork
+
+The November 5 class uses Broadside by default. Edit the three chapters in `SECTIONS`, homework in `BONUS`, and the opening, recap and closing notes in `BOOKENDS`. Three cases select inline SVG motion plates by their `motion` field. Each plate plays on slide entry and shows its completed diagram during export or reduced motion. The recap links back to the chapters and homework. See the fork README for the class sources.
+
 ## What Is This?
 
 Spatial Deck is a single-file HTML presentation framework. Everything — CSS, JS, config, and content — lives in `index.html`. No build process, no dependencies (except Three.js via CDN for the optional constellation map).
@@ -31,7 +35,7 @@ index.html
     ├── buildMediaCycler() function
     ├── Auto-wrap static images
     ├── Explicit media cycler IIFEs
-    ├── Map constellation builder (startMap)
+    ├── Clickable workflow recap
     ├── Slide navigation (goTo, nextVisible, slideSteps)
     ├── Annotation system
     ├── Move mode + undo/redo
