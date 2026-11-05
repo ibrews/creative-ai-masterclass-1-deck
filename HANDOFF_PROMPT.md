@@ -8,7 +8,7 @@
 
 ## Masterclass fork
 
-The November 5 class uses Broadside by default. Edit the three chapters in `SECTIONS`, homework in `BONUS`, and the opening, recap and closing notes in `BOOKENDS`. Three cases select inline SVG motion plates by their `motion` field. Each plate plays on slide entry and shows its completed diagram during export or reduced motion. The recap links back to the chapters and homework. See the fork README for the class sources.
+The November 5 class uses Broadside by default. Edit the six chapters in `SECTIONS`, homework in `BONUS`, and the opening, recap and closing notes in `BOOKENDS`. Nine cases select inline SVG motion plates by their `motion` field. Each plate plays on slide entry and shows its completed diagram during export or reduced motion. Recorded demos use a local clip with presenter-controlled playback and a companion still for export. Worked examples and paired photographs share the normal case builder. The recap links back to the chapters and homework. See the fork README for the class sources.
 
 ## What Is This?
 
