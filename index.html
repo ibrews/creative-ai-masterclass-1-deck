@@ -71,6 +71,27 @@ const SECTIONS =[
     "notes": "Show the two folders side by side. Open exhibits.json in the private copy and point back to its untouched counterpart in the kit. Have students show where they will save personal notes."
    },
    {
+    "title": "Check the starting line",
+    "subtitle": "Everyone should be able to join the gallery exercise.",
+    "img": "",
+    "bullets": [
+     "Open a terminal and check your Python version.",
+     "Find build.py, verify.py and exhibits.json in your private copy.",
+     "If Python is unavailable, follow the file-reading demonstration with a partner."
+    ],
+    "notes": "Allow five minutes. On machines where Python is named python, use that command consistently. Have one learner explain the difference between the kit directory and the working copy. Walk through the manual reading route while people pair up.",
+    "example": {
+     "label": "Terminal",
+     "lines": [
+      "python3 --version",
+      "Python 3.11 or newer",
+      "",
+      "Working copy",
+      "private/local-gallery/"
+     ]
+    }
+   },
+   {
     "title": "Who can authorize the edit?",
     "subtitle": "A recipe describes the steps. You decide which ones to take.",
     "img": "images/ch1-permission.svg",
@@ -91,6 +112,27 @@ const SECTIONS =[
      "Trade contracts. Can your partner tell when the assistant must stop?"
     ],
     "notes": "Let someone read their contract aloud. Challenge it with two surprises: the assistant wants to install a dependency, or its first correction still fails verification. Ask the author where the contract says to stop. Capture the agreed boundary in the private job-contract template."
+   },
+   {
+    "title": "Find a source you can reopen",
+    "subtitle": "Look inside the recipe before giving the assistant a job.",
+    "img": "",
+    "bullets": [
+     "Open the file and read its ID, review status and supported environment.",
+     "Copy the path and your kit revision into your private note.",
+     "Have a partner retrieve the same page using only your citation."
+    ],
+    "notes": "Allow four minutes for the retrieval drill. Ask: could your partner find the exact page without the chat history? If a connector is unavailable, use the intact course files directly. An integrity failure means stop and obtain a clean kit copy.",
+    "example": {
+     "label": "ACP Second Brain",
+     "lines": [
+      "SB-01-memory",
+      "Keep Private Project Memory",
+      "",
+      "start-here/",
+      "private-project-memory.md"
+     ]
+    }
    }
   ]
  },
@@ -115,6 +157,18 @@ const SECTIONS =[
      "Check the support matrix before choosing an engine track."
     ],
     "notes": "Trace the route from assistant to server. The diagram shows optional engine connections. Switch back to the course kit: the document connector has no command for editing a scene or running a shell."
+   },
+   {
+    "title": "Which end is listening?",
+    "subtitle": "SensAI’s animated setup diagram follows the request into an editor.",
+    "img": "",
+    "bullets": [
+     "The client uses its configuration to find the server.",
+     "The server lists operations and sends a supported request to the editor.",
+     "Trace the response back before you propose a second action."
+    ],
+    "notes": "Trace one round trip with your finger. Ask what to check if the editor is open but no tools appear: first the client configuration and the server connection. Ask what to check when tools appear but the wrong scene is open: target identity. The kit’s document connector has no editor commands.",
+    "motion": "setup"
    },
    {
     "title": "Find the actual recipe",
@@ -149,6 +203,18 @@ const SECTIONS =[
      "Open the result in a browser to judge the change."
     ],
     "notes": "Recall the two SensAI loops. Ask learners to sort three tasks: inspect a light, rebuild the gallery, decide if a title reads well. Run the builder in the terminal and switch to the browser for the last decision. No Unreal, headset or paid API is required."
+   },
+   {
+    "title": "Choose the shorter feedback loop",
+    "subtitle": "Watch how the two routes in the SensAI diagram return evidence.",
+    "img": "",
+    "bullets": [
+     "Lighting needs a visible viewport and an artist to judge the result.",
+     "A scripted build can finish with the editor closed and leave files to inspect.",
+     "Which route fits a gallery rebuild? Which fits choosing its accent color?"
+    ],
+    "notes": "Let pairs classify both gallery tasks. The builder is a headless Python process. Picking the accent needs someone looking at the actual page. A job can cross between the two loops; identify the handoff before you automate it.",
+    "motion": "modes"
    }
   ]
  },
@@ -156,11 +222,113 @@ const SECTIONS =[
   "year": "CH 3",
   "accent": "amber",
   "lesson": {
-   "title": "What Survives a Restart?",
-   "short": "MEMORY",
-   "tagline": "Close the chat. Could someone find the last gallery you accepted, explain your edit and take the next safe step?",
-   "tags": "Private memory · Independent evidence",
-   "notes": "Ask a partner to play the next session. Give them only the note. Listen for where the files live, what the verifier checked and which decision still belongs to the artist."
+   "short": "ENGINE DEMOS",
+   "title": "Inside the engine demos",
+   "tagline": "Watch the original SensAI examples. For each, decide what the assistant controlled and what Alex had to judge.",
+   "tags": "Unreal · Blender · Forage",
+   "notes": "Optional watch-and-discuss block, about 20 minutes. Play the embedded recordings on demand. Learners do not need an engine installed. Ask for a prediction before each reveal."
+  },
+  "cases": [
+   {
+    "title": "Watch an Unreal edit",
+    "subtitle": "SensAI recording · interactive scene editing",
+    "img": "media/sensai/unreal-edit.jpg",
+    "bullets": [
+     "Watch the viewport as the scene changes.",
+     "For a lighting request, name the subject and the allowed lights.",
+     "What would you inspect before accepting the edit?"
+    ],
+    "notes": "Play twice. On the first pass let people describe only what changed on screen. On the second, ask what the image cannot establish: whether other actors changed or whether the edit was saved. In a live editor, inspect the actor list and undo history before expanding scope.",
+    "clip": "media/sensai/unreal-edit.mp4"
+   },
+   {
+    "title": "Same brief, different tools",
+    "subtitle": "The SensAI Blender comparison kept the local model fixed.",
+    "img": "media/sensai/robust-scene-contrast.jpg",
+    "bullets": [
+     "With primitive operations, the scene ended at a plane and a cube.",
+     "With composite tools, the same brief produced a 45-tower city.",
+     "Find one design decision the tool author made before the model ran."
+    ],
+    "notes": "Give the room thirty seconds to read the comparison. Name window grids, street reflections and the framed camera as examples of choices built into the tools. Ask what a gallery-building function already decides for us. Expected answer: card markup, layout and how exhibits are ordered."
+   },
+   {
+    "title": "Orbit the finished city",
+    "subtitle": "SensAI recording · Blender scene built with composite tools",
+    "img": "media/sensai/robust-scene-turntable.jpg",
+    "bullets": [
+     "Pick one tower before pressing play.",
+     "Follow its windows and its neighbors as the camera moves.",
+     "What can a moving view establish that a single hero frame cannot?"
+    ],
+    "notes": "Play the orbit, then pause on the first composition. Ask someone to distinguish a repeatable tool output from a creative verdict. An orbit can expose depth and repetition; neither it nor the hero shot proves the underlying file is clean. Ask what you would request next before taking ownership.",
+    "clip": "media/sensai/robust-scene-turntable.mp4"
+   },
+   {
+    "title": "Change the light, keep the brief",
+    "subtitle": "Golden-hour and ember versions of the SensAI city.",
+    "img": "",
+    "bullets": [
+     "Compare the same design problem under two lighting choices.",
+     "Choose one version and name the visual cue behind your choice.",
+     "Turn “make it better” into one testable revision."
+    ],
+    "notes": "Let students vote before revealing your preference. Invite a dissenting vote and ask for a concrete cue: silhouette, separation or reflections. Record a sample decision as an artist’s choice; do not pretend the renderer or the model made it for you.",
+    "pair": [
+     "media/sensai/robust-scene-golden.jpg",
+     "media/sensai/robust-scene-ember.jpg"
+    ],
+    "captions": [
+     "Golden hour",
+     "Ember sunset"
+    ]
+   },
+   {
+    "title": "A flythrough is one kind of evidence",
+    "subtitle": "SensAI recording · the cyberpunk environment used in the Forage demo",
+    "img": "media/sensai/cyberpunk-flythrough.jpg",
+    "bullets": [
+     "Forage scouted assets and produced a handoff manifest.",
+     "The flythrough shows the assembled environment.",
+     "What would you open to check which assets were selected?"
+    ],
+    "notes": "Play the flythrough and ask learners what they can infer about the asset search from the pixels alone. Then describe the manifest as the place to inspect the selection. Relate this to output/index.html versus exhibits.json: visual evidence and input evidence answer different questions.",
+    "clip": "media/sensai/cyberpunk-flythrough.mp4"
+   },
+   {
+    "title": "Decide when to stop",
+    "subtitle": "The original SensAI field of attempted megaplant variations.",
+    "img": "media/sensai/tree-megaplant-field.jpg",
+    "bullets": [
+     "The brief called for a lush megaplant based on a scanned tree.",
+     "Compare the candidates and name the requirement still unmet.",
+     "Agree on a stop condition before running another variation."
+    ],
+    "notes": "Do not reveal the outcome immediately. Ask the room to choose another pass, manual work or acceptance, and explain the cost of their choice. Move to the next slide after the room commits."
+   },
+   {
+    "title": "Watch the last iteration",
+    "subtitle": "SensAI recording · the tree-to-megaplant experiment",
+    "img": "media/sensai/tree-megaplant.jpg",
+    "bullets": [
+     "Alex’s team stopped iterating with AI and finished the work by hand.",
+     "Keep the best checkpoint and record why the route changed.",
+     "Apply the same discipline when a gallery correction misses its target."
+    ],
+    "notes": "Play the clip and ask whether motion changes anyone’s vote. Point back to the agreed one-correction limit. Have learners write the sentence they would leave for the next session: what was tried, why it was rejected and which route is now authorized.",
+    "clip": "media/sensai/tree-megaplant.mp4"
+   }
+  ]
+ },
+ {
+  "year": "CH 4",
+  "accent": "rose",
+  "lesson": {
+   "short": "GALLERY LAB",
+   "title": "Build the gallery together",
+   "tagline": "Work in your private copy. Keep the baseline, make a single edit and compare the two pages.",
+   "tags": "Hands-on · Python 3.11+ · Terminal",
+   "notes": "Reserve about 25 minutes. Pair learners with different levels of terminal experience. One person drives and one person verifies, then swap before the edited build."
   },
   "cases": [
    {
@@ -175,6 +343,24 @@ const SECTIONS =[
     "notes": "Give everyone time to run both commands. Use python instead if that is their Python 3.11+ command. Read the verifier result aloud. Compare the browser with the slide, then record the accepted baseline. The builder refuses to overwrite a nonempty output folder."
    },
    {
+    "title": "Read one exhibit",
+    "subtitle": "Find the part of the source that controls a displayed title.",
+    "img": "",
+    "bullets": [
+     "Locate the first exhibit in the array.",
+     "Predict what changing its title will do to the page.",
+     "Name two things you expect to stay the same."
+    ],
+    "notes": "Open the actual private JSON; this slide shows only two fields. Ask learners to point out the description and the array order. Before typing, write a prediction: the first card gets a new heading, the other two titles and IDs stay the same.",
+    "example": {
+     "label": "exhibits.json · excerpt",
+     "lines": [
+      "\"id\": \"paper-city\"",
+      "\"title\": \"Paper City\""
+     ]
+    }
+   },
+   {
     "title": "Keep both versions",
     "subtitle": "One title edit should leave a small, visible difference.",
     "img": "",
@@ -187,6 +373,100 @@ const SECTIONS =[
     "motion": "checkpoint"
    },
    {
+    "title": "Verify the edited copy",
+    "subtitle": "Run the same checks against a fresh destination.",
+    "img": "",
+    "bullets": [
+     "Run each command on one line.",
+     "Compare the edited page with output/index.html.",
+     "Agree on a verdict, then swap roles with your partner."
+    ],
+    "notes": "Build and verify in output-edited. If that path is already nonempty, preserve it; agree on a fresh path and record it before another build. Ask each pair to show a visible difference and one unchanged exhibit.",
+    "example": {
+     "label": "In private/local-gallery",
+     "lines": [
+      "python3 build.py",
+      "  --output output-edited",
+      "",
+      "python3 verify.py",
+      "  --output output-edited"
+     ]
+    }
+   },
+   {
+    "title": "Can a passing build be rejected?",
+    "subtitle": "Peer review · compare the result with the written job.",
+    "img": "",
+    "bullets": [
+     "Give your partner the job contract and both pages.",
+     "Ask them to locate evidence for the requested change.",
+     "If a valid title misses the brief, record a rejection and the next safe step."
+    ],
+    "notes": "Give pairs three minutes. A passing verifier compares output with the current input; it cannot decide that the input expresses the author’s intent. Ask for one verdict the verifier can support and one claim that requires a person.",
+    "example": {
+     "label": "Proposed edit",
+     "lines": [
+      "Paper City → Paper City at Dusk",
+      "",
+      "Acceptance question",
+      "Did we authorize that title?"
+     ]
+    }
+   },
+   {
+    "title": "Read the checkpoint",
+    "subtitle": "A controlled interruption leaves a state file you can inspect.",
+    "img": "",
+    "bullets": [
+     "Optional instructor demo in a separately authorized scratch copy.",
+     "Run build.py with --output interrupted --stop-after 1.",
+     "Inspect checkpoint.json before attempting a restart."
+    ],
+    "notes": "Use a fresh private scratch copy and an empty destination. Run python3 build.py --output interrupted --stop-after 1. Exit 75 is the expected controlled stop. Show the input hash and the count. Ask whether it is safe to resume after someone edits the input.",
+    "example": {
+     "label": "checkpoint.json · after one exhibit",
+     "lines": [
+      "\"completed\": 1",
+      "\"total\": 3",
+      "\"status\": \"in-progress\""
+     ]
+    }
+   },
+   {
+    "title": "Resume or start clean?",
+    "subtitle": "The input revision decides which action is safe.",
+    "img": "",
+    "bullets": [
+     "If the input still matches, resume and run the full verifier.",
+     "If the input changed, preserve the checkpoint and use a fresh output folder.",
+     "Record the interruption even when the final page passes."
+    ],
+    "notes": "Run each command on one line. The unchanged example continues with exhibits two and three. Show the verified page in the browser. Ask what to preserve if the hash differs. Keep the partial output and note the discrepancy; do not edit the hash to make resume succeed.",
+    "example": {
+     "label": "Same input, same checkpoint",
+     "lines": [
+      "python3 build.py",
+      "  --output interrupted --resume",
+      "",
+      "python3 verify.py",
+      "  --output interrupted"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "year": "CH 5",
+  "accent": "teal",
+  "lesson": {
+   "short": "EXPORT LAB",
+   "title": "What survived the trip?",
+   "tagline": "The Data Interchange class sent one scene through several tools. Use the same method to inspect what an assistant delivers.",
+   "tags": "Unreal · USD · GLB · RealityKit",
+   "notes": "Optional instructor-led lab, about 25 minutes. Use the captured material and simulator recording. Keep the results scoped to the source class scene, exporter versions and settings."
+  },
+  "cases": [
+   {
     "title": "A file can open and still be wrong",
     "subtitle": "In the UE5 interchange class, we compared the same scene across three renderers.",
     "img": "images/three-renderers.jpg",
@@ -196,6 +476,63 @@ const SECTIONS =[
      "Apply that test to the gallery: a valid file can still have the wrong title."
     ],
     "notes": "Ask the room to choose one feature to follow before comparing images. The earlier class compared Unreal, Godot and Three.js; its stock export table records the override and light losses. These are observations from that scene. Ask what evidence would catch an accidental change to Moon Garden."
+   },
+   {
+    "title": "Read the scene as a set of files",
+    "subtitle": "Original Data Interchange animation · composing a USD stage",
+    "img": "",
+    "bullets": [
+     "Start at scene.usda and follow one reference to the chair.",
+     "Follow its material binding into the shared material scope.",
+     "The viewer composes the files into the stage on the right."
+    ],
+    "notes": "Trace only the chair first. Ask where to inspect if the chair appears but the assigned material is wrong. Return to the private gallery: exhibits.json, build.py and output/index.html have different roles. Which one should be edited to change a title durably?",
+    "motion": "composition"
+   },
+   {
+    "title": "One unit, two meanings",
+    "subtitle": "Original Data Interchange animation · coordinate conversion",
+    "img": "",
+    "bullets": [
+     "Track one vertical meter from Unreal to glTF.",
+     "The numerical length and the up axis both change.",
+     "Before blaming a missing object, ask for its dimensions in the target."
+    ],
+    "notes": "Give learners a prediction: what should a 100-centimeter object measure in meters? Then walk through scale, up axis and handedness as distinct conversions. An aggregate bounding box can conceal an outlier. The next images show what that looked like in the class.",
+    "motion": "units"
+   },
+   {
+    "title": "Spot the broken conversion",
+    "subtitle": "Class capture · Unreal to USD to Blender to GLB",
+    "img": "media/interchange/path2-viausd-broken.jpg",
+    "bullets": [
+     "The observed route dropped the instanced cones.",
+     "One unscaled prototype became roughly 100 meters tall.",
+     "Which check would distinguish “missing” from “too large”?"
+    ],
+    "notes": "Before revealing the explanation, let learners describe the silhouette. In the class test with Blender 5.2, the prototype and instancer followed different paths. Ask for per-mesh dimensions and an instance count. “The GLB opens” would pass both failures."
+   },
+   {
+    "title": "Inspect the repaired route",
+    "subtitle": "Class capture · the fixed USD-to-GLB conversion",
+    "img": "media/interchange/sharp-edges-viausd-fixed.jpg",
+    "bullets": [
+     "The repair expanded the instances and applied unit scale.",
+     "Count the cones again and inspect their size against the table.",
+     "Check material overrides separately. Geometry and appearance can disagree."
+    ],
+    "notes": "Flip back one slide and invite a student to describe the repair in visible terms. Ask whether restored geometry proves the override was restored; it does not. Have them write two separate checks for the receipt."
+   },
+   {
+    "title": "Look inside the warning",
+    "subtitle": "Godot kit viewer · mixed-unit diagnostic",
+    "img": "media/interchange/kit-godot-mixed-units.jpg",
+    "bullets": [
+     "A combined bounding box describes the whole asset.",
+     "Compare each mesh’s bounds to expose an outlier.",
+     "Transfer the habit to the gallery: inspect individual cards as well as the total."
+    ],
+    "notes": "Tell the source class’s MetaHuman story: the hair showed while body parts carried different scale after an armature was removed. This image is the kit viewer warning, not a portrait of that character. Ask why a total of three cards would miss one wrong title."
    },
    {
     "title": "Follow the red material",
@@ -210,6 +547,65 @@ const SECTIONS =[
     "notes": "Let the swatches resolve before naming the outputs. Ask: if the object name and mesh survived, would a count of imported objects catch this difference? Compare a kept material with a lost override. These outcomes describe the class scene and settings, not every export."
    },
    {
+    "title": "Watch the destination renderer",
+    "subtitle": "Original recording · UnRealityKit in the visionOS simulator",
+    "img": "media/interchange/urk-sim.jpg",
+    "bullets": [
+     "Find the red override, then look for the row of cones.",
+     "In this run the red returned, the nine instances dropped and the Substrate sphere stayed black.",
+     "Give the material and instance checks separate verdicts."
+    ],
+    "notes": "Pause on the scene. Ask for one preserved feature and one missing feature before reading the bullets. Clarify that this is a simulator recording from the interchange class. It documents this route; it does not demonstrate physical-headset performance.",
+    "clip": "media/interchange/urk-sim.mp4"
+   },
+   {
+    "title": "Read an export receipt",
+    "subtitle": "The actual RenderMan bridge status card from the class.",
+    "img": "media/interchange/urmb-status-card.jpg",
+    "bullets": [
+     "The translated scene.rib carried the nine instances and all five lights.",
+     "This class run stopped at export. The evidence is in the translated file.",
+     "What extra evidence would you need to accept the final image?"
+    ],
+    "notes": "Name the artifact before interpreting it. The source class inspected the RIB; it did not produce a render in that run. Ask a student to rewrite “the render looks right” as a supported statement about the exported file. Connect it to a gallery receipt that records a verifier pass before visual review."
+   },
+   {
+    "title": "Predict a loss before export",
+    "subtitle": "The original Export Preflight report for the class scene.",
+    "img": "media/interchange/preflight-report.jpg",
+    "bullets": [
+     "Pick one finding, such as instancing or a material pattern.",
+     "Predict a visible symptom in the destination.",
+     "After export, check the same feature and record what actually happened."
+    ],
+    "notes": "Give pairs one minute. Separate a risk reported by preflight from a defect confirmed at the destination. The pictured utility was an early class tool; students only need the screenshot. Ask them to devise one gallery preflight check, such as unique IDs."
+   },
+   {
+    "title": "Close the verification loop",
+    "subtitle": "Original Data Interchange animation · checking an export",
+    "img": "",
+    "bullets": [
+     "Decide what must survive. Export. Inspect. Validate.",
+     "If the target fails a check, keep the previous accepted version.",
+     "Write one acceptance check for an object and one for the whole result."
+    ],
+    "notes": "Trace the return arrow with the class. Give them the gallery analogy: three cards, correct order, one intended title change, and visual approval. Invite one learner to say precisely which failure would trigger the one allowed correction.",
+    "motion": "validate"
+   }
+  ]
+ },
+ {
+  "year": "CH 6",
+  "accent": "amber",
+  "lesson": {
+   "title": "What Survives a Restart?",
+   "short": "MEMORY",
+   "tagline": "Close the chat. Could someone find the last gallery you accepted, explain your edit and take the next safe step?",
+   "tags": "Private memory · Independent evidence",
+   "notes": "Ask a partner to play the next session. Give them only the note. Listen for where the files live, what the verifier checked and which decision still belongs to the artist."
+  },
+  "cases": [
+   {
     "title": "Write the restart note",
     "subtitle": "Leave the next session enough evidence to begin.",
     "img": "images/ch3-memory.svg",
@@ -221,6 +617,39 @@ const SECTIONS =[
     "notes": "Demonstrate a first line such as “Baseline accepted in output/; edited title awaiting my visual review.” Ask a student which folder they would open. If they hesitate, add the exact private path. Keep client details out of the course repository."
    },
    {
+    "title": "What should another project inherit?",
+    "subtitle": "Original SensAI animation · keeping transferable knowledge",
+    "img": "",
+    "bullets": [
+     "Save the symptom, the attempted fix and the evidence.",
+     "State where the finding was observed.",
+     "Identify one check the next project must repeat for itself."
+    ],
+    "notes": "Use the cone repair as an example. A useful note names the route, the missing instances and the scale check. A later project can use that as a hypothesis. Ask students to write the equivalent if a gallery output folder was already nonempty.",
+    "motion": "transfer"
+   },
+   {
+    "title": "Write a receipt someone can challenge",
+    "subtitle": "Keep the evidence beside the verdict in your private folder.",
+    "img": "",
+    "bullets": [
+     "Record the allowed change and the actual files touched.",
+     "Quote the checker and describe one thing you saw yourself.",
+     "Name the last accepted checkpoint and any unresolved decision."
+    ],
+    "notes": "Give learners four minutes to complete their own receipt. An example is not evidence of their build. Ask a partner to find one vague claim and replace it with a path and an observation. Keep personal paths and receipts private.",
+    "example": {
+     "label": "Completion receipt",
+     "lines": [
+      "Changed: paper-city title",
+      "Checked: verifier output",
+      "Inspected: both pages",
+      "Verdict: [your decision]",
+      "Next: [one safe action]"
+     ]
+    }
+   },
+   {
     "title": "Test the handoff",
     "subtitle": "A fresh session is the reader of your note.",
     "img": "images/ch3-loop.svg",
@@ -230,6 +659,26 @@ const SECTIONS =[
      "If it guesses, revise the note and try the handoff again."
     ],
     "notes": "Let the class see the new conversation start empty. Compare its answer to your saved note. Ask it to cite the evidence for acceptance. If the note records only a successful build, pause before it claims you approved the design."
+   },
+   {
+    "title": "Try a cold handoff",
+    "subtitle": "Swap seats. Give your partner the note and start a fresh conversation.",
+    "img": "",
+    "bullets": [
+     "Compare the new answer with your saved checkpoint.",
+     "Circle one guess or missing fact. Repair the note and retest.",
+     "For Part 2, bring a receipt or private summary and one point of friction."
+    ],
+    "notes": "Allow five minutes for the blind restart. The observer keeps the old chat closed. Ask whether a new session could distinguish built, verified and accepted. Finish with an optional share-out of a general lesson; learners can keep all client details and private files to themselves.",
+    "example": {
+     "label": "Ask before taking action",
+     "lines": [
+      "What was accepted?",
+      "Where is the evidence?",
+      "What is out of scope?",
+      "What is my next safe step?"
+     ]
+    }
    }
   ]
  }
@@ -1647,7 +2096,19 @@ body[data-look="transit"]:not(#_) #map-svg text{fill:var(--ink)!important}
 body[data-look="transit"]:not(#_) .lesson-rule{margin-left:0;margin-right:auto}
 </style>
 <!-- ── SD LOOKS END ── -->
-<style>@font-face{font-family:'ACP Slab';src:url('media/type/alfa-slab-one/AlfaSlabOne-Regular.ttf')}@font-face{font-family:'ACP Book';src:url('media/type/eb-garamond/EBGaramond.ttf');font-weight:400 800}@font-face{font-family:'ACP Book';src:url('media/type/eb-garamond/EBGaramond-Italic.ttf');font-weight:400 800;font-style:italic}
+<style>
+.demo-clip{width:100%;height:auto;max-height:56vh;display:block}
+.worked-example{align-self:stretch;background:#faf3e5;color:#382e24;text-align:left;padding:clamp(18px,3vw,48px);margin:0}
+.worked-example figcaption,.paired-view figcaption{font-family:Georgia,serif;font-style:italic}
+.worked-example figcaption{border-bottom:1px solid #a78e77;padding-bottom:.6em;margin-bottom:1em;color:#883326}
+.worked-example pre{font:clamp(13px,1.5vw,24px)/1.65 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;letter-spacing:-.025em}
+.case-image.pair-image{display:grid;grid-template-columns:1fr 1fr;gap:5px;background:#efe6d2;color:#382e24}
+.paired-view{margin:0;min-width:0}.paired-view figcaption{text-align:center;padding:.4em;font-size:clamp(12px,1.2vw,24px)}
+body.print-mode .imported-plate *,body.shot-mode .imported-plate *,body.reduced-motion .imported-plate *{animation:none!important}
+@media(prefers-reduced-motion:reduce){.imported-plate *{animation:none!important}}
+/* Restart source animations on entry. Keep the complete drawing visible between entries. */
+.slide:not(.active) .imported-plate *{animation:none!important}
+@font-face{font-family:'ACP Slab';src:url('media/type/alfa-slab-one/AlfaSlabOne-Regular.ttf')}@font-face{font-family:'ACP Book';src:url('media/type/eb-garamond/EBGaramond.ttf');font-weight:400 800}@font-face{font-family:'ACP Book';src:url('media/type/eb-garamond/EBGaramond-Italic.ttf');font-weight:400 800;font-style:italic}
 body[data-look="broadside"]:not(#_){--font-display:'ACP Slab',Georgia,serif;--font-body:'ACP Book',Georgia,serif}
 body[data-look="broadside"]:not(#_) .case-image img{filter:none;border-radius:0!important}
 body[data-look="broadside"]:not(#_) .talk-title{font-size:clamp(3rem,6.4em,7.3rem)}
@@ -1712,6 +2173,606 @@ body[data-look="broadside"]:not(#_) #deck{--t-body:clamp(1rem,calc(1.6*var(--vw)
   window._fitStage=fit;
 })();
 </script>
+<template id="motion-modes"><svg class="motion-plate imported-plate" viewBox="0 0 840 620" role="img" aria-label="Interactive editor loop and headless pipeline" font-family="Arial,sans-serif">
+  <defs>
+    <filter id="glowT" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowA" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrT" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#9d3328"/></marker>
+    <marker id="arrA" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#9d3328"/></marker>
+  </defs>
+
+  <style>@scope (.imported-plate){
+    /* ── INTERACTIVE side: bidirectional loop arrows flow in both directions simultaneously ── */
+    /* Down arrow (left arc): dash flows downward = decreasing offset */
+    @keyframes flowDown {
+      0%   { stroke-dashoffset: 40; }
+      100% { stroke-dashoffset: 0; }
+    }
+    /* Up arrow (right arc): dash flows upward = increasing offset */
+    @keyframes flowUp {
+      0%   { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 40; }
+    }
+    .loop-down {
+      stroke-dasharray: 10 7;
+      animation: flowDown 1.8s linear infinite;
+    }
+    .loop-up {
+      stroke-dasharray: 10 7;
+      animation: flowDown 1.8s linear infinite;
+    }
+
+    /* ── HEADLESS side: sequential downward pulse through AI -> PIPELINE -> OUTPUT ── */
+    /* Each arrow fades in then out, staggered for batch-conveyor feel */
+    @keyframes arrowPulse1 {
+      0%,100%{ stroke-opacity:0.2; }
+      0%     { stroke-opacity:0.2; }
+      10%    { stroke-opacity:1; }
+      33%    { stroke-opacity:1; }
+      50%    { stroke-opacity:0.2; }
+    }
+    @keyframes arrowPulse2 {
+      0%,100%{ stroke-opacity:0.2; }
+      33%    { stroke-opacity:0.2; }
+      43%    { stroke-opacity:1; }
+      66%    { stroke-opacity:1; }
+      80%    { stroke-opacity:0.2; }
+    }
+    /* Flowing dash offsets for the headless arrows */
+    @keyframes batchFlow {
+      0%   { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .arrow-h1 {
+      stroke-dasharray: 8 5;
+      animation: batchFlow 0.9s linear infinite, arrowPulse1 2.7s ease-in-out infinite;
+    }
+    .arrow-h2 {
+      stroke-dasharray: 8 5;
+      animation: batchFlow 0.9s linear infinite 0.9s, arrowPulse2 2.7s ease-in-out infinite;
+    }
+
+    /* Moving dots for headless: travel down each arrow segment, staggered */
+    @keyframes dotH1 {
+      0%   { offset-distance:0%; opacity:0; }
+      5%   { opacity:1; }
+      90%  { opacity:1; }
+      100% { offset-distance:100%; opacity:0; }
+    }
+    @keyframes dotH2 {
+      0%   { offset-distance:0%; opacity:0; }
+      5%   { opacity:1; }
+      90%  { opacity:1; }
+      100% { offset-distance:100%; opacity:0; }
+    }
+    .dot-h1 {
+      offset-path: path('M630,193 L630,262');
+      animation: dotH1 2.7s ease-in infinite;
+    }
+    .dot-h2 {
+      offset-path: path('M630,323 L630,392');
+      animation: dotH2 2.7s ease-in infinite 0.9s;
+    }
+  }</style>
+
+  <!-- divider -->
+  <line x1="420" y1="70" x2="420" y2="560" stroke="#554c41" stroke-width="1.5" stroke-dasharray="4 7"/>
+
+  <!-- ================= INTERACTIVE (left, teal) ================= -->
+  <text x="210" y="56" text-anchor="middle" fill="#9d3328" font-size="30" font-weight="700" letter-spacing="2">INTERACTIVE</text>
+  <text x="210" y="84" text-anchor="middle" fill="#554c41" font-size="16">edit the live scene</text>
+
+  <!-- AI node -->
+  <rect x="120" y="150" width="180" height="70" rx="14" fill="#e4d8c1" stroke="#9d3328" stroke-width="2"/>
+  <text x="210" y="183" text-anchor="middle" fill="#382f27" font-size="20" font-weight="600">AI AGENT</text>
+  <text x="210" y="206" text-anchor="middle" fill="#554c41" font-size="13">prompts &amp; acts</text>
+
+  <!-- Editor node -->
+  <rect x="120" y="360" width="180" height="70" rx="14" fill="#e4d8c1" stroke="#9d3328" stroke-width="2"/>
+  <text x="210" y="393" text-anchor="middle" fill="#382f27" font-size="20" font-weight="600">EDITOR</text>
+  <text x="210" y="416" text-anchor="middle" fill="#554c41" font-size="13">scene updates live</text>
+
+  <!-- bidirectional loop — animated flowing dashes -->
+  <path class="loop-down" d="M165 222 C 120 270, 120 310, 165 358" fill="none" stroke="#9d3328" stroke-width="2.5" marker-end="url(#arrT)"/>
+  <path class="loop-up" d="M255 358 C 300 310, 300 270, 255 222" fill="none" stroke="#9d3328" stroke-width="2.5" marker-end="url(#arrT)"/>
+  <text x="210" y="295" text-anchor="middle" fill="#382f27" font-size="13" font-weight="600">tight loop</text>
+
+  <text x="210" y="500" text-anchor="middle" fill="#554c41" font-size="15">you watch it happen</text>
+  <text x="210" y="524" text-anchor="middle" fill="#554c41" font-size="13">iteration &#183; lighting &#183; prototyping</text>
+
+  <!-- ================= HEADLESS (right, amber) ================= -->
+  <text x="630" y="56" text-anchor="middle" fill="#9d3328" font-size="30" font-weight="700" letter-spacing="2">HEADLESS</text>
+  <text x="630" y="84" text-anchor="middle" fill="#554c41" font-size="16">no editor window</text>
+
+  <!-- AI -->
+  <rect x="540" y="135" width="180" height="58" rx="13" fill="#e4d8c1" stroke="#9d3328" stroke-width="2"/>
+  <text x="630" y="170" text-anchor="middle" fill="#382f27" font-size="19" font-weight="600">AI AGENT</text>
+  <!-- Pipeline -->
+  <rect x="540" y="265" width="180" height="58" rx="13" fill="#e4d8c1" stroke="#9d3328" stroke-width="2"/>
+  <text x="630" y="300" text-anchor="middle" fill="#382f27" font-size="19" font-weight="600">PIPELINE</text>
+  <!-- Output -->
+  <rect x="540" y="395" width="180" height="58" rx="13" fill="#e4d8c1" stroke="#9d3328" stroke-width="2"/>
+  <text x="630" y="430" text-anchor="middle" fill="#382f27" font-size="19" font-weight="600">OUTPUT</text>
+
+  <!-- Headless arrows — animated sequential flow -->
+  <line class="arrow-h1" x1="630" y1="193" x2="630" y2="262" stroke="#9d3328" stroke-width="2.5" marker-end="url(#arrA)"/>
+  <line class="arrow-h2" x1="630" y1="323" x2="630" y2="392" stroke="#9d3328" stroke-width="2.5" marker-end="url(#arrA)"/>
+
+  <!-- Moving dots for sequential batch feel -->
+  <circle class="dot-h1" r="4.5" fill="#9d3328" opacity="0"/>
+  <circle class="dot-h2" r="4.5" fill="#9d3328" opacity="0"/>
+
+  <text x="630" y="500" text-anchor="middle" fill="#554c41" font-size="15">runs at scale, on a schedule</text>
+  <text x="630" y="524" text-anchor="middle" fill="#554c41" font-size="13">batch &#183; CI &#183; automation</text>
+</svg>
+</template>
+<template id="motion-setup"><svg class="motion-plate imported-plate" viewBox="0 0 820 640" role="img" aria-label="Client, configuration, server and optional editors" font-family="Arial,sans-serif">
+  <defs>
+    <filter id="g2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="a2" markerWidth="11" markerHeight="11" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7.5,3.2 L0,6.4 Z" fill="#9d3328"/></marker>
+    <marker id="a2ret" markerWidth="11" markerHeight="11" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7.5,3.2 L0,6.4 Z" fill="#e4d8c1"/></marker>
+    <linearGradient id="ln" gradientUnits="userSpaceOnUse" x1="360" y1="168" x2="452" y2="168">
+      <stop offset="0" stop-color="#9d3328"/><stop offset="1" stop-color="#9d3328"/>
+    </linearGradient>
+    <linearGradient id="lnret" gradientUnits="userSpaceOnUse" x1="452" y1="148" x2="360" y2="148">
+      <stop offset="0" stop-color="#e4d8c1"/><stop offset="1" stop-color="#e4d8c1"/>
+    </linearGradient>
+  </defs>
+
+  <style>@scope (.imported-plate){
+    /*
+      Call pulse travels: AI CLIENT -> MCP SERVER (horizontal) -> EDITOR (vertical, server->editor)
+      One continuous "packet" traveling the path, with a gap between segments.
+      Total cycle = 4s.
+      Segment 1: CLIENT->SERVER horizontal (x 360->452, y 158), duration ~1.2s of cycle
+      Segment 2: SERVER->EDITOR vertical (x 600, y 206->372), duration ~1.4s of cycle
+    */
+
+    /* Segment 1: horizontal arrow CLIENT->SERVER — dot travels along it */
+    @keyframes dotSeg1 {
+      0%    { offset-distance:0%;   opacity:0; }
+      3%    { opacity:1; }
+      28%   { offset-distance:100%; opacity:1; }
+      30%   { opacity:0; }
+      100%  { opacity:0; }
+    }
+    /* Segment 2: vertical arrow SERVER->EDITOR — dot travels, after seg1 finishes */
+    @keyframes dotSeg2 {
+      0%,30%  { offset-distance:0%; opacity:0; }
+      33%     { opacity:1; }
+      68%     { offset-distance:100%; opacity:1; }
+      70%     { opacity:0; }
+      100%    { opacity:0; }
+    }
+
+    .dot-seg1 {
+      offset-path: path('M360,158 L452,158');
+      animation: dotSeg1 4s ease-in-out infinite;
+    }
+    .dot-seg2 {
+      offset-path: path('M600,206 L600,372');
+      animation: dotSeg2 4s ease-in-out infinite;
+    }
+
+    /* Flowing dash on horizontal arrow */
+    @keyframes dashH {
+      0%   { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 0; }
+    }
+    /* Flowing dash on vertical server->editor arrow */
+    @keyframes dashV {
+      0%   { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 0; }
+    }
+    .arrow-horiz {
+      stroke-dasharray: 9 5;
+      animation: dashH 1.2s linear infinite;
+    }
+    .arrow-vert {
+      stroke-dasharray: 9 5;
+      animation: dashV 1.2s linear infinite 0.3s;
+    }
+
+    /* Return arrows — faint, upward flow (same dashH animation = forward along up-direction path) */
+    .arrow-ret-vert {
+      stroke-dasharray: 7 6;
+      animation: dashH 1.4s linear infinite 1.8s;
+      opacity: 0.38;
+    }
+    .arrow-ret-horiz {
+      stroke-dasharray: 7 6;
+      animation: dashH 1.2s linear infinite 3.0s;
+      opacity: 0.38;
+    }
+
+    /* Glow pulse on each node when the pulse "arrives" */
+    @keyframes clientGlow {
+      0%,100%   { opacity:0.1; }
+      0%        { opacity:0.3; }
+      8%        { opacity:0.1; }
+    }
+    @keyframes serverGlow {
+      0%,100%   { opacity:0.12; }
+      28%       { opacity:0.35; }
+      36%       { opacity:0.12; }
+    }
+    @keyframes editorGlow {
+      0%,100%   { opacity:0.04; }
+      68%       { opacity:0.14; }
+      76%       { opacity:0.04; }
+    }
+    .client-fill  { animation: clientGlow 4s ease-in-out infinite; }
+    .server-fill  { animation: serverGlow 4s ease-in-out infinite; }
+    .editor-fill  { animation: editorGlow 4s ease-in-out infinite; }
+  }</style>
+
+  <text x="410" y="52" text-anchor="middle" fill="#554c41" font-size="16" letter-spacing="3">ONE PATTERN &#183; EVERY ENGINE</text>
+
+  <!-- AI CLIENT -->
+  <rect class="client-fill" x="80" y="110" width="280" height="96" rx="18" fill="#9d3328"/>
+  <rect x="80" y="110" width="280" height="96" rx="18" fill="none" stroke="#9d3328" stroke-width="2.5"/>
+  <text x="220" y="152" text-anchor="middle" fill="#382f27" font-size="24" font-weight="700">AI CLIENT</text>
+  <text x="220" y="180" text-anchor="middle" fill="#554c41" font-size="15">Claude &#183; sends structured calls</text>
+
+  <!-- MCP SERVER -->
+  <rect class="server-fill" x="460" y="110" width="280" height="96" rx="18" fill="#9d3328"/>
+  <rect x="460" y="110" width="280" height="96" rx="18" fill="none" stroke="#9d3328" stroke-width="2.5"/>
+  <text x="600" y="152" text-anchor="middle" fill="#efe9ff" font-size="24" font-weight="700">MCP SERVER</text>
+  <text x="600" y="180" text-anchor="middle" fill="#554c41" font-size="15">runs beside your editor</text>
+
+  <!-- arrow client -> server (animated flowing dash) -->
+  <line class="arrow-horiz" x1="360" y1="168" x2="452" y2="168" stroke="url(#ln)" stroke-width="3.5" marker-end="url(#a2)"/>
+  <!-- return arrow server -> client (faint, offset above) -->
+  <line class="arrow-ret-horiz" x1="452" y1="148" x2="360" y2="148" stroke="url(#lnret)" stroke-width="2" marker-end="url(#a2ret)"/>
+  <text x="406" y="136" text-anchor="middle" fill="#e4d8c1" font-size="10" letter-spacing="1">response</text>
+
+  <!-- config file (between, below the arrow) -->
+  <rect x="330" y="250" width="160" height="62" rx="12" fill="#e4d8c1" stroke="#9d3328" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="410" y="280" text-anchor="middle" fill="#382f27" font-size="17" font-weight="600">config file</text>
+  <text x="410" y="301" text-anchor="middle" fill="#554c41" font-size="12.5">where each server lives</text>
+  <line x1="410" y1="206" x2="410" y2="248" stroke="#9d3328" stroke-width="2" stroke-dasharray="3 4"/>
+
+  <!-- arrow server -> editor (down) — animated flowing dash -->
+  <line class="arrow-vert" x1="600" y1="206" x2="600" y2="372" stroke="#9d3328" stroke-width="3.5" marker-end="url(#a2)"/>
+  <text x="618" y="295" fill="#554c41" font-size="13">translates calls &#8594; editor commands</text>
+
+  <!-- return arrow editor -> server (faint, offset left) -->
+  <line class="arrow-ret-vert" x1="584" y1="374" x2="584" y2="208" stroke="#e4d8c1" stroke-width="2" marker-end="url(#a2ret)"/>
+  <text x="566" y="295" text-anchor="middle" fill="#e4d8c1" font-size="10" letter-spacing="1" transform="rotate(-90,566,295)">result</text>
+
+  <!-- EDITOR with three engine chips -->
+  <rect class="editor-fill" x="200" y="380" width="420" height="170" rx="20" fill="#382f27"/>
+  <rect x="200" y="380" width="420" height="170" rx="20" fill="none" stroke="#554c41" stroke-width="2"/>
+  <text x="410" y="418" text-anchor="middle" fill="#382f27" font-size="22" font-weight="700">YOUR EDITOR</text>
+
+  <!-- engine chips -->
+  <rect x="232" y="442" width="116" height="78" rx="14" fill="#e4d8c1" stroke="#9d3328" stroke-width="2"/>
+  <text x="290" y="478" text-anchor="middle" fill="#382f27" font-size="16" font-weight="600">Unreal</text>
+  <text x="290" y="500" text-anchor="middle" fill="#554c41" font-size="12">amber</text>
+
+  <rect x="352" y="442" width="116" height="78" rx="14" fill="#e4d8c1" stroke="#f43f5e" stroke-width="2"/>
+  <text x="410" y="478" text-anchor="middle" fill="#ffd7df" font-size="16" font-weight="600">Blender</text>
+  <text x="410" y="500" text-anchor="middle" fill="#554c41" font-size="12">rose</text>
+
+  <rect x="472" y="442" width="116" height="78" rx="14" fill="#e4d8c1" stroke="#9d3328" stroke-width="2"/>
+  <text x="530" y="478" text-anchor="middle" fill="#382f27" font-size="16" font-weight="600">Godot</text>
+  <text x="530" y="500" text-anchor="middle" fill="#554c41" font-size="12">teal</text>
+
+  <!-- Travelling pulse dots -->
+  <circle class="dot-seg1" r="6" fill="#9d3328" opacity="0"/>
+  <circle class="dot-seg2" r="6" fill="#9d3328" opacity="0"/>
+
+  <text x="410" y="592" text-anchor="middle" fill="#554c41" font-size="15">different server &#8212; same mental model</text>
+</svg>
+</template>
+<template id="motion-transfer"><svg class="motion-plate imported-plate" viewBox="0 0 820 620" role="img" aria-label="Private knowledge moving between projects" font-family="Arial,sans-serif">
+  <defs>
+    <filter id="gtr" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="atr" markerWidth="11" markerHeight="11" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7.5,3.2 L0,6.4 Z" fill="#9d3328"/></marker>
+    <marker id="atrp" markerWidth="11" markerHeight="11" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7.5,3.2 L0,6.4 Z" fill="#9d3328"/></marker>
+    <linearGradient id="ltr" x1="260" y1="494" x2="556" y2="494" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9d3328"/><stop offset="1" stop-color="#9d3328"/>
+    </linearGradient>
+  </defs>
+
+  <style>@scope (.imported-plate){
+    /*
+      Total cycle: 6s.
+      Sequence:
+        0-20%  (0-1.2s):  A->B arrow fires (dot travels)
+        20-45% (1.2-2.7s): B->C arrow fires (dot travels, slightly faster)
+        (B->C fires quicker to show "faster still")
+
+      Then KB read/write pulses overlap throughout:
+        A->KB write pulse: 0-30%
+        KB->B read pulse: 15-50%
+        B->KB write pulse: 30-60%
+        KB->C read pulse: 45-85%
+    */
+
+    /* Compounding arrow A->B dot */
+    @keyframes dotAB {
+      0%    { offset-distance:0%; opacity:0; }
+      3%    { opacity:1; }
+      18%   { offset-distance:100%; opacity:1; }
+      22%   { opacity:0; }
+      100%  { opacity:0; }
+    }
+    /* Compounding arrow B->C dot — fires faster (shorter active window) */
+    @keyframes dotBC {
+      0%,20%  { offset-distance:0%; opacity:0; }
+      23%     { opacity:1; }
+      40%     { offset-distance:100%; opacity:1; }
+      44%     { opacity:0; }
+      100%    { opacity:0; }
+    }
+
+    .dot-ab {
+      offset-path: path('M260,494 L306,494');
+      animation: dotAB 6s ease-out infinite;
+    }
+    .dot-bc {
+      offset-path: path('M510,494 L556,494');
+      animation: dotBC 6s ease-out infinite;
+    }
+
+    /* Flowing dashes on compounding arrows */
+    @keyframes dashAB {
+      0%,100%{ stroke-dashoffset:16; stroke-opacity:0.4; }
+      0%     { stroke-opacity:0.9; stroke-dashoffset:16; }
+      22%    { stroke-dashoffset:0; stroke-opacity:0.9; }
+      30%    { stroke-opacity:0.4; }
+    }
+    @keyframes dashBC {
+      0%,100%{ stroke-dashoffset:16; stroke-opacity:0.4; }
+      20%    { stroke-dashoffset:16; stroke-opacity:0.4; }
+      40%    { stroke-dashoffset:0; stroke-opacity:1; }
+      48%    { stroke-opacity:0.4; }
+    }
+    .arr-ab {
+      stroke-dasharray:7 5;
+      animation: dashAB 6s ease-out infinite;
+    }
+    .arr-bc {
+      stroke-dasharray:7 5;
+      animation: dashBC 6s ease-out infinite;
+    }
+
+    /* KB write pulse from A: path "M160 446 C 160 400, 240 372, 296 350" */
+    @keyframes writeA {
+      0%,100%{ stroke-opacity:0.2; }
+      5%     { stroke-opacity:0.9; }
+      28%    { stroke-opacity:0.9; }
+      35%    { stroke-opacity:0.2; }
+    }
+    /* KB read pulse to B: "M410 366 -> 410 446" (vertical down from KB to B) */
+    @keyframes readB {
+      0%,100% { stroke-opacity:0.2; }
+      18%     { stroke-opacity:0.2; }
+      25%     { stroke-opacity:0.9; }
+      48%     { stroke-opacity:0.9; }
+      55%     { stroke-opacity:0.2; }
+    }
+    /* B writes to KB: (reuse vertical up line) */
+    @keyframes writeB {
+      0%,100%{ stroke-opacity:0.2; }
+      35%    { stroke-opacity:0.2; }
+      42%    { stroke-opacity:0.9; }
+      60%    { stroke-opacity:0.9; }
+      67%    { stroke-opacity:0.2; }
+    }
+    /* KB read pulse to C: "M524 348 -> 660 446" */
+    @keyframes readC {
+      0%,100%{ stroke-opacity:0.2; }
+      45%    { stroke-opacity:0.2; }
+      52%    { stroke-opacity:1; }
+      80%    { stroke-opacity:1; }
+      88%    { stroke-opacity:0.2; }
+    }
+
+    .kb-write-a { animation: writeA 6s ease-in-out infinite; }
+    .kb-read-b  { animation: readB  6s ease-in-out infinite; }
+    .kb-write-b { animation: writeB 6s ease-in-out infinite; }
+    .kb-read-c  { animation: readC  6s ease-in-out infinite; }
+
+    /* Moving dot on write-A arc path */
+    @keyframes dotWriteA {
+      0%   { offset-distance:0%; opacity:0; }
+      5%   { opacity:1; }
+      28%  { offset-distance:100%; opacity:1; }
+      33%  { opacity:0; }
+      100% { opacity:0; }
+    }
+    /* Moving dot on read-B arc path */
+    @keyframes dotReadB {
+      0%,18%{ offset-distance:0%; opacity:0; }
+      23%  { opacity:1; }
+      50%  { offset-distance:100%; opacity:1; }
+      55%  { opacity:0; }
+      100% { opacity:0; }
+    }
+    /* Moving dot on write-B vertical path */
+    @keyframes dotWriteB {
+      0%,35%{ offset-distance:0%; opacity:0; }
+      40%  { opacity:1; }
+      62%  { offset-distance:100%; opacity:1; }
+      67%  { opacity:0; }
+      100% { opacity:0; }
+    }
+    /* Moving dot on read-C arc path */
+    @keyframes dotReadC {
+      0%,45%{ offset-distance:0%; opacity:0; }
+      50%  { opacity:1; }
+      82%  { offset-distance:100%; opacity:1; }
+      88%  { opacity:0; }
+      100% { opacity:0; }
+    }
+
+    .dotWriteA { offset-path: path('M160 446 C 160 400, 240 372, 296 350'); animation: dotWriteA 6s ease-in-out infinite; }
+    .dotReadB  { offset-path: path('M410,366 L410,446'); animation: dotReadB  6s ease-in-out infinite; }
+    .dotWriteB { offset-path: path('M410,446 L410,366'); animation: dotWriteB 6s ease-in-out infinite; }
+    .dotReadC  { offset-path: path('M524 348 C 580 372, 660 404, 660 446'); animation: dotReadC  6s ease-in-out infinite; }
+
+    /* KB hub gentle glow pulse */
+    @keyframes kbPulse {
+      0%,100%{ opacity:0.14; }
+      50%    { opacity:0.28; }
+    }
+    .kb-bg { animation: kbPulse 3s ease-in-out infinite; }
+  }</style>
+
+  <text x="410" y="50" text-anchor="middle" fill="#554c41" font-size="16" letter-spacing="3">EVERY PROJECT COMPOUNDS THE LAST</text>
+
+  <!-- KB / Second Brain (center hub) — pulsing background fill -->
+  <rect class="kb-bg" x="290" y="248" width="240" height="116" rx="20" fill="#9d3328"/>
+  <rect x="290" y="248" width="240" height="116" rx="20" fill="none" stroke="#9d3328" stroke-width="3"/>
+  <text x="410" y="294" text-anchor="middle" fill="#efe9ff" font-size="24" font-weight="700">KB / Second Brain</text>
+  <text x="410" y="320" text-anchor="middle" fill="#554c41" font-size="13">notes, patterns, gotchas</text>
+  <text x="410" y="340" text-anchor="middle" fill="#554c41" font-size="12.5">read &#8596; write</text>
+
+  <!-- three project nodes -->
+  <rect x="60" y="448" width="200" height="92" rx="16" fill="#e4d8c1" stroke="#9d3328" stroke-width="2.5"/>
+  <text x="160" y="488" text-anchor="middle" fill="#382f27" font-size="21" font-weight="700">Project A</text>
+  <text x="160" y="514" text-anchor="middle" fill="#554c41" font-size="13">first pass</text>
+
+  <rect x="310" y="448" width="200" height="92" rx="16" fill="#e4d8c1" stroke="#9d3328" stroke-width="2.5"/>
+  <text x="410" y="488" text-anchor="middle" fill="#382f27" font-size="21" font-weight="700">Project B</text>
+  <text x="410" y="514" text-anchor="middle" fill="#7dd3fc" font-size="13" font-weight="600">faster</text>
+
+  <rect x="560" y="448" width="200" height="92" rx="16" fill="#e4d8c1" stroke="#9d3328" stroke-width="2.5"/>
+  <text x="660" y="488" text-anchor="middle" fill="#382f27" font-size="21" font-weight="700">Project C</text>
+  <text x="660" y="514" text-anchor="middle" fill="#7dd3fc" font-size="13" font-weight="600">faster still</text>
+
+  <!-- compounding arrows A->B and B->C (animated dashes + dots) -->
+  <line class="arr-ab" x1="260" y1="494" x2="306" y2="494" stroke="url(#ltr)" stroke-width="3.5" marker-end="url(#atr)"/>
+  <line class="arr-bc" x1="510" y1="494" x2="556" y2="494" stroke="url(#ltr)" stroke-width="3.5" marker-end="url(#atr)"/>
+
+  <!-- KB connection arcs — animated opacity pulses -->
+  <path class="kb-write-a" d="M160 446 C 160 400, 240 372, 296 350" fill="none" stroke="#9d3328" stroke-width="2.5" marker-end="url(#atrp)"/>
+  <path class="kb-read-c" d="M524 348 C 580 372, 660 404, 660 446" fill="none" stroke="#9d3328" stroke-width="2.5" marker-end="url(#atr)"/>
+  <!-- B->KB write (upward) -->
+  <line class="kb-write-b" x1="410" y1="446" x2="410" y2="368" stroke="#9d3328" stroke-width="2.5" marker-end="url(#atrp)"/>
+  <!-- KB->B read (downward) -->
+  <line class="kb-read-b" x1="410" y1="366" x2="410" y2="446" stroke="#e4d8c1" stroke-width="2.5" marker-end="url(#atr)"/>
+
+  <text x="190" y="404" text-anchor="middle" fill="#554c41" font-size="12">write</text>
+  <text x="628" y="404" text-anchor="middle" fill="#554c41" font-size="12">read</text>
+
+  <!-- Travelling dots on KB connection paths -->
+  <circle class="dotWriteA" r="5" fill="#9d3328" opacity="0"/>
+  <circle class="dotReadB"  r="5" fill="#9d3328" opacity="0"/>
+  <circle class="dotWriteB" r="5" fill="#9d3328" opacity="0"/>
+  <circle class="dotReadC"  r="5" fill="#9d3328" opacity="0"/>
+
+  <!-- Compounding dots -->
+  <circle class="dot-ab" r="6" fill="#9d3328" opacity="0"/>
+  <circle class="dot-bc" r="6" fill="#9d3328" opacity="0"/>
+
+  <text x="410" y="588" text-anchor="middle" fill="#554c41" font-size="16">The smarter your notes, the smarter your AI gets.</text>
+</svg>
+</template>
+<template id="motion-composition"><svg class="motion-plate imported-plate" viewBox="0 0 1600 600" role="img" aria-label="USD files compose into a stage" font-family="Arial,sans-serif">
+<style>@scope (.imported-plate){@keyframes dkIn{from{opacity:0}to{opacity:1}}
+.cp-root,.cp-file,.cp-mat,.cp-stage,.cp-line{animation:none}
+.cp-root{animation:dkIn .6s ease both .2s}
+.cp-line{animation:cpDraw .7s ease both}
+.cp-f1{animation:dkIn .5s ease both 1s}.cp-f2{animation:dkIn .5s ease both 1.3s}.cp-f3{animation:dkIn .5s ease both 1.6s}.cp-mat{animation:dkIn .5s ease both 1.9s}
+.cp-b1{animation:cpDraw .8s ease both 2.5s}.cp-b2{animation:cpDraw .8s ease both 2.6s}.cp-b3{animation:cpDraw .8s ease both 2.7s}
+.cp-stage{animation:dkIn .6s ease both 3.4s}
+.cp-t1{animation:dkIn .4s ease both 3.8s}.cp-t2{animation:dkIn .4s ease both 4s}.cp-t3{animation:dkIn .4s ease both 4.2s}.cp-t4{animation:dkIn .4s ease both 4.4s}
+.cp-dot{opacity:0}
+.cp-dot{offset-path:path('M420 300 H520 V95 H680');offset-rotate:0deg;animation:cpDot 3.6s linear 5s infinite}
+@keyframes cpDraw{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+@keyframes cpDot{0%{offset-distance:0%;opacity:1}90%{offset-distance:100%;opacity:1}100%{offset-distance:100%;opacity:0}}
+}</style><defs><marker id="cpM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#382f27"/></marker><marker id="cpMa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9d3328"/></marker></defs>
+<g stroke="#9d3328" stroke-width="4" fill="none">
+<path class="cp-line" pathLength="1" style="animation-delay:.7s" d="M420 300H520"/>
+<path class="cp-line" pathLength="1" style="animation-delay:.8s" d="M520 95V485"/>
+<path class="cp-line" pathLength="1" style="animation-delay:.9s" d="M520 95H674" marker-end="url(#cpM)"/>
+<path class="cp-line" pathLength="1" style="animation-delay:1.1s" d="M520 195H674" marker-end="url(#cpM)"/>
+<path class="cp-line" pathLength="1" style="animation-delay:1.3s" d="M520 295H674" marker-end="url(#cpM)"/>
+<path class="cp-line" pathLength="1" style="animation-delay:1.6s;stroke:#9d3328" d="M520 485H674" marker-end="url(#cpMa)"/></g>
+<g class="cp-root"><rect x="40" y="200" width="380" height="200" rx="20" fill="#e4d8c1" stroke="#9d3328" stroke-width="3"/><text x="230" y="262" text-anchor="middle" fill="#382f27" font-size="36" font-weight="700" font-family="JetBrains Mono,monospace">scene.usda</text><text x="230" y="306" text-anchor="middle" fill="#382f27" font-size="28">the root layer</text><text x="230" y="350" text-anchor="middle" fill="#382f27" font-size="26" font-family="JetBrains Mono,monospace">def Xform "World"</text></g>
+<text x="600" y="72" text-anchor="middle" fill="#382f27" font-size="22" transform="translate(0,0)">references</text>
+<g class="cp-file cp-f1"><rect x="680" y="60" width="340" height="70" rx="14" fill="#e4d8c1" stroke="#9d3328" stroke-width="3"/><text x="850" y="105" text-anchor="middle" fill="#382f27" font-size="28" font-family="JetBrains Mono,monospace">SM_Chair_01.usd</text></g>
+<g class="cp-file cp-f2"><rect x="680" y="160" width="340" height="70" rx="14" fill="#e4d8c1" stroke="#9d3328" stroke-width="3"/><text x="850" y="205" text-anchor="middle" fill="#382f27" font-size="28" font-family="JetBrains Mono,monospace">SM_Table_01.usd</text></g>
+<g class="cp-file cp-f3"><rect x="680" y="260" width="340" height="70" rx="14" fill="#e4d8c1" stroke="#9d3328" stroke-width="3"/><text x="850" y="305" text-anchor="middle" fill="#382f27" font-size="28" font-family="JetBrains Mono,monospace">SM_Cone.usd</text></g>
+<g class="cp-mat"><rect x="680" y="430" width="340" height="110" rx="14" fill="#e4d8c1" stroke="#9d3328" stroke-width="3"/><text x="850" y="480" text-anchor="middle" fill="#382f27" font-size="28" font-family="JetBrains Mono,monospace">/World/Materials</text><text x="850" y="518" text-anchor="middle" fill="#382f27" font-size="26">Scope: M_Wood, ...</text></g>
+<g fill="none" stroke="#9d3328" stroke-width="4"><path class="cp-b1" pathLength="1" d="M1024 95H1064V485H1026" marker-end="url(#cpMa)"/><path class="cp-b2" pathLength="1" d="M1024 195H1064"/><path class="cp-b3" pathLength="1" d="M1024 295H1064"/></g>
+<text class="cp-bl" x="1110" y="46" fill="#382f27" font-size="24" text-anchor="end">material:binding</text>
+<g class="cp-stage"><path d="M1096 300H1176" stroke="#382f27" stroke-width="4" marker-end="url(#cpM)"/><text x="1136" y="340" text-anchor="middle" fill="#382f27" font-size="22">compose</text>
+<rect x="1180" y="120" width="380" height="380" rx="20" fill="#e4d8c1" stroke="#9d3328" stroke-width="3"/><text x="1370" y="170" text-anchor="middle" fill="#9d3328" font-size="26" font-weight="700" letter-spacing="2">THE STAGE</text></g>
+<g font-size="27" font-family="JetBrains Mono,monospace" fill="#382f27"><text class="cp-t1" x="1210" y="235">/World</text><text class="cp-t2" x="1240" y="290">SM_Chair_01</text><text class="cp-t2" x="1240" y="335">SM_Table_01</text><text class="cp-t3" x="1240" y="380">SM_Cone</text><text class="cp-t4" x="1240" y="440" fill="#382f27">Materials/M_Wood</text></g>
+<circle class="cp-dot" r="12" fill="#382f27"/>
+</svg></template>
+<template id="motion-units"><svg class="motion-plate imported-plate" viewBox="0 0 1600 570" role="img" aria-label="Unreal and glTF coordinate conventions" font-family="Arial,sans-serif">
+<style>@scope (.imported-plate){@keyframes dkIn{from{opacity:0}to{opacity:1}}
+.un-a,.un-b,.un-c,.un-d,.un-g{animation:none}
+.un-a{animation:dkIn .6s ease both .2s}
+.un-arrow{animation:unFlow 1.4s linear infinite}
+.un-b{animation:dkIn .6s ease both 1.2s}
+.un-c{animation:dkIn .5s ease both 2s}.un-c2{animation-delay:2.4s}.un-c3{animation-delay:2.8s}
+.un-g{animation:unGizmo 1s ease both 3.3s}
+.un-d{animation:dkIn .7s ease both 4.2s}
+.un-glow{animation:unGlow 4s ease-in-out infinite}
+.un-arrow{stroke-dasharray:16 12}
+.un-glow{transform-box:fill-box;transform-origin:center}
+@keyframes unFlow{from{stroke-dashoffset:56}to{stroke-dashoffset:0}}
+@keyframes unGizmo{from{opacity:0;transform:rotate(-90deg)}to{opacity:1;transform:none}}
+@keyframes unGlow{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+}</style><defs><filter id="unGl" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<marker id="unM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="context-stroke"/></marker></defs>
+<g class="un-a"><rect x="40" y="20" width="560" height="400" rx="22" fill="#f8f1e3" stroke="#9d3328" stroke-width="3"/><text x="70" y="72" fill="#9d3328" font-size="36" font-weight="700">Unreal</text><text x="70" y="112" fill="#382f27" font-size="28">Z up · left-handed · 1 unit = 1 cm</text>
+<g stroke-width="6" fill="none" stroke-linecap="round"><path d="M160 380V210" stroke="#60a5fa" marker-end="url(#unM)"/><path d="M160 380H320" stroke="#9d3328" marker-end="url(#unM)"/><path d="M160 380L104 412" stroke="#9d3328" marker-end="url(#unM)"/></g>
+<text x="176" y="216" fill="#60a5fa" font-size="30" font-weight="700">Z</text><text x="322" y="368" fill="#9d3328" font-size="30" font-weight="700">X</text><text x="74" y="418" fill="#9d3328" font-size="30" font-weight="700">Y</text>
+<rect x="380" y="160" width="60" height="220" rx="10" fill="#e4d8c1" stroke="#9d3328" stroke-width="3"/><path d="M465 160V380M455 160H475M455 380H475" stroke="#382f27" stroke-width="3" fill="none"/><text x="485" y="285" fill="#382f27" font-size="40" font-weight="700">180</text></g>
+<g class="un-b"><rect class="un-glow" x="690" y="150" width="220" height="100" rx="18" fill="#e4d8c1" stroke="#9d3328" stroke-width="3"/><text x="800" y="196" text-anchor="middle" fill="#382f27" font-size="34" font-weight="700">a hop</text><text x="800" y="230" text-anchor="middle" fill="#382f27" font-size="24">the conversion</text>
+<path class="un-arrow" d="M610 200H694" stroke="#9d3328" stroke-width="5" fill="none" marker-end="url(#unM)"/><path class="un-arrow" d="M906 200H990" stroke="#9d3328" stroke-width="5" fill="none" marker-end="url(#unM)"/></g>
+<g font-size="27" font-weight="600" text-anchor="middle"><g class="un-c"><rect x="670" y="290" width="260" height="50" rx="25" fill="#e4d8c1" stroke="#9d3328" stroke-width="2"/><text x="800" y="325" fill="#382f27">scale × 0.01</text></g>
+<g class="un-c un-c2"><rect x="670" y="352" width="260" height="50" rx="25" fill="#e4d8c1" stroke="#9d3328" stroke-width="2"/><text x="800" y="387" fill="#382f27">Z-up to Y-up</text></g>
+<g class="un-c un-c3"><rect x="670" y="414" width="260" height="50" rx="25" fill="#e4d8c1" stroke="#9d3328" stroke-width="2"/><text x="800" y="449" fill="#382f27">flip handedness</text></g></g>
+<g class="un-a" style="animation-delay:1.6s"><rect x="1000" y="20" width="560" height="400" rx="22" fill="#f8f1e3" stroke="#9d3328" stroke-width="3"/><text x="1030" y="72" fill="#9d3328" font-size="36" font-weight="700">glTF / GLB</text><text x="1030" y="112" fill="#382f27" font-size="28">Y up · right-handed · 1 unit = 1 m</text>
+<g class="un-g" style="transform-origin:1120px 380px"><g stroke-width="6" fill="none" stroke-linecap="round"><path d="M1120 380V210" stroke="#9d3328" marker-end="url(#unM)"/><path d="M1120 380H1280" stroke="#9d3328" marker-end="url(#unM)"/><path d="M1120 380L1064 412" stroke="#60a5fa" marker-end="url(#unM)"/></g>
+<text x="1136" y="216" fill="#9d3328" font-size="30" font-weight="700">Y</text><text x="1282" y="368" fill="#9d3328" font-size="30" font-weight="700">X</text><text x="1034" y="418" fill="#60a5fa" font-size="30" font-weight="700">Z</text></g>
+<rect x="1340" y="160" width="60" height="220" rx="10" fill="#e4d8c1" stroke="#9d3328" stroke-width="3"/><path d="M1425 160V380M1415 160H1435M1415 380H1435" stroke="#382f27" stroke-width="3" fill="none"/><text x="1445" y="285" fill="#382f27" font-size="40" font-weight="700">1.8</text></g>
+<g class="un-d"><rect x="40" y="490" width="1520" height="64" rx="16" fill="#e4d8c1" stroke="#9d3328" stroke-width="2" stroke-dasharray="10 8"/><text x="800" y="533" text-anchor="middle" fill="#ffc4cc" font-size="30" font-weight="600">Miss one, and the chair is 100 times too big, or lying on its side.</text></g>
+</svg></template>
+<template id="motion-validate"><svg class="motion-plate imported-plate" viewBox="0 0 1600 520" role="img" aria-label="Four steps in checking a scene export" font-family="Arial,sans-serif">
+<style>@scope (.imported-plate){@keyframes dkIn{from{opacity:0}to{opacity:1}}
+.ca-n{animation:none}
+.ca-n{animation:dkIn .6s ease both}
+.n1{animation-delay:.2s}.n2{animation-delay:.6s}.n3{animation-delay:1s}.n4{animation-delay:1.4s}
+.ca-cap{animation:dkIn .6s ease both;animation-delay:1.8s}
+.ca-ret{animation:dkIn .8s ease both;animation-delay:2s}
+.ca-dot,.ca-hl{opacity:0}
+.ca-dot{offset-path:path('M200 170 H1400 V50 H200 Z');offset-rotate:0deg;animation:caDot 9s linear 2.6s infinite}
+.ca-hl{animation:caHl 9s ease-in-out infinite}
+.h1{animation-delay:2.4s}.h2{animation-delay:3.8s}.h3{animation-delay:5.1s}.h4{animation-delay:6.5s}
+@keyframes caDot{0%{offset-distance:0%;opacity:1}98%{offset-distance:100%;opacity:1}100%{offset-distance:100%;opacity:0}}
+@keyframes caHl{0%{opacity:0}3%,12%{opacity:1}20%,100%{opacity:0}}
+}</style><defs><marker id="caM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#382f27"/></marker><marker id="caMa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9d3328"/></marker></defs>
+<g class="ca-ret"><path d="M1400 110 V50 H200 V108" fill="none" stroke="#9d3328" stroke-width="4" stroke-dasharray="14 10" marker-end="url(#caMa)"/>
+<text x="800" y="36" text-anchor="middle" fill="#382f27" font-size="28" font-weight="600">Something off? Fix it, then export again.</text></g>
+<g stroke="#382f27" stroke-width="4" fill="none"><path d="M356 170H444" marker-end="url(#caM)"/><path d="M756 170H844" marker-end="url(#caM)"/><path d="M1156 170H1244" marker-end="url(#caM)"/></g>
+<g class="ca-n n1"><rect x="50" y="110" width="300" height="120" rx="20" fill="#f8f1e3" stroke="#9d3328" stroke-width="3"/><text x="200" y="158" text-anchor="middle" fill="#9d3328" font-size="26" font-weight="700" letter-spacing="3">STEP 1</text><text x="200" y="204" text-anchor="middle" fill="#382f27" font-size="40" font-weight="700">Decide</text><rect class="ca-hl h1" x="50" y="110" width="300" height="120" rx="20" fill="none" stroke="#382f27" stroke-width="6"/></g>
+<g class="ca-n n2"><rect x="450" y="110" width="300" height="120" rx="20" fill="#f8f1e3" stroke="#9d3328" stroke-width="3"/><text x="600" y="158" text-anchor="middle" fill="#9d3328" font-size="26" font-weight="700" letter-spacing="3">STEP 2</text><text x="600" y="204" text-anchor="middle" fill="#382f27" font-size="40" font-weight="700">Export</text><rect class="ca-hl h2" x="450" y="110" width="300" height="120" rx="20" fill="none" stroke="#382f27" stroke-width="6"/></g>
+<g class="ca-n n3"><rect x="850" y="110" width="300" height="120" rx="20" fill="#f8f1e3" stroke="#9d3328" stroke-width="3"/><text x="1000" y="158" text-anchor="middle" fill="#9d3328" font-size="26" font-weight="700" letter-spacing="3">STEP 3</text><text x="1000" y="204" text-anchor="middle" fill="#382f27" font-size="40" font-weight="700">Inspect</text><rect class="ca-hl h3" x="850" y="110" width="300" height="120" rx="20" fill="none" stroke="#382f27" stroke-width="6"/></g>
+<g class="ca-n n4"><rect x="1250" y="110" width="300" height="120" rx="20" fill="#f8f1e3" stroke="#9d3328" stroke-width="3"/><text x="1400" y="158" text-anchor="middle" fill="#9d3328" font-size="26" font-weight="700" letter-spacing="3">STEP 4</text><text x="1400" y="204" text-anchor="middle" fill="#382f27" font-size="40" font-weight="700">Validate</text><rect class="ca-hl h4" x="1250" y="110" width="300" height="120" rx="20" fill="none" stroke="#382f27" stroke-width="6"/></g>
+<g class="ca-cap" text-anchor="middle" font-size="28"><text x="200" y="290" fill="#382f27">What must survive?</text><text x="200" y="330" fill="#382f27" font-size="26">units, materials, lights</text>
+<text x="600" y="290" fill="#382f27">USD or GLB</text><text x="600" y="330" fill="#382f27" font-size="26">run Preflight first</text>
+<text x="1000" y="290" fill="#382f27">Open it in a viewer</text><text x="1000" y="330" fill="#382f27" font-size="26">bounds, per mesh</text>
+<text x="1400" y="290" fill="#382f27">glTF Validator</text><text x="1400" y="330" fill="#382f27" font-size="26">then the target engine</text></g>
+<g class="ca-cap"><rect x="50" y="410" width="1500" height="84" rx="16" fill="#e4d8c1" stroke="#9d3328" stroke-width="2" stroke-dasharray="10 8"/><text x="800" y="464" text-anchor="middle" fill="#382f27" font-size="32" font-weight="600">A green validator is not the same as looks right. Look in the target too.</text></g>
+<circle class="ca-dot" r="13" fill="#382f27"/>
+</svg></template>
 <template id="motion-material"><svg class="motion-plate" viewBox="0 0 800 560" role="img" aria-label="Red source swatch compared with gray stock USD and GLB results and red UnRealityKit output."><rect width="800" height="560" fill="#efe6d2"/><g fill="#231b14" font-family="Georgia,serif"><text x="48" y="66" font-size="36">Where the color changed</text><path d="M48 86H752" stroke="#463f36"/><rect x="58" y="221" width="125" height="125" fill="#b92117"/><text x="120" y="384" text-anchor="middle" font-size="24">UE source</text><g class="beat" style="--delay:1.0s"><path class="trace" d="M205 280 H270 L340 167 H400" pathLength="1" fill="none" stroke="#a3271f" stroke-width="3"/><rect x="415" y="137" width="60" height="60" fill="#888582"/><text x="496" y="175" font-size="29">Stock USD</text><text x="748" y="175" text-anchor="end" font-size="22" font-style="italic">Gray</text></g><g class="beat" style="--delay:2.6s"><path class="trace" d="M205 280 H270 L340 283 H400" pathLength="1" fill="none" stroke="#a3271f" stroke-width="3"/><rect x="415" y="253" width="60" height="60" fill="#888582"/><text x="496" y="291" font-size="29">Stock GLB</text><text x="748" y="291" text-anchor="end" font-size="22" font-style="italic">Gray</text></g><g class="beat" style="--delay:4.2s"><path class="trace" d="M205 280 H270 L340 399 H400" pathLength="1" fill="none" stroke="#a3271f" stroke-width="3"/><rect x="415" y="369" width="60" height="60" fill="#b92117"/><text x="496" y="407" font-size="29">UnRealityKit</text><text x="748" y="407" text-anchor="end" font-size="22" font-style="italic">Red</text></g><text x="48" y="514" font-size="21" font-style="italic">Class test · flat-color material override</text></g></svg></template>
 <template id="motion-retrieval"><svg class="motion-plate" viewBox="0 0 800 560" role="img" aria-label="Request and reply sequence between the assistant and the course kit." xmlns="http://www.w3.org/2000/svg">
  <rect width="800" height="560" fill="#efe6d2"/><g fill="#231b14" font-family="Georgia,serif">
@@ -2130,7 +3191,16 @@ SECTIONS.forEach((sec,si)=>{
       return;
     }
     let imgHTML;
-    if(c.motion){
+    if(c.example){
+      const sample=document.createElement('figure');sample.className='worked-example';
+      const label=document.createElement('figcaption');label.textContent=c.example.label;
+      const lines=document.createElement('pre');lines.textContent=c.example.lines.join('\n');
+      sample.append(label,lines);imgHTML=sample.outerHTML;
+    } else if(c.pair){
+      imgHTML=c.pair.map((src,i)=>`<figure class="paired-view"><img src="${src}" alt="${c.captions[i]} city lighting"><figcaption>${c.captions[i]}</figcaption></figure>`).join('');
+    } else if(c.clip && !new URLSearchParams(location.search).has('print') && !new URLSearchParams(location.search).has('shot')){
+      imgHTML=`<video class="demo-clip" controls muted playsinline preload="none" poster="${c.img}" src="${c.clip}" aria-label="${c.subtitle}"></video>`;
+    } else if(c.motion){
       imgHTML=document.getElementById("motion-"+c.motion).innerHTML;
     } else if(c.img&&c.img.startsWith('IFRAME:')){
       const iframeSrc=c.img.slice(7);
@@ -2141,6 +3211,9 @@ SECTIONS.forEach((sec,si)=>{
       imgHTML=`<div class="media-cycler-mount" style="width:100%;height:100%"></div>`;
     }
     s.innerHTML=`<div class="case-image">${imgHTML}</div><div class="case-content"><div class="case-ytag">${sec.year}${sec.lesson.short?' &middot; '+sec.lesson.short:''}</div><h2 class="case-title">${c.title}</h2><p class="case-sub">${c.subtitle}</p><ul class="case-bl">${c.bullets.map(b=>`<li>${b.replace(/\n/g,'<br>')}</li>`).join('')}</ul></div>`;
+    if(c.pair)s.querySelector('.case-image').classList.add('pair-image');
+    const video=s.querySelector('.demo-clip');
+    if(video)new MutationObserver(()=>{if(!s.classList.contains('active'))video.pause();}).observe(s,{attributes:true,attributeFilter:['class']});
     deck.appendChild(s);allSlides.push(s);
   });
 });
@@ -2183,7 +3256,7 @@ function goToFromHash(){const raw=location.hash.replace('#','');if(raw==='00'||r
 document.getElementById('btn-next').addEventListener('click',()=>{if(window._arrowSubstep!==false&&advanceStep())return;goNext();});
 document.getElementById('btn-prev').addEventListener('click',goPrev);
 // A link inside a slide opens its URL; it must not also advance the deck.
-document.addEventListener('click',e=>{if(e.target.closest('a.deck-link,a.deck-link-inline'))e.stopPropagation();},true);
+document.addEventListener('click',e=>{if(e.target.closest('a.deck-link,a.deck-link-inline,video[controls],.workflow-index button'))e.stopPropagation();},true);
 // ── Playing indicator + Autoplay ──
 const _navSpinner=document.getElementById('nav-playing');
 let _playingTimer=null;
@@ -2207,7 +3280,7 @@ document.addEventListener('keydown',e=>{
 });
 let touchX=0,touchY=0,touchT=0,lastTapT=0,wasPinch=false;
 document.addEventListener('touchstart',e=>{if(document.body.classList.contains('notes-mode'))return;if(e.touches.length>1){wasPinch=true;return;}touchX=e.touches[0].clientX;touchY=e.touches[0].clientY;touchT=Date.now();},{passive:true});
-document.addEventListener('touchend',e=>{if(document.body.classList.contains('notes-mode'))return;if(e.target.closest&&e.target.closest('a.deck-link,a.deck-link-inline'))return;if(wasPinch){if(e.touches.length===0)wasPinch=false;return;}const dx=e.changedTouches[0].clientX-touchX;const dy=e.changedTouches[0].clientY-touchY;const dt=Date.now()-touchT;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){lastTapT=0;dx<0?(window._arrowSubstep!==false&&advanceStep()?0:goNext()):goPrev();}else if(Math.abs(dx)<15&&Math.abs(dy)<15&&dt<300){if(window._arrowSubstep!==false&&advanceStep())return;goNext();}},{passive:true});
+document.addEventListener('touchend',e=>{if(document.body.classList.contains('notes-mode'))return;if(e.target.closest&&e.target.closest('a.deck-link,a.deck-link-inline,video[controls],.workflow-index button'))return;if(wasPinch){if(e.touches.length===0)wasPinch=false;return;}const dx=e.changedTouches[0].clientX-touchX;const dy=e.changedTouches[0].clientY-touchY;const dt=Date.now()-touchT;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)){lastTapT=0;dx<0?(window._arrowSubstep!==false&&advanceStep()?0:goNext()):goPrev();}else if(Math.abs(dx)<15&&Math.abs(dy)<15&&dt<300){if(window._arrowSubstep!==false&&advanceStep())return;goNext();}},{passive:true});
 // Double-click (desktop): advance substep or next event — same as arrow/tap
 document.addEventListener('dblclick',e=>{
   if(window._moveMode)return;
