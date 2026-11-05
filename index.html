@@ -1090,7 +1090,7 @@ body.edit-text .slide.active [contenteditable="true"]{outline:2px solid var(--te
 /* === SPLIT PRESENTER VIEW === */
 body.split-view #deck{bottom:calc(42*var(--vh))!important}
 body.split-view #notes-drawer{transform:none!important;pointer-events:all;max-height:calc(42*var(--vh));height:calc(42*var(--vh));overflow-y:auto}
-body.split-view #brand{bottom:calc(calc(42*var(--vh)) + 6px)!important}
+body.split-view:not([data-look="broadside"]) #brand{bottom:calc(calc(42*var(--vh)) + 6px)!important}
 body.split-view .nav-arrows{bottom:calc(calc(42*var(--vh)) + 4px)!important}
 /* === ?present MODE — single-window presenter (resizable slide + script ribbon) === */
 body.present-mode{--ribbon-vh:10;--present-scale:calc(1 - var(--ribbon-vh) * 0.01)}
